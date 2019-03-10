@@ -1,5 +1,20 @@
 const store = require('../store')
 
+const initStore = () => {
+  console.log('initStore')
+  store.game = {}
+  store.game.math = {}
+  store.game.timer = {}
+  store.game.countdown = 30
+  store.game.hearts = 5
+  store.game.score = 0
+  store.game.over = false
+  store.game.start = false
+  store.game.problem = null
+  store.game.answer = null
+  store.user = null
+}
+
 const resetStore = () => {
   console.log('resetStore')
   store.game = {}
@@ -36,6 +51,7 @@ const resetTimer = () => {
 }
 const stopTimer = () => {
   clearInterval(store.game.timer)
+  $('#game-timer').html(`<h1>Game over!</h1>`)
 }
 
 const startTimer = () => {
@@ -48,9 +64,10 @@ const startTimer = () => {
     now = Date.now()
     if (now > end || store.game.hearts === -1) {
       clearInterval(store.game.timer)
+      $('#game-timer').html(`<h1>Game over!</h1>`)
       store.game.over = true
     }
-    $('#game-timer').html(`<h1>Milliseconds remaining:${-(now - end)}</h1>`)
+    $('#game-timer').html(`<h1>Time remaining in seconds:${-(now - end) / 1000}</h1>`)
   }, 1)
 }
 
@@ -65,5 +82,6 @@ module.exports = {
   resetTimer,
   stopTimer,
   startTimer,
-  startGame
+  startGame,
+  initStore
 }

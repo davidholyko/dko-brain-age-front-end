@@ -13,7 +13,7 @@ const client = require('./client-side/events')
 
 $(() => {
   console.log('JavaScript is running...')
-  client.resetStore()
+  client.initStore()
   authEvents.addHandlers()
   gameEvents.addHandlers()
 })
