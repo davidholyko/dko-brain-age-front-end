@@ -8,9 +8,11 @@
 
 const authEvents = require('./auth/events')
 const gameEvents = require('./game/events')
+const storeEvents = require('./client-side/events')
 
 $(() => {
   console.log('JavaScript is running...')
+  storeEvents.initStore()
   authEvents.addHandlers()
   gameEvents.addHandlers()
 })
