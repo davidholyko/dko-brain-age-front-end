@@ -1,49 +1,79 @@
 'use strict'
 
-const words = ['dog', 'cat', 'horse', 'rabbit', 'cow', 'person', 'goat', 'wizard',
-  'jumped', 'ran', 'looked', 'ate', 'backed', 'talked', 'bit', 'approached',
-  'sleepy', 'hungry', 'angry', 'excited', 'curious', 'tall', 'happy', 'bewildered', 'green',
-  'hastily', 'quickly', 'carefully', 'slowly', 'menacingly', 'abruptly', 'carelessly', 'calmly']
+// QUESTION: 10 WORDS ARE IN THE ARRAY
+// WHICH WORD APPEARS 0,1,2,3,4 TIMES?
 
-const question = []
-const output = []
+const store = require('../store')
 
-// add words into array
-for (let i = 0; i < 4; i++) {
-  const randomIndex = Math.random() * words.length | 0
-  const input = { 0: words[randomIndex], 1: words[randomIndex], 2: words[randomIndex], 3: words[randomIndex] }
-  const randomInput = input[i]
+const generateMemoryProblem = () => {
+  const words = ['dog', 'cat', 'horse', 'rabbit', 'cow', 'person', 'goat', 'wizard',
+    'jumped', 'ran', 'looked', 'ate', 'backed', 'talked', 'bit', 'approached',
+    'sleepy', 'hungry', 'angry', 'excited', 'curious', 'tall', 'happy', 'bewildered', 'green',
+    'hastily', 'quickly', 'carefully', 'slowly', 'menacingly', 'abruptly', 'carelessly', 'calmly']
 
-  switch (i) {
-    case 0:
-      question.push(randomInput)
-      break
-    case 1:
-      question.push(randomInput)
-      question.push(randomInput)
-      break
-    case 2:
-      question.push(randomInput)
-      question.push(randomInput)
-      question.push(randomInput)
-      break
-    case 3:
-      question.push(randomInput)
-      question.push(randomInput)
-      question.push(randomInput)
-      question.push(randomInput)
-      break
+  const choicesInput = []
+  const choicesOutput = []
+  const multipleChoice = []
+  const multipleChoiceIndexes = []
+
+  // add words into array
+  for (let i = 0; i < 4; i++) {
+    const randomIndex = Math.random() * words.length | 0
+    const randomChoice = words[randomIndex]
+    multipleChoice.push(randomChoice)
+
+    switch (i) {
+      case 0:
+        choicesInput.push(randomChoice)
+        break
+      case 1:
+        choicesInput.push(randomChoice)
+        choicesInput.push(randomChoice)
+        break
+      case 2:
+        choicesInput.push(randomChoice)
+        choicesInput.push(randomChoice)
+        choicesInput.push(randomChoice)
+        break
+      case 3:
+        choicesInput.push(randomChoice)
+        choicesInput.push(randomChoice)
+        choicesInput.push(randomChoice)
+        choicesInput.push(randomChoice)
+        break
+    }
+    words.splice(randomIndex, 1)
   }
-  words.splice(randomIndex, 1)
+
+  // randomize choicesOutput
+  for (let i = choicesInput.length; i > 0; i--) {
+    const random = Math.random() * i | 0
+    choicesOutput.push(choicesInput[random])
+    choicesInput.splice(random, 1)
+  }
+
+  // add a 5th choice to multipleChoice
+  // get difference between words array and multipleChoice
+  // select a random word (it isnt already in the multipleChoice array b/c the filter)
+  // push word into multipleChoice
+  multipleChoice.unshift(words.filter(word => !multipleChoice.includes(word))[Math.random() * words.length | 0])
+
+  const randomChoiceIndex = Math.random() * 5 | 0
+
+  const question = `${choicesOutput} Which word appeared ${randomChoiceIndex} times?`
+  const answer = `${multipleChoice[randomChoiceIndex]}`
+
+  // store.game.question = question
+  // store.game.answer = answer
+  // store.game.multipleChoice = multipleChoice
+
+  console.log(question)
+  console.log(answer)
+  console.log(multipleChoice)
 }
 
-// randomize output
-for (let i = question.length; i > 0; i--) {
-  const random = Math.random() * i | 0
-  output.push(question[random])
-  question.splice(random, 1)
+generateMemoryProblem()
+
+module.exports = {
+  generateMemoryProblem
 }
-
-// which word appeared x amount of times
-
-console.log(output)

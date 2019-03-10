@@ -3,14 +3,15 @@ const store = require('../store')
 const initStore = () => {
   console.log('initStore')
   store.game = {}
-  store.game.math = {}
+  store.game.problem = {}
+  store.game.question = ''
+  store.game.multipleChoice = []
   store.game.timer = {}
   store.game.countdown = 30
   store.game.hearts = 5
   store.game.score = 0
   store.game.over = false
   store.game.start = false
-  store.game.problem = null
   store.game.answer = null
   store.user = null
 }
@@ -18,17 +19,21 @@ const initStore = () => {
 const resetStore = () => {
   console.log('resetStore')
   store.game = {}
-  store.game.math = {}
+  store.game.problem = {}
+  store.game.question = ''
+  store.game.multipleChoice = []
   store.game.timer = {}
   store.game.countdown = 30
   store.game.hearts = 5
   store.game.score = 0
   store.game.over = false
   store.game.start = false
-  store.game.problem = ''
   store.game.answer = ''
 }
 
+const startGame = () => {
+  store.game.start = true
+}
 const resetHearts = () => {
   const hearts =
     `<div id="game-hearts">
@@ -71,8 +76,15 @@ const startTimer = () => {
   }, 1)
 }
 
-const startGame = () => {
-  store.game.start = true
+const updateGameDisplay = () => {
+  console.log('updateGameDisplay')
+  $('#game-display').empty()
+  $('#game-display').append(`<div><h1>${store.game.question}</h1></div>`)
+  $('#option-0').text(`${store.game.multipleChoice[0]}`)
+  $('#option-1').text(`${store.game.multipleChoice[1]}`)
+  $('#option-2').text(`${store.game.multipleChoice[2]}`)
+  $('#option-3').text(`${store.game.multipleChoice[3]}`)
+  $('#option-4').text(`${store.game.multipleChoice[4]}`)
 }
 
 module.exports = {
@@ -83,5 +95,6 @@ module.exports = {
   stopTimer,
   startTimer,
   startGame,
-  initStore
+  initStore,
+  updateGameDisplay
 }

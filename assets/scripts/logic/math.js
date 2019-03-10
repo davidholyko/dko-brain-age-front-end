@@ -1,5 +1,8 @@
 'use strict'
 
+//  QUESTION: X OPERAND Y EQUALS Z
+//  IF X,Y, OR Z IS TAKEN OUT, WHAT IS THE VALUE OF THE ITEM THAT IS REMOVED?
+
 const store = require('../store')
 
 const generateMathProblem = () => {
@@ -26,7 +29,7 @@ const generateMathProblem = () => {
   elements[randomIndex] = '_'
   // replace an operand or result with blank
   const question = `${elements[0]} ${operator} ${elements[1]} = ${elements[2]}`
-  const multipleChoiceOptions = [answer, answer - 1, answer + 2, answer * 2 + 3, answer * 2 + 4]
+  const multipleChoiceOptions = [answer, answer - 1, answer + 2, answer * 3 - 3, answer * 4 + 4]
   const multipleChoice = []
 
   // randomize output
@@ -36,22 +39,10 @@ const generateMathProblem = () => {
     multipleChoiceOptions.splice(random, 1)
   }
 
-  store.game.math.question = question
+  store.game.question = question
   store.game.answer = answer
-  store.game.math.multipleChoice = multipleChoice
-
-  $('#game-display').empty()
-  $('#game-display').append(`<div><h1>${store.game.math.question}</h1></div>`)
-  $('#option-0').text(`${store.game.math.multipleChoice[0]}`)
-  $('#option-1').text(`${store.game.math.multipleChoice[1]}`)
-  $('#option-2').text(`${store.game.math.multipleChoice[2]}`)
-  $('#option-3').text(`${store.game.math.multipleChoice[3]}`)
-  $('#option-4').text(`${store.game.math.multipleChoice[4]}`)
-
-  // console.log(store.game.answer)
+  store.game.multipleChoice = multipleChoice
 }
-
-// what is the value of answer
 
 module.exports = {
   generateMathProblem

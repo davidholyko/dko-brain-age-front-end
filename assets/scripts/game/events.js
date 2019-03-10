@@ -14,6 +14,7 @@ const startGame = () => {
   client.startGame()
   client.startTimer()
   logicMath.generateMathProblem()
+  client.updateGameDisplay()
   $('#game-score').html(`<h1>Your score is: ${store.game.score}</h1>`)
   $('#game-timer').html(`<h1>Time left: ${store.game.countdown} seconds</h1>`)
 }
@@ -37,6 +38,7 @@ const answerMathProblem = () => {
     }
   }
   logicMath.generateMathProblem()
+  client.updateGameDisplay()
 }
 
 const onSubmitScore = () => {
