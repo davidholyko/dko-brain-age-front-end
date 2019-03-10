@@ -47,10 +47,28 @@ const onSubmitScore = () => {
     .catch(ui.failure)
 }
 
+const onGetScores = () => {
+  console.log('onGetScores')
+  event.preventDefault()
+  api.getScores()
+    .then(ui.getScoresSuccess)
+    .catch(ui.failure)
+}
+
+const onGetHighScores = () => {
+  console.log('onGetHighScores')
+  event.preventDefault()
+  api.getHighScores()
+    .then(ui.getHighScoresSuccess)
+    .catch(ui.failure)
+}
+
 const addHandlers = () => {
   $('.option').on('click', answerMathProblem)
   $('#game-start-button').on('click', startGame)
   $('#submit-score-button').on('click', onSubmitScore)
+  $('#all-scores-button').on('click', onGetScores)
+  $('#high-scores-button').on('click', onGetHighScores)
 }
 
 module.exports = {

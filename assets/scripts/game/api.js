@@ -4,7 +4,7 @@ const config = require('../config')
 const store = require('../store')
 
 const submitScore = () => {
-  // console.log('newGame')
+  console.log('submitScore')
   return $.ajax({
     url: config.apiUrl + '/games',
     headers: {Authorization: `Token token=${store.user.token}`},
@@ -17,6 +17,24 @@ const submitScore = () => {
   })
 }
 
+const getScores = () => {
+  console.log('getScores')
+  return $.ajax({
+    url: config.apiUrl + '/games',
+    method: 'GET'
+  })
+}
+
+const getHighScores = () => {
+  console.log('getHighScores')
+  return $.ajax({
+    url: config.apiUrl + '/highscores',
+    method: 'GET'
+  })
+}
+
 module.exports = {
-  submitScore
+  submitScore,
+  getScores,
+  getHighScores
 }

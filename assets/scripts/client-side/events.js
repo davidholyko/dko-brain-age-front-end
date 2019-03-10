@@ -67,7 +67,7 @@ const startTimer = () => {
       $('#game-timer').html(`<h1>Game over!</h1>`)
       store.game.over = true
     }
-    $('#game-timer').html(`<h1>Time remaining in seconds:${-(now - end) / 1000}</h1>`)
+    $('#game-timer').html(`<h1>Time remaining in seconds: ${-(now - end) / 1000}</h1>`)
   }, 1)
 }
 
