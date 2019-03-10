@@ -48,7 +48,7 @@ const generateMathProblem = () => {
   $('#option-3').text(`${store.game.math.multipleChoice[3]}`)
   $('#option-4').text(`${store.game.math.multipleChoice[4]}`)
 
-  console.log(store.game.answer)
+  // console.log(store.game.answer)
 }
 
 // what is the value of answer

@@ -3,14 +3,16 @@
 const logicMath = require('../logic/math')
 const store = require('../store')
 const client = require('../client-side/events')
+const api = require('./api')
+const ui = require('./ui')
 
 const startGame = () => {
   console.log('startGame')
-  client.initStore()
-  store.game.start = true
+  client.resetStore()
   client.resetHearts()
   client.resetScore()
-  client.startGameTimer()
+  client.startGame()
+  client.startTimer()
   logicMath.generateMathProblem()
   $('#game-score').html(`<h1>Your score is: ${store.game.score}</h1>`)
   $('#game-timer').html(`<h1>Time left: ${store.game.countdown} seconds</h1>`)
@@ -37,9 +39,18 @@ const answerMathProblem = () => {
   logicMath.generateMathProblem()
 }
 
+const onSubmitScore = () => {
+  console.log('submitScore')
+  event.preventDefault()
+  api.submitScore()
+    .then(ui.submitScoreSuccess)
+    .catch(ui.failure)
+}
+
 const addHandlers = () => {
   $('.option').on('click', answerMathProblem)
   $('#game-start-button').on('click', startGame)
+  $('#submit-score-button').on('click', onSubmitScore)
 }
 
 module.exports = {
