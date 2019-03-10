@@ -60,8 +60,12 @@ const generateProblem = () => {
   multipleChoice.unshift(words.filter(word => !multipleChoice.includes(word))[Math.random() * words.length | 0])
 
   const randomChoiceIndex = Math.random() * 5 | 0
+  let s = 's'
+  if (randomChoiceIndex === 1) { s = '' }
 
-  const question = `${choicesOutput} Which word appeared ${randomChoiceIndex} times?`
+  const question = `<h1>${choicesOutput[0]} ${choicesOutput[1]} ${choicesOutput[2]} ${choicesOutput[3]} ${choicesOutput[4]} ${choicesOutput[5]}
+  ${choicesOutput[6]} ${choicesOutput[7]} ${choicesOutput[8]} ${choicesOutput[9]}</h1>
+  <h1> Which word appeared ${randomChoiceIndex} time${s}?</h1>`
   const answer = `${multipleChoice[randomChoiceIndex]}`
 
   store.game.question = question
