@@ -13,7 +13,7 @@ const startGame = () => {
   client.startGameTimer()
   logicMath.generateMathProblem()
   $('#game-score').html(`<h1>Your score is: ${store.game.score}</h1>`)
-  $('#game-timer').html(`<h1>Time left: ${store.game.timer} seconds</h1>`)
+  $('#game-timer').html(`<h1>Time left: ${store.game.countdown} seconds</h1>`)
 }
 
 const answerMathProblem = () => {
@@ -26,12 +26,12 @@ const answerMathProblem = () => {
     store.game.score++
     $('#game-score').html(`<h1>Your score is: ${store.game.score}</h1>`)
   } else {
-    $($('#game-hearts').children()[store.game.hearts]).attr('src', '/public/images/empty-heart.png')
+    $($('#game-hearts').children()[store.game.hearts - 1]).attr('src', '/public/images/empty-heart.png')
     store.game.hearts--
-    if (store.game.hearts === -1) {
+    if (!store.game.hearts) {
       store.game.over = true
-      store.game.timer = 0
-      client.resetTimer()
+      client.stopTimer()
+      return
     }
   }
   logicMath.generateMathProblem()
