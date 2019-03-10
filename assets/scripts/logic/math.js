@@ -16,3 +16,5 @@ const answer = operator[randomOperator](randomNumberOne, randomNumberTwo)
 const question = `${randomNumberOne} ${randomOperator} ${randomNumberTwo} = ${answer}`
 
 console.log(question)
+
+// what is the value of answer
