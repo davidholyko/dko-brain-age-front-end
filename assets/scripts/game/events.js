@@ -30,7 +30,7 @@ const answerProblem = () => {
     store.game.score++
     $('#game-score').html(`<h1>Your score is: ${store.game.score}</h1>`)
   } else {
-    $($('#game-hearts').children()[store.game.hearts - 1]).attr('src', 'images/empty-heart.png')
+    $($('#game-hearts').children()[store.game.hearts - 1]).attr('src', 'public/images/empty-heart.png')
     store.game.hearts--
     if (!store.game.hearts) {
       store.game.over = true
