@@ -1,6 +1,10 @@
 @import '~bootstrap/scss/bootstrap';
 @import 'shapes';
 
+body {
+  background-color: grey;
+}
+
 #game-display {
   height: 500px;
   width: 500px;

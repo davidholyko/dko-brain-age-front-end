@@ -7,8 +7,10 @@
 // require('./example')
 
 const authEvents = require('./auth/events')
+const gameEvents = require('./game/events')
 
 $(() => {
   console.log('JavaScript is running...')
   authEvents.addHandlers()
+  gameEvents.addHandlers()
 })

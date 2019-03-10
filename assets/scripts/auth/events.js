@@ -1,5 +1,5 @@
 'use strict'
-console.log('events.js is running...')
+console.log('auth/events.js is running...')
 
 const api = require('./api')
 const ui = require('./ui')
