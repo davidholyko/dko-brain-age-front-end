@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>API Token Authentication</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <h1>API Token Authentication</h1>
+  <h2> This is a toy application. Do not enter real passwords, or passwords you have used anywhere else!</h2>
+  <h1 id="user-message"></h1>
+  <form id="sign-up-form">
+    <input type="email" placeholder="email" name="credentials[email]">
+    <input type="text" minlength="3" maxlength="8" placeholder="display name" pattern="[A-Za-z0-9]+" name="credentials[handle]">
+    <input type="password" placeholder="password" name="credentials[password]">
+    <input type="password" placeholder="password_confirmation" name="credentials[password_confirmation]">
+    <input type="submit" value="sign-up">
+  </form>
+
+  <form id="sign-in-form">
+    <input type="email" placeholder="email" name="credentials[email]">
+    <input type="password" placeholder="password" name="credentials[password]">
+    <input type="submit" value="sign-in">
+  </form>
+
+  <form id="change-password-form">
+    <input type="password" placeholder="old password" name="passwords[old]">
+    <input type="password" placeholder="new password" name="passwords[new]">
+    <input type="submit" value="Change Password">
+  </form>
+
+  <button id="sign-out-button">Sign Out</button>
+
+  <div id="game-board">
+    <div id="game-display" class="col-12"></div>
+    <div id="game-buttons">
+      <button class="btn btn-primary">Option 1</button>
+      <button class="btn btn-primary">Option 2</button>
+      <button class="btn btn-primary">Option 3</button>
+      <button class="btn btn-primary">Option 4</button>
+      <button class="btn btn-primary">Option 5</button>
+    </div>
+  </div>
+
+  <div id="shapes" class="d-flex">
+    <img src="/public/images/triangle.png" id="triangle"></img>
+    <img src="/public/images/square.png" id="square"></img>
+    <img src="/public/images/pentagon.png" id="pentagon"></img>
+    <img src="/public/images/hexagon.png" id="hexagon"></img>
+    <img src="/public/images/heptagon.png" id="heptagon"></img>
+    <img src="/public/images/octagon.png" id="octagon"></img>
+  </div>
+
+  <div id="response-data"></div>
+</body>
+
+</html>
