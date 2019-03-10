@@ -5,8 +5,8 @@
 
 const store = require('../store')
 
-const generateMathProblem = () => {
-  console.log('generateMathProblem')
+const generateProblem = () => {
+  console.log('generateProblem')
   const operators = ['+', '-', '*']
   const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
   const operandOne = numbers[Math.random() * numbers.length | 0]
@@ -44,6 +44,4 @@ const generateMathProblem = () => {
   store.game.multipleChoice = multipleChoice
 }
 
-module.exports = {
-  generateMathProblem
-}
+module.exports = generateProblem

@@ -1,26 +1,31 @@
 'use strict'
 
 const logicMath = require('../logic/math')
+const logicMemory = require('../logic/memory')
 const store = require('../store')
 const client = require('../client-side/events')
+const logicController = require('../logic/controller')
 const api = require('./api')
 const ui = require('./ui')
 
 const startGame = () => {
   console.log('startGame')
+  if (store.game.start && !store.game.over) { return }
   client.resetStore()
   client.resetHearts()
   client.resetScore()
   client.startGame()
   client.startTimer()
-  logicMath.generateMathProblem()
+  logicController[Math.random() * Object.keys(logicController).length | 0]()
+  // logicMath.generateMathProblem()
+  // logicMemory.generateMemoryProblem()
   client.updateGameDisplay()
   $('#game-score').html(`<h1>Your score is: ${store.game.score}</h1>`)
   $('#game-timer').html(`<h1>Time left: ${store.game.countdown} seconds</h1>`)
 }
 
-const answerMathProblem = () => {
-  console.log('answerMathProblem')
+const answerProblem = () => {
+  console.log('answerProblem')
   event.preventDefault()
   if (!store.game.start) { return }
   if (store.game.over) { return }
@@ -34,10 +39,9 @@ const answerMathProblem = () => {
     if (!store.game.hearts) {
       store.game.over = true
       client.stopTimer()
-      return
     }
   }
-  logicMath.generateMathProblem()
+  logicController[Math.random() * Object.keys(logicController).length | 0]()
   client.updateGameDisplay()
 }
 
@@ -66,7 +70,7 @@ const onGetHighScores = () => {
 }
 
 const addHandlers = () => {
-  $('.option').on('click', answerMathProblem)
+  $('.option').on('click', answerProblem)
   $('#game-start-button').on('click', startGame)
   $('#submit-score-button').on('click', onSubmitScore)
   $('#all-scores-button').on('click', onGetScores)

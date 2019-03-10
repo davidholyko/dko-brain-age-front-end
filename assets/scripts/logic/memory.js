@@ -5,7 +5,7 @@
 
 const store = require('../store')
 
-const generateMemoryProblem = () => {
+const generateProblem = () => {
   const words = ['dog', 'cat', 'horse', 'rabbit', 'cow', 'person', 'goat', 'wizard',
     'jumped', 'ran', 'looked', 'ate', 'backed', 'talked', 'bit', 'approached',
     'sleepy', 'hungry', 'angry', 'excited', 'curious', 'tall', 'happy', 'bewildered', 'green',
@@ -14,7 +14,6 @@ const generateMemoryProblem = () => {
   const choicesInput = []
   const choicesOutput = []
   const multipleChoice = []
-  const multipleChoiceIndexes = []
 
   // add words into array
   for (let i = 0; i < 4; i++) {
@@ -63,17 +62,11 @@ const generateMemoryProblem = () => {
   const question = `${choicesOutput} Which word appeared ${randomChoiceIndex} times?`
   const answer = `${multipleChoice[randomChoiceIndex]}`
 
-  // store.game.question = question
-  // store.game.answer = answer
-  // store.game.multipleChoice = multipleChoice
+  store.game.question = question
+  store.game.answer = answer
+  store.game.multipleChoice = multipleChoice
 
-  console.log(question)
-  console.log(answer)
-  console.log(multipleChoice)
+  // console.log(answer)
 }
 
-generateMemoryProblem()
-
-module.exports = {
-  generateMemoryProblem
-}
+module.exports = generateProblem

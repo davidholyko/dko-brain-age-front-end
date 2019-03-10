@@ -5,35 +5,33 @@ const initStore = () => {
   store.game = {}
   store.game.problem = {}
   store.game.question = ''
+  store.game.answer = ''
   store.game.multipleChoice = []
   store.game.timer = {}
-  store.game.countdown = 30
+  store.game.countdown = 60
   store.game.hearts = 5
   store.game.score = 0
   store.game.over = false
   store.game.start = false
-  store.game.answer = null
   store.user = null
 }
 
 const resetStore = () => {
   console.log('resetStore')
-  store.game = {}
-  store.game.problem = {}
   store.game.question = ''
+  store.game.answer = ''
   store.game.multipleChoice = []
   store.game.timer = {}
-  store.game.countdown = 30
   store.game.hearts = 5
   store.game.score = 0
   store.game.over = false
   store.game.start = false
-  store.game.answer = ''
 }
 
 const startGame = () => {
   store.game.start = true
 }
+
 const resetHearts = () => {
   const hearts =
     `<div id="game-hearts">
@@ -61,13 +59,14 @@ const stopTimer = () => {
 
 const startTimer = () => {
   console.log('setGameTimer')
+  clearInterval(store.game.timer)
   const start = Date.now()
   const end = start + (store.game.countdown * 1000)
   let now
 
   store.game.timer = setInterval(() => {
     now = Date.now()
-    if (now > end || store.game.hearts === -1) {
+    if (now > end || !store.game.hearts) {
       clearInterval(store.game.timer)
       $('#game-timer').html(`<h1>Game over!</h1>`)
       store.game.over = true
