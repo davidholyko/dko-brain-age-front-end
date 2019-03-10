@@ -35,11 +35,11 @@ const startGame = () => {
 const resetHearts = () => {
   const hearts =
     `<div id="game-hearts">
-      <img id="heart-0" class="heart" src="public/images/full-heart.png" alt="">
-      <img id="heart-1" class="heart" src="public/images/full-heart.png" alt="">
-      <img id="heart-2" class="heart" src="public/images/full-heart.png" alt="">
-      <img id="heart-3" class="heart" src="public/images/full-heart.png" alt="">
-      <img id="heart-4" class="heart" src="public/images/full-heart.png" alt="">
+      <img id="heart-0" class="heart" src="/public/images/full-heart.png" alt="">
+      <img id="heart-1" class="heart" src="/public/images/full-heart.png" alt="">
+      <img id="heart-2" class="heart" src="/public/images/full-heart.png" alt="">
+      <img id="heart-3" class="heart" src="/public/images/full-heart.png" alt="">
+      <img id="heart-4" class="heart" src="/public/images/full-heart.png" alt="">
     </div>`
 
   $('#game-hearts').replaceWith(hearts)
