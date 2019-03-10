@@ -3,8 +3,9 @@
 const store = require('../store')
 
 const generateMathProblem = () => {
+  console.log('generateMathProblem')
   const operators = ['+', '-', '*']
-  const numbers = Array.from(Array(13).keys())
+  const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
   const operandOne = numbers[Math.random() * numbers.length | 0]
   const operandTwo = numbers[Math.random() * numbers.length | 0]
   const operator = operators[Math.random() * operators.length | 0]
@@ -25,7 +26,7 @@ const generateMathProblem = () => {
   elements[randomIndex] = '_'
   // replace an operand or result with blank
   const question = `${elements[0]} ${operator} ${elements[1]} = ${elements[2]}`
-  const multipleChoiceOptions = [`ANSWER ${answer}`, answer - 1, answer + 2, answer * 2 + 3, answer * 2 + 4]
+  const multipleChoiceOptions = [answer, answer - 1, answer + 2, answer * 2 + 3, answer * 2 + 4]
   const multipleChoice = []
 
   // randomize output
@@ -36,8 +37,18 @@ const generateMathProblem = () => {
   }
 
   store.game.math.question = question
-  store.game.math.answer = answer
+  store.game.answer = answer
   store.game.math.multipleChoice = multipleChoice
+
+  $('#game-display').empty()
+  $('#game-display').append(`<div><h1>${store.game.math.question}</h1></div>`)
+  $('#option-0').text(`${store.game.math.multipleChoice[0]}`)
+  $('#option-1').text(`${store.game.math.multipleChoice[1]}`)
+  $('#option-2').text(`${store.game.math.multipleChoice[2]}`)
+  $('#option-3').text(`${store.game.math.multipleChoice[3]}`)
+  $('#option-4').text(`${store.game.math.multipleChoice[4]}`)
+
+  console.log(store.game.answer)
 }
 
 // what is the value of answer
