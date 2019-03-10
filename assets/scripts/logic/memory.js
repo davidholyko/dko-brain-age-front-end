@@ -6,6 +6,8 @@
 const store = require('../store')
 
 const generateProblem = () => {
+  console.log('generateMemoryProblem')
+
   const words = ['dog', 'cat', 'horse', 'rabbit', 'cow', 'person', 'goat', 'wizard',
     'jumped', 'ran', 'looked', 'ate', 'backed', 'talked', 'bit', 'approached',
     'sleepy', 'hungry', 'angry', 'excited', 'curious', 'tall', 'happy', 'bewildered', 'green',
@@ -53,7 +55,7 @@ const generateProblem = () => {
 
   // add a 5th choice to multipleChoice
   // get difference between words array and multipleChoice
-  // select a random word (it isnt already in the multipleChoice array b/c the filter)
+  // select a random word that isnt already in the multipleChoice
   // push word into multipleChoice
   multipleChoice.unshift(words.filter(word => !multipleChoice.includes(word))[Math.random() * words.length | 0])
 

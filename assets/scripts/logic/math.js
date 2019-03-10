@@ -6,7 +6,7 @@
 const store = require('../store')
 
 const generateProblem = () => {
-  console.log('generateProblem')
+  console.log('generateMathProblem')
   const operators = ['+', '-', '*']
   const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
   const operandOne = numbers[Math.random() * numbers.length | 0]

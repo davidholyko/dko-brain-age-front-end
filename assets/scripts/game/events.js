@@ -1,7 +1,5 @@
 'use strict'
 
-const logicMath = require('../logic/math')
-const logicMemory = require('../logic/memory')
 const store = require('../store')
 const client = require('../client-side/events')
 const logicController = require('../logic/controller')
@@ -17,8 +15,6 @@ const startGame = () => {
   client.startGame()
   client.startTimer()
   logicController[Math.random() * Object.keys(logicController).length | 0]()
-  // logicMath.generateMathProblem()
-  // logicMemory.generateMemoryProblem()
   client.updateGameDisplay()
   $('#game-score').html(`<h1>Your score is: ${store.game.score}</h1>`)
   $('#game-timer').html(`<h1>Time left: ${store.game.countdown} seconds</h1>`)
