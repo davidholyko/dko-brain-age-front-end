@@ -37,7 +37,9 @@ const generateProblem = () => {
     adverbs}
   let wordBank = []
 
-  const question = `The ${sentence[0].word} ${sentence[1].word} ${sentence[2].word} ${sentence[3].word} the ${sentence[4].word} ${sentence[5].word}.`
+  const question =
+  `<h1>The ${sentence[0].word} ${sentence[1].word} ${sentence[2].word} ${sentence[3].word} the ${sentence[4].word} ${sentence[5].word}.</h1>
+  <h1>Which word fits the sentence?</h1>`
 
   // adds all words to wordBank
   for (let i = 0; i < 4; i++) { wordBank = wordBank.concat(options[i]) }

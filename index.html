@@ -15,45 +15,61 @@
 
 <body>
 
-  <h1 id="user-message"></h1>
-  <form id="sign-up-form">
-    <input type="email" placeholder="email" name="credentials[email]">
-    <input type="text" minlength="3" maxlength="8" placeholder="display name" pattern="[A-Za-z0-9]+" name="credentials[handle]">
-    <input type="password" placeholder="password" name="credentials[password]">
-    <input type="password" placeholder="password_confirmation" name="credentials[password_confirmation]">
-    <input type="submit " value="sign-up">
-  </form>
+  <div class="pre-login">
+    <!-- PRE LOGIN FORMS -->
+    <form id="sign-up-form" class="">
+      <input type="email" placeholder="email" name="credentials[email]">
+      <input type="text" minlength="3" maxlength="8" placeholder="display name" pattern="[A-Za-z0-9]+" name="credentials[handle]">
+      <input type="password" placeholder="password" name="credentials[password]">
+      <input type="password" placeholder="password_confirmation" name="credentials[password_confirmation]">
+      <input type="submit" value="sign-up">
+    </form>
 
-  <form id="sign-in-form">
-    <input type="email" placeholder="email" name="credentials[email]">
-    <input type="password" placeholder="password" name="credentials[password]">
-    <input type="submit" value="sign-in">
-  </form>
-
-  <form id="change-password-form">
-    <input type="password" placeholder="old password" name="passwords[old]">
-    <input type="password" placeholder="new password" name="passwords[new]">
-    <input type="submit" value="Change Password">
-  </form>
-
-  <button id="sign-out-button" class="btn-danger">Sign Out</button>
-
-  <div id="game-timer"></div>
-  <div id="game-hearts">
-    <img id="heart-1" class="heart" src="public/images/full-heart.png" alt="">
-    <img id="heart-2" class="heart" src="public/images/full-heart.png" alt="">
-    <img id="heart-3" class="heart" src="public/images/full-heart.png" alt="">
-    <img id="heart-4" class="heart" src="public/images/full-heart.png" alt="">
-    <img id="heart-5" class="heart" src="public/images/full-heart.png" alt="">
+    <form id="sign-in-form">
+      <input type="email" placeholder="email" name="credentials[email]">
+      <input type="password" placeholder="password" name="credentials[password]">
+      <input type="submit" value="sign-in">
+    </form>
+    <!-- PRE LOGIN FORMS END -->
   </div>
-  <div id="game-score">
-    <h1>The score has not been set</h1>
+
+  <div class="post-login">
+    <!-- POST LOGIN FORMS -->
+    <form id="change-password-form">
+      <input type="password" placeholder="old password" name="passwords[old]">
+      <input type="password" placeholder="new password" name="passwords[new]">
+      <input type="submit" value="Change Password">
+    </form>
+
+    <button id="sign-out-button" class="btn-danger">Sign Out</button>
+    <!-- POST LOGIN FORMS END-->
   </div>
+
+
 
 
   <div id="game-board">
+    <h1 id="user-message"></h1>
+    <!-- GAME BOARD -->
+
+    <div id="game-header" class="post-game-start">
+      <!-- GAME HEADER -->
+      <div id="game-timer"></div>
+      <div id="game-hearts">
+        <img id="heart-1" class="heart" src="public/images/full-heart.png" alt="">
+        <img id="heart-2" class="heart" src="public/images/full-heart.png" alt="">
+        <img id="heart-3" class="heart" src="public/images/full-heart.png" alt="">
+        <img id="heart-4" class="heart" src="public/images/full-heart.png" alt="">
+        <img id="heart-5" class="heart" src="public/images/full-heart.png" alt="">
+      </div>
+      <div id="game-score"></div>
+      <button id="submit-score-button" class="col-12 m-0 post-login">Submit score</button>
+      <!-- GAME HEADER END-->
+    </div>
+
+
     <div id="game-display" class="col-12"></div>
-    <div id="game-options-container">
+    <div id="game-options-container" class="post-game-start">
       <button id="option-0" class="option btn-primary">option 0</button>
       <button id="option-1" class="option btn-primary">option 1</button>
       <button id="option-2" class="option btn-primary">option 2</button>
@@ -62,14 +78,15 @@
     </div>
     <div id="game-buttons-container">
       <button id="game-start-button" class="">Start game</button>
-      <button id="submit-score-button" class="">Submit score</button>
       <button id="all-scores-button" class="">See all scores</button>
-      <button id="high-scores-button" class="">See hi-scores</button>
-      <button id="my-scores-button" class="">See my scores</button>
+      <button id="hiscores-button" class="">See hiscores</button>
+      <button id="my-scores-button" class="post-login">See my scores</button>
     </div>
+
+    <!-- GAME BOARD END-->
   </div>
 
-  <div id="suggestions-container">
+  <div id="suggestions-container" class="post-login">
     <form id="create-suggestion-form">
       <input required type="text" placeholder="Write your suggestion here" name="suggestion[text]" class="textarea">
       <input type="submit" value="Send me a suggestion!">
@@ -83,14 +100,13 @@
       <input required type="number" placeholder="Write your suggestion here" name="suggestion[id]">
       <input type="submit" value="Delete a suggestion">
     </form>
-    <button id="show-all-suggestion-button">Show All Suggestions</button>
     <button id="show-my-suggestion-button">Show My Suggestions</button>
-
   </div>
+  <button id="show-all-suggestion-button" class="">Show All Suggestions</button>
 
 
-  <div id="scores">SCORES</div>
-  <div id="suggestions">SUGGESTIONS</div>
+  <div id="scores"></div>
+  <div id="suggestions"></div>
 
 </body>
 

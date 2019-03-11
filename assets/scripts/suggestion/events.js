@@ -1,7 +1,5 @@
 'use strict'
 
-const store = require('../store')
-const client = require('../client-side/events')
 const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
@@ -42,12 +40,22 @@ const onShowSuggestion = () => {
     .catch(ui.failure)
 }
 
+const onShowMySuggestion = () => {
+  console.log('onShowSuggestion')
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  api.showMySuggestion(data)
+    .then(ui.showMySuggestionSuccess)
+    .catch(ui.failure)
+}
+
 const addHandlers = () => {
   console.log('addHandlers Suggestions')
   $('#create-suggestion-form').on('submit', onCreateSuggestion)
   $('#update-suggestion-form').on('submit', onUpdateSuggestion)
   $('#delete-suggestion-form').on('submit', onDeleteSuggestion)
   $('#show-all-suggestion-button').on('click', onShowSuggestion)
+  $('#show-my-suggestion-button').on('click', onShowMySuggestion)
 }
 
 module.exports = { addHandlers }

@@ -9,11 +9,7 @@ const submitScore = () => {
     url: config.apiUrl + '/games',
     headers: {Authorization: `Token token=${store.user.token}`},
     method: 'POST',
-    data: {
-      'game': {
-        'score': store.game.score
-      }
-    }
+    data: { 'game': { 'score': store.game.score } }
   })
 }
 

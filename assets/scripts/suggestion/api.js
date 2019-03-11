@@ -49,9 +49,18 @@ const showSuggestion = () => {
   })
 }
 
+const showMySuggestion = () => {
+  console.log('showMySuggestion')
+  return $.ajax({
+    url: config.apiUrl + `/users/${store.user.handle}`,
+    method: 'GET'
+  })
+}
+
 module.exports = {
   createSuggestion,
   updateSuggestion,
   deleteSuggestion,
-  showSuggestion
+  showSuggestion,
+  showMySuggestion
 }

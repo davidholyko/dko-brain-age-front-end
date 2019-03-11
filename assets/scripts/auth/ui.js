@@ -1,6 +1,7 @@
 'use strict'
 
 const store = require('../store')
+const view = require('../view/view')
 
 const signUpSuccess = () => {
   console.log('onSignUpSuccess')
@@ -15,6 +16,7 @@ const signInSuccess = responseData => {
   $('#user-message').text('SIGNED IN')
   $('form').trigger('reset')
   store.user = responseData.user
+  view.login()
 }
 
 const signInFailure = () => $('#user-message').text('NOT SIGNED IN')
@@ -32,6 +34,7 @@ const signOutSuccess = () => {
   $('#user-message').text('SIGN OUT SUCCESSFUL')
   $('form').trigger('reset')
   store.user = null
+  view.logout()
 }
 
 const signOutFailure = () => $('#user-message').text('SIGN OUT NOT SUCCESSFUL')

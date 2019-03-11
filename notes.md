@@ -15,6 +15,7 @@ rm package.json.bak
 
 ## Structure
 
+
 Dependencies are stored in [`package.json`](package.json).
 
 Do not configure `grunt` packages directly in the

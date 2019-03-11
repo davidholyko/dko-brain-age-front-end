@@ -31,8 +31,7 @@ const getHighScoresSuccess = responseData => {
 const getMyScoresSuccess = responseData => {
   console.log('getMyScoresSuccess')
   $('#scores').empty()
-  const showMyScores = showMyScoreTemplate({games: responseData.user.games})
-  $('#scores').append(showMyScores)
+  $('#scores').append(showMyScoreTemplate({games: responseData.user.games}))
 }
 
 const deleteScoreSuccess = () => {

@@ -6,6 +6,7 @@ const logicController = require('../logic/controller')
 const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
+const view = require('../view/view')
 
 const startGame = () => {
   console.log('startGame')
@@ -18,6 +19,7 @@ const startGame = () => {
   client.allowSubmission()
   logicController[Math.random() * Object.keys(logicController).length | 0]()
   client.updateGameDisplay()
+  view.startGame()
   $('#game-score').html(`<h1>Your score is: ${store.game.score}</h1>`)
   $('#game-timer').html(`<h1>Time left: ${store.game.countdown} seconds</h1>`)
 }
@@ -92,7 +94,7 @@ const addHandlers = () => {
   $('#game-start-button').on('click', startGame)
   $('#submit-score-button').on('click', onSubmitScore)
   $('#all-scores-button').on('click', onGetScores)
-  $('#high-scores-button').on('click', onGetHighScores)
+  $('#hiscores-button').on('click', onGetHighScores)
   $('#my-scores-button').on('click', onGetMyScores)
   $('#delete-score-form').on('submit', onDeleteScore)
 }
