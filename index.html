@@ -14,15 +14,14 @@
 </head>
 
 <body>
-  <h1>API Token Authentication</h1>
-  <h2> This is a toy application. Do not enter real passwords, or passwords you have used anywhere else!</h2>
+
   <h1 id="user-message"></h1>
   <form id="sign-up-form">
     <input type="email" placeholder="email" name="credentials[email]">
     <input type="text" minlength="3" maxlength="8" placeholder="display name" pattern="[A-Za-z0-9]+" name="credentials[handle]">
     <input type="password" placeholder="password" name="credentials[password]">
     <input type="password" placeholder="password_confirmation" name="credentials[password_confirmation]">
-    <input type="submit" value="sign-up">
+    <input type="submit " value="sign-up">
   </form>
 
   <form id="sign-in-form">
@@ -37,7 +36,7 @@
     <input type="submit" value="Change Password">
   </form>
 
-  <button id="sign-out-button">Sign Out</button>
+  <button id="sign-out-button" class="btn-danger">Sign Out</button>
 
   <div id="game-timer"></div>
   <div id="game-hearts">
@@ -54,40 +53,40 @@
 
   <div id="game-board">
     <div id="game-display" class="col-12"></div>
-    <div id="game-buttons">
+    <div id="game-options-container">
       <button id="option-0" class="option btn-primary">option 0</button>
       <button id="option-1" class="option btn-primary">option 1</button>
       <button id="option-2" class="option btn-primary">option 2</button>
       <button id="option-3" class="option btn-primary">option 3</button>
       <button id="option-4" class="option btn-primary">option 4</button>
     </div>
-    <button id="game-start-button" class="col-3">Start game</button>
-    <button id="submit-score-button" class="col-3">Submit score</button>
-    <button id="all-scores-button" class="col-3">See all scores</button>
-    <button id="high-scores-button" class="col-3">See hi-scores</button>
-    <button id="my-scores-button" class="col-3">See my scores</button>
+    <div id="game-buttons-container">
+      <button id="game-start-button" class="">Start game</button>
+      <button id="submit-score-button" class="">Submit score</button>
+      <button id="all-scores-button" class="">See all scores</button>
+      <button id="high-scores-button" class="">See hi-scores</button>
+      <button id="my-scores-button" class="">See my scores</button>
+    </div>
   </div>
 
-  <form id="delete-score-form">
-    <input type="text" placeholder="game id" name="game[id]">
-    <input type="submit" value="delete score">
-  </form>
+  <div id="suggestions-container">
+    <form id="create-suggestion-form">
+      <input required type="text" placeholder="Write your suggestion here" name="suggestion[text]" class="textarea">
+      <input type="submit" value="Send me a suggestion!">
+    </form>
+    <form id="update-suggestion-form">
+      <input required type="text" placeholder="Write your updated suggestion here" name="suggestion[text]">
+      <input required type="number" placeholder="Suggestion id" name="suggestion[id]" class="textarea">
+      <input type="submit" value="Update a suggestion">
+    </form>
+    <form id="delete-suggestion-form">
+      <input required type="number" placeholder="Write your suggestion here" name="suggestion[id]">
+      <input type="submit" value="Delete a suggestion">
+    </form>
+    <button id="show-all-suggestion-button">Show All Suggestions</button>
+    <button id="show-my-suggestion-button">Show My Suggestions</button>
 
-  <form id="create-suggestion-form">
-    <input required type="text" placeholder="Write your suggestion here" name="suggestion[text]" class="textarea">
-    <input type="submit" value="Send me a suggestion!">
-  </form>
-  <form id="update-suggestion-form">
-    <input required type="text" placeholder="Write your updated suggestion here" name="suggestion[text]">
-    <input required type="number" placeholder="Suggestion id" name="suggestion[id]" class="textarea">
-    <input type="submit" value="Update a suggestion">
-  </form>
-  <form id="delete-suggestion-form">
-    <input required type="number" placeholder="Write your suggestion here" name="suggestion[id]">
-    <input type="submit" value="Delete a suggestion">
-  </form>
-  <button id="show-all-suggestion-button">All Suggestions</button>
-  <button id="show-my-suggestion-button">My Suggestions</button>
+  </div>
 
 
   <div id="scores">SCORES</div>
