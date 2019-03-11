@@ -11,6 +11,7 @@ const initStore = () => {
   store.game.countdown = 60
   store.game.hearts = 5
   store.game.score = 0
+  store.game.submit = false
   store.game.over = false
   store.game.start = false
   store.user = {}
@@ -24,11 +25,15 @@ const resetStore = () => {
   store.game.timer = {}
   store.game.hearts = 5
   store.game.score = 0
+  store.game.submit = false
   store.game.over = false
   store.game.start = false
 }
 
 const startGame = () => { store.game.start = true }
+
+const allowSubmission = () => { store.game.submit = true }
+const forbidSubmission = () => { store.game.submit = false }
 
 const resetHearts = () => {
   const hearts =
@@ -70,7 +75,6 @@ const startTimer = () => {
       store.game.over = true
     }
     $('#game-timer').html(`<h1>Time remaining in seconds: ${((end - now) / 1000).toString().slice(0, -1)}</h1>`)
-    console.log($('#game-timer').text())
     if ($('#game-timer').text() === 'Time remaining in seconds: -0.00') { $('#game-timer').html(`<h1>Game over!</h1>`) }
   }, 1)
 }
@@ -95,5 +99,7 @@ module.exports = {
   startTimer,
   startGame,
   initStore,
-  updateGameDisplay
+  updateGameDisplay,
+  allowSubmission,
+  forbidSubmission
 }

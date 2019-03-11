@@ -3,6 +3,7 @@
 const store = require('../store')
 const client = require('../client-side/events')
 const logicController = require('../logic/controller')
+const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
 
@@ -14,6 +15,7 @@ const startGame = () => {
   client.resetScore()
   client.startGame()
   client.startTimer()
+  client.allowSubmission()
   logicController[Math.random() * Object.keys(logicController).length | 0]()
   client.updateGameDisplay()
   $('#game-score').html(`<h1>Your score is: ${store.game.score}</h1>`)
@@ -42,8 +44,10 @@ const answerProblem = () => {
 }
 
 const onSubmitScore = () => {
-  console.log('submitScore')
   event.preventDefault()
+  if (!store.game.submit) { return }
+  console.log('submitScore')
+  client.forbidSubmission()
   api.submitScore()
     .then(ui.submitScoreSuccess)
     .catch(ui.failure)
@@ -57,11 +61,28 @@ const onGetScores = () => {
     .catch(ui.failure)
 }
 
+const onGetMyScores = () => {
+  console.log('onGetUserScores')
+  event.preventDefault()
+  api.getMyScores()
+    .then(ui.getMyScoresSuccess)
+    .catch(ui.failure)
+}
+
 const onGetHighScores = () => {
   console.log('onGetHighScores')
   event.preventDefault()
   api.getHighScores()
-    .then(ui.getHighScoresSuccess)
+    .then(ui.getScoresSuccess)
+    .catch(ui.failure)
+}
+
+const onDeleteScore = () => {
+  console.log('onDeleteScore')
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  api.deleteScore(data)
+    .then(ui.deleteScoreSuccess)
     .catch(ui.failure)
 }
 
@@ -71,8 +92,8 @@ const addHandlers = () => {
   $('#submit-score-button').on('click', onSubmitScore)
   $('#all-scores-button').on('click', onGetScores)
   $('#high-scores-button').on('click', onGetHighScores)
+  $('#my-scores-button').on('click', onGetMyScores)
+  $('#delete-score-form').on('submit', onDeleteScore)
 }
 
-module.exports = {
-  addHandlers
-}
+module.exports = { addHandlers }

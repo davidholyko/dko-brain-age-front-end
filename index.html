@@ -61,13 +61,26 @@
       <button id="option-3" class="option btn-primary">option 3</button>
       <button id="option-4" class="option btn-primary">option 4</button>
     </div>
-    <button id="game-start-button" class="col-3"> Start game</button>
-    <button id="submit-score-button" class="col-3"> Submit score</button>
-    <button id="all-scores-button" class="col-3"> See all scores</button>
-    <button id="high-scores-button" class="col-3"> See hi-scores</button>
+    <button id="game-start-button" class="col-3">Start game</button>
+    <button id="submit-score-button" class="col-3">Submit score</button>
+    <button id="all-scores-button" class="col-3">See all scores</button>
+    <button id="high-scores-button" class="col-3">See hi-scores</button>
+    <button id="my-scores-button" class="col-3">See my scores</button>
   </div>
 
-  <div id="scores"></div>
+  <form id="delete-score-form">
+    <input type="text" placeholder="game id" name="game[id]">
+    <input type="submit" value="delete score">
+  </form>
+
+  <div id="scores">SCORES</div>
+  <div id="suggestions">
+    <form id="create-suggestion-form">
+      <input required type="text" placeholder="Write your suggestion here" name="suggestion[text]">
+      <input type="submit" value="Send me a suggestion!">
+    </form>
+  </div>
+
 </body>
 
 </html>

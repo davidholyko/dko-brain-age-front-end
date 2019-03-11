@@ -33,8 +33,27 @@ const getHighScores = () => {
   })
 }
 
+const getMyScores = () => {
+  console.log('getMyScores')
+  return $.ajax({
+    url: config.apiUrl + `/users/${store.user.handle}`,
+    method: 'GET'
+  })
+}
+
+const deleteScore = data => {
+  console.log('getMyScores')
+  console.log(data)
+  return $.ajax({
+    url: config.apiUrl + `/games/${data.game.id}`,
+    method: 'DELETE'
+  })
+}
+
 module.exports = {
   submitScore,
   getScores,
-  getHighScores
+  getHighScores,
+  getMyScores,
+  deleteScore
 }

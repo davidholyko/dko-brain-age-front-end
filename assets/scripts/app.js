@@ -8,6 +8,7 @@
 
 const authEvents = require('./auth/events')
 const gameEvents = require('./game/events')
+const suggestionEvents = require('./suggestion/events')
 const client = require('./client-side/events')
 // const logicMath = require('./logic/math')
 
@@ -16,4 +17,5 @@ $(() => {
   client.initStore()
   authEvents.addHandlers()
   gameEvents.addHandlers()
+  suggestionEvents.addHandlers()
 })

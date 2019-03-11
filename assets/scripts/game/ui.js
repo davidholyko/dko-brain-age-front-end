@@ -1,7 +1,8 @@
 'use strict'
-//
+
 // const store = require('../store')
 const showScoreTemplate = require('../handlebars/scores.handlebars')
+const showMyScoreTemplate = require('../handlebars/my-scores.handlebars')
 const client = require('../client-side/events')
 
 const failure = () => {
@@ -27,9 +28,22 @@ const getHighScoresSuccess = responseData => {
   $('#scores').append(showScores)
 }
 
+const getMyScoresSuccess = responseData => {
+  console.log('getMyScoresSuccess')
+  $('#scores').empty()
+  const showMyScores = showMyScoreTemplate({games: responseData.user.games})
+  $('#scores').append(showMyScores)
+}
+
+const deleteScoreSuccess = () => {
+  console.log('deleteScoreSuccess')
+}
+
 module.exports = {
   failure,
   submitScoreSuccess,
   getScoresSuccess,
-  getHighScoresSuccess
+  getHighScoresSuccess,
+  getMyScoresSuccess,
+  deleteScoreSuccess
 }
