@@ -5,7 +5,7 @@ const store = require('../store')
 const generateProblem = () => {
   console.log('generateWordProblem')
   const nouns = ['dog', 'cat', 'horse', 'rabbit', 'cow', 'person', 'goat', 'wizard']
-  const verbs = ['jumped over', 'ran towards', 'looked at', 'ate', 'moved', 'talked to', 'ate', 'approached']
+  const verbs = ['jumped over', 'ran towards', 'looked at', 'picked up', 'moved', 'talked to', 'ate', 'approached']
   const adjectives = ['sleepy', 'hungry', 'angry', 'excited', 'curious', 'tall', 'happy', 'bewildered', 'green']
   const adverbs = ['hastily', 'quickly', 'carefully', 'slowly', 'menacingly', 'abruptly', 'carelessly', 'calmly']
 
