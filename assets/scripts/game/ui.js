@@ -2,6 +2,7 @@
 //
 // const store = require('../store')
 const showScoreTemplate = require('../handlebars/scores.handlebars')
+const client = require('../client-side/events')
 
 const failure = () => {
   console.log('failure')
@@ -9,6 +10,7 @@ const failure = () => {
 
 const submitScoreSuccess = () => {
   console.log('submitScoreSuccess')
+  client.resetStore()
 }
 
 const getScoresSuccess = responseData => {

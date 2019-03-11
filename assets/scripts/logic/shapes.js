@@ -11,6 +11,7 @@ const shapesHTML = {
 }
 
 const generateProblem = () => {
+  console.log('generateShapesProblem')
   const shapes = ['triangle', 'square', 'pentagon', 'hexagon', 'heptagon', 'octagon']
   const startIndex = Math.random() * 2 | 0
   const multipleChoiceInput = []
