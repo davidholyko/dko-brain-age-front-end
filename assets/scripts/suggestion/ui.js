@@ -2,6 +2,7 @@
 
 // const store = require('../store')
 const showSuggestionsTemplate = require('../handlebars/suggestions.handlebars')
+const showMySuggestionsTemplate = require('../handlebars/my-suggestions.handlebars')
 
 const failure = () => {
   console.log('failure')
@@ -20,7 +21,7 @@ const showSuggestionSuccess = responseData => {
 const showMySuggestionSuccess = responseData => {
   console.log('showMySuggestionSuccess')
   $('#suggestions').empty()
-  $('#suggestions').append(showSuggestionsTemplate({suggestions: responseData.user.suggestions}))
+  $('#suggestions').append(showMySuggestionsTemplate({suggestions: responseData.user.suggestions}))
 }
 
 const deleteSuggestionSuccess = () => {

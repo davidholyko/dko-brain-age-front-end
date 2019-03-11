@@ -1,13 +1,13 @@
 const store = require('../store')
 
 const shapesHTML = {
-  triangle: '<img src="public/images/triangle.png" alt="" id="triangle">',
-  square: '<img src="public/images/square.png" alt="" id="square">',
-  pentagon: '<img src="public/images/pentagon.png" alt="" id="pentagon">',
-  hexagon: '<img src="public/images/hexagon.png" alt="" id="hexagon">',
-  heptagon: '<img src="public/images/heptagon.png" alt="" id="heptagon">',
-  octagon: '<img src="public/images/octagon.png" alt="" id="octagon">',
-  question: '<img src="public/images/question.png" alt="" id="question">'
+  triangle: '<img id="triangle" src="public/images/triangle.png" alt="" class="shape">',
+  square: '<img id="square" src="public/images/square.png" alt="" class="shape">',
+  pentagon: '<img id="pentagon" src="public/images/pentagon.png" alt="" class="shape">',
+  hexagon: '<img id="hexagon" src="public/images/hexagon.png" alt="" class="shape">',
+  heptagon: '<img id="heptagon" src="public/images/heptagon.png" alt="" class="shape">',
+  octagon: '<img id="octagon" src="public/images/octagon.png" alt="" class="shape">',
+  question: '<img id="question" src="public/images/question.png" alt="" class="shape">'
 }
 
 const generateProblem = () => {
