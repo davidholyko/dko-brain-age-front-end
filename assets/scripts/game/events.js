@@ -87,6 +87,7 @@ const onDeleteScore = () => {
 }
 
 const addHandlers = () => {
+  console.log('addHandlers Game')
   $('.option').on('click', answerProblem)
   $('#game-start-button').on('click', startGame)
   $('#submit-score-button').on('click', onSubmitScore)

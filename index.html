@@ -73,13 +73,25 @@
     <input type="submit" value="delete score">
   </form>
 
+  <form id="create-suggestion-form">
+    <input required type="text" placeholder="Write your suggestion here" name="suggestion[text]" class="textarea">
+    <input type="submit" value="Send me a suggestion!">
+  </form>
+  <form id="update-suggestion-form">
+    <input required type="text" placeholder="Write your updated suggestion here" name="suggestion[text]">
+    <input required type="number" placeholder="Suggestion id" name="suggestion[id]" class="textarea">
+    <input type="submit" value="Update a suggestion">
+  </form>
+  <form id="delete-suggestion-form">
+    <input required type="number" placeholder="Write your suggestion here" name="suggestion[id]">
+    <input type="submit" value="Delete a suggestion">
+  </form>
+  <button id="show-all-suggestion-button">All Suggestions</button>
+  <button id="show-my-suggestion-button">My Suggestions</button>
+
+
   <div id="scores">SCORES</div>
-  <div id="suggestions">
-    <form id="create-suggestion-form">
-      <input required type="text" placeholder="Write your suggestion here" name="suggestion[text]">
-      <input type="submit" value="Send me a suggestion!">
-    </form>
-  </div>
+  <div id="suggestions">SUGGESTIONS</div>
 
 </body>
 

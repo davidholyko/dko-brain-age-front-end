@@ -42,6 +42,7 @@ const onSignOut = event => {
 }
 
 const addHandlers = () => {
+  console.log('addHandlers Authentication')
   $('#sign-up-form').on('submit', onSignUp)
   $('#sign-in-form').on('submit', onSignIn)
   $('#change-password-form').on('submit', onChangePassword)

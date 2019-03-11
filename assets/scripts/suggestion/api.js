@@ -17,6 +17,41 @@ const createSuggestion = data => {
   })
 }
 
+const updateSuggestion = data => {
+  console.log('createSuggestion')
+  return $.ajax({
+    url: config.apiUrl + `/suggestions/${data.suggestion.id}`,
+    headers: {Authorization: `Token token=${store.user.token}`},
+    method: 'PATCH',
+    data: {
+      'suggestion': {
+        'text': data.suggestion.text
+      }
+    }
+  })
+}
+
+const deleteSuggestion = data => {
+  console.log('deleteSuggestion')
+  return $.ajax({
+    url: config.apiUrl + `/suggestions/${data.suggestion.id}`,
+    headers: {Authorization: `Token token=${store.user.token}`},
+    method: 'DELETE'
+  })
+}
+
+const showSuggestion = () => {
+  console.log('showSuggestion')
+  return $.ajax({
+    url: config.apiUrl + `/suggestions/`,
+    headers: {Authorization: `Token token=${store.user.token}`},
+    method: 'GET'
+  })
+}
+
 module.exports = {
-  createSuggestion
+  createSuggestion,
+  updateSuggestion,
+  deleteSuggestion,
+  showSuggestion
 }
