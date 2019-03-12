@@ -3,11 +3,16 @@
 
 body {}
 
+#brain-age-icon {
+  margin-left: 2rem;
+  height: inherit;
+  width: 3rem;
+}
+
 #content {
   width: 90%;
   padding: 2% 0;
   background-color: AliceBlue;
-  opacity: 0.75;
 }
 
 #game-title {
@@ -62,7 +67,6 @@ input[type="number"] {
   display: flex;
   flex-direction: row;
   background-color: AliceBlue;
-  opacity: 0.8;
 }
 
 #navbar {

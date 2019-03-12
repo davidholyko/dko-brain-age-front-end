@@ -18,11 +18,12 @@
     <!-- NAVBAR NAV START-->
 
     <!-- GAME TITLE -->
+    <div><img id="brain-age-icon" src="public/images/brain-age.png" alt=""></div>
     <div id="game-title" class="navbar-brand mx-3">Brain Age</div>
 
 
     <!-- NAVBAR DIV START -->
-    <div class="navbar-nav flex-row flex-grow-1">
+    <div class="navbar-nav flex-row flex-grow-1 flex-start">
       <!-- NAVBAR LIST ITEMS START -->
 
       <!-- MOVE TO SUGGESTIONS PAGE -->
@@ -119,7 +120,7 @@
       </div>
 
       <!-- SIGN OUT NAVBAR ITEM- -->
-      <div class="nav-item my-1 mx-3 post-login">
+      <div class="nav-item my-1 mx-3 post-login ml-auto order-1">
         <button id="sign-out-button" class="btn btn-danger">Sign Out</button>
       </div>
 
@@ -128,14 +129,14 @@
         <button id="game-start-button" class="btn btn-success">Start New Game</button>
       </div>
 
-      <!-- SHOW ALL SUGGESTIONS -->
-      <div class="nav-item my-1 mx-3 suggestion post-login">
-        <button id="show-all-suggestion-button" class="suggestion btn btn-warning">Show All Suggestions</button>
-      </div>
-
       <!-- SHOW MY SUGGESTIONS -->
       <div class="nav-item my-1 mx-3 post-login">
         <button id="show-my-suggestion-button" class="suggestion post-login btn btn-dark">Show My Suggestions</button>
+      </div>
+
+      <!-- SHOW ALL SUGGESTIONS -->
+      <div class="nav-item my-1 mx-3 suggestion post-login">
+        <button id="show-all-suggestion-button" class="suggestion btn btn-warning">Show All Suggestions</button>
       </div>
 
       <!-- SHOW MY SCORES -->
@@ -154,7 +155,8 @@
 
       <div id="game-description" class="m-3">
         <h1 class="text-center">Welcome to Brain Age</h1>
-        <h3 class="text-justify">Play this 60 second game and try to get the highest score possible! There are four types of questions: Complete the Sentence, Math, Find the Missing Shape, and Recognition</h3>
+        <h3 class="text-justify">Play this 60 second game and try to get the highest score possible! There are four types of questions: Complete the Sentence, Math, Find the Missing Shape, and Recognition. Any completed score will be submitted on
+          completion. </h3>
       </div>
 
       <div id="game-container" class="d-flex flex-row">
