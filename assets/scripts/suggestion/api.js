@@ -17,10 +17,10 @@ const createSuggestion = data => {
   })
 }
 
-const updateSuggestion = data => {
+const updateSuggestion = (data, id) => {
   console.log('createSuggestion')
   return $.ajax({
-    url: config.apiUrl + `/suggestions/${data.suggestion.id}`,
+    url: config.apiUrl + `/suggestions/${id}`,
     headers: {Authorization: `Token token=${store.user.token}`},
     method: 'PATCH',
     data: {
@@ -34,7 +34,7 @@ const updateSuggestion = data => {
 const deleteSuggestion = data => {
   console.log('deleteSuggestion')
   return $.ajax({
-    url: config.apiUrl + `/suggestions/${data.suggestion.id}`,
+    url: config.apiUrl + `/suggestions/${data}`,
     headers: {Authorization: `Token token=${store.user.token}`},
     method: 'DELETE'
   })

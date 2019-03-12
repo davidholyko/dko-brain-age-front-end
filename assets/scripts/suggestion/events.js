@@ -14,28 +14,28 @@ const onCreateSuggestion = () => {
 }
 
 const onUpdateSuggestion = () => {
-  console.log('onCreateSuggestion')
+  console.log('onUpdateSuggestion')
   event.preventDefault()
   const data = getFormFields(event.target)
-  api.updateSuggestion(data)
-    .then(ui.updateSuggestionSuccess)
+  const id = $(event.target).data('id')
+  api.updateSuggestion(data, id)
+    .then(ui.updateSuggestionSuccess(data, id))
     .catch(ui.failure)
 }
 
 const onDeleteSuggestion = () => {
   console.log('onDeleteSuggestion')
   event.preventDefault()
-  const data = getFormFields(event.target)
+  const data = $(event.target).data('id')
   api.deleteSuggestion(data)
-    .then(ui.deleteSuggestionSuccess)
+    .then(ui.deleteSuggestionSuccess(data))
     .catch(ui.failure)
 }
 
 const onShowSuggestion = () => {
   console.log('onShowSuggestion')
   event.preventDefault()
-  const data = getFormFields(event.target)
-  api.showSuggestion(data)
+  api.showSuggestion()
     .then(ui.showSuggestionSuccess)
     .catch(ui.failure)
 }
@@ -43,8 +43,7 @@ const onShowSuggestion = () => {
 const onShowMySuggestion = () => {
   console.log('onShowSuggestion')
   event.preventDefault()
-  const data = getFormFields(event.target)
-  api.showMySuggestion(data)
+  api.showMySuggestion()
     .then(ui.showMySuggestionSuccess)
     .catch(ui.failure)
 }
@@ -52,10 +51,11 @@ const onShowMySuggestion = () => {
 const addHandlers = () => {
   console.log('addHandlers Suggestions')
   $('#create-suggestion-form').on('submit', onCreateSuggestion)
-  $('#update-suggestion-form').on('submit', onUpdateSuggestion)
-  $('#delete-suggestion-form').on('submit', onDeleteSuggestion)
   $('#show-all-suggestion-button').on('click', onShowSuggestion)
   $('#show-my-suggestion-button').on('click', onShowMySuggestion)
+
+  $('#suggestions').on('click', '.delete-suggestion-button', onDeleteSuggestion)
+  $('#suggestions').on('submit', '.update-suggestion-form', onUpdateSuggestion)
 }
 
 module.exports = { addHandlers }

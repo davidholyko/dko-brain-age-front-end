@@ -24,12 +24,14 @@ const showMySuggestionSuccess = responseData => {
   $('#suggestions').append(showMySuggestionsTemplate({suggestions: responseData.user.suggestions}))
 }
 
-const deleteSuggestionSuccess = () => {
+const deleteSuggestionSuccess = (id) => {
   console.log('deleteSuggestionSuccess')
+  $(`#suggestion-${id}`).hide()
 }
 
-const updateSuggestionSuccess = responseData => {
+const updateSuggestionSuccess = (data, id) => {
   console.log('updateSuggestionSuccess')
+  $(`#suggestion-${id}`).replaceWith(`<h2>${data.suggestion.text}</h2>`)
 }
 
 module.exports = {
