@@ -14,6 +14,9 @@ const hideGameDisplay = () => { $('.post-game-start').hide() }
 const showSuggestion = () => { $('.suggestion').show() }
 const hideSuggestion = () => { $('.suggestion').hide() }
 
+const showSuggestionPage = () => { $('#suggestion-page').show() }
+const hideSuggestionPage = () => { $('#suggestion-page').hide() }
+
 const showGame = () => { $('.game').show() }
 const hideGame = () => { $('.game').hide() }
 
@@ -42,6 +45,7 @@ const onPageLoad = () => {
   showGame()
   hideSuggestion()
   hidePostLogin()
+  hideSuggestionPage()
   endGame()
 }
 
@@ -54,5 +58,7 @@ module.exports = {
   showSuggestion,
   hideSuggestion,
   showGame,
-  hideGame
+  hideGame,
+  hideSuggestionPage,
+  showSuggestionPage
 }

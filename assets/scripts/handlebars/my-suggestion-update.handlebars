@@ -1,30 +1,32 @@
+<div id="suggestion-{{suggestion.id}}" class="suggestion d-flex my-2">
 
-{{log suggestion}}
+  <div class="suggestion-buttons d-flex mx-2">
 
-  <div id="suggestion-{{suggestion.id}}" class="suggestion d-flex my-2">
-    <div class="suggestion-buttons d-flex mx-2">
-      <button type="button" data-id="{{suggestion.id}}" class="delete-suggestion-button btn btn-danger">Delete</button>
+    <!-- DELETE BUTTON -->
+    <button type="button" data-id="{{suggestion.id}}" class="delete-suggestion-button btn btn-danger">Delete</button>
 
-      <!-- UPDATE A SUGGESTION NAVBAR ITEM-->
-      <div class="dropdown mx-2">
-        <!-- UPDATE A SUGGESTION DROPDOWN MENU -->
-        <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Update </button>
+    <!-- UPDATE A SUGGESTION NAVBAR ITEM-->
+    <div class="dropdown mx-2">
+      <!-- UPDATE A SUGGESTION DROPDOWN MENU -->
+      <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Update </button>
 
-        <div class="dropdown-menu">
-          <!-- DROPDOWN MENU UPDATE A SUGGESTION -->
-          <form class="px-4 py-3 d-flex flex-column update-suggestion-form" data-id="{{suggestion.id}}">
-            <div class="form-group">
-              <textarea required minlength="8" maxlength="64" type="text" placeholder="Write your updated suggestion here" name="suggestion[text]" class="textarea"></textarea>
-            </div>
-            <input type="submit" data-id="{{suggestion.id}}" value="Update suggestion">
-          </form>
-          <!-- DROPDOWN MENU UPDATE A SUGGESTION END -->
-        </div>
-        <!-- DROPDOWN END -->
+      <div class="dropdown-menu">
+        <!-- DROPDOWN MENU UPDATE A SUGGESTION -->
+        <form class="px-4 py-3 d-flex flex-column update-suggestion-form" data-id="{{suggestion.id}}">
+          <div class="form-group">
+            <textarea required minlength="8" maxlength="64" type="text" placeholder="Write your updated suggestion here" name="suggestion[text]" class="textarea"></textarea>
+          </div>
+          <input type="submit" data-id="{{suggestion.id}}" value="Update suggestion">
+        </form>
+        <!-- DROPDOWN MENU UPDATE A SUGGESTION END -->
       </div>
-
+      <!-- DROPDOWN END -->
     </div>
 
-
-    <div><h2 class="suggestion-text-{{suggestion.id}}">{{suggestion.text}}</h2></div>
   </div>
+
+  <div>
+    <h2 class="suggestion-text-{{suggestion.id}}">{{suggestion.text}}</h2>
+  </div>
+
+</div>

@@ -1,14 +1,13 @@
 @import '~bootstrap/scss/bootstrap';
 @import 'shapes';
 
-body {
-  background-color: grey;
-}
+body {}
 
 #content {
   width: 90%;
   padding: 2% 0;
   background-color: AliceBlue;
+  opacity: 0.75;
 }
 
 #game-title {
@@ -30,7 +29,7 @@ body {
 #info-container {}
 
 textarea {
-  max-width: 50%;
+  max-width: 100%;
   font-size: 24px;
 }
 
@@ -43,14 +42,13 @@ input[type="number"] {
 #game-page {
   display: flex;
   justify-content: center;
-  background: black;
   background-size: cover;
   background-image: url("/public/images/background.jpg");
   height: 95vh;
 }
 
 #suggestions-page {
-  display: flex;
+  display: none;
   justify-content: center;
   background: black;
   background-size: cover;
@@ -64,6 +62,7 @@ input[type="number"] {
   display: flex;
   flex-direction: row;
   background-color: AliceBlue;
+  opacity: 0.8;
 }
 
 #navbar {
