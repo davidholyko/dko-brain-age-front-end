@@ -12,6 +12,7 @@ const onCreateSuggestion = () => {
   api.createSuggestion(data)
     .then(ui.createSuggestionSuccess)
     .catch(ui.failure)
+    .then(loadSuggestions)
 }
 
 const onUpdateSuggestion = () => {
@@ -41,6 +42,13 @@ const onShowSuggestion = () => {
     .catch(ui.failure)
 }
 
+const loadSuggestions = () => {
+  console.log('loadSuggestions')
+  api.showSuggestion()
+    .then(ui.showSuggestionSuccess)
+    .catch(ui.failure)
+}
+
 const onShowMySuggestion = () => {
   console.log('onShowSuggestion')
   event.preventDefault()
@@ -53,11 +61,15 @@ const onToggleSuggestionsPage = () => {
   console.log('onToggleSuggestionsPage')
   if (!store.suggestion) {
     $('#suggestions-page').show()
+    $('.suggestion').show()
     $('#game-page').hide()
+    $('.game').hide()
     store.suggestion = true
   } else {
     $('#suggestions-page').hide()
+    $('.suggestion').hide()
     $('#game-page').show()
+    $('.game').show()
     store.suggestion = false
   }
 }
@@ -71,6 +83,10 @@ const addHandlers = () => {
 
   $('#suggestions').on('click', '.delete-suggestion-button', onDeleteSuggestion)
   $('#suggestions').on('submit', '.update-suggestion-form', onUpdateSuggestion)
+
+  loadSuggestions()
 }
 
-module.exports = { addHandlers }
+module.exports = {
+  addHandlers
+}

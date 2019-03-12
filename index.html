@@ -124,49 +124,24 @@
       </div>
 
       <!-- START NEW GAME NAVBAR ITEM -->
-      <div class="nav-item mx-3 my-1">
+      <div class="nav-item mx-3 my-1 game">
         <button id="game-start-button" class="btn btn-success">Start New Game</button>
       </div>
 
       <!-- SHOW ALL SUGGESTIONS -->
-      <div class="nav-item my-1 mx-3">
-        <button id="show-all-suggestion-button" class="btn btn-warning">Show All Suggestions</button>
+      <div class="nav-item my-1 mx-3 suggestion">
+        <button id="show-all-suggestion-button" class="suggestion btn btn-warning">Show All Suggestions</button>
       </div>
 
       <!-- SHOW MY SUGGESTIONS -->
       <div class="nav-item my-1 mx-3 post-login">
-        <button id="show-my-suggestion-button" class="btn btn-dark">Show My Suggestions</button>
+        <button id="show-my-suggestion-button" class="suggestion post-login btn btn-dark">Show My Suggestions</button>
       </div>
 
       <!-- SHOW MY SCORES -->
-      <div class="nav-item my-1 mx-3">
+      <div class="nav-item my-1 mx-3 game">
         <button id="my-scores-button" class="btn btn-dark post-login">Show My Scores</button>
       </div>
-
-      <!-- CREATE A SUGGESTION NAVBAR ITEM-->
-      <div class=" nav-item active my-1 mx-3 post-login">
-        <div class="dropdown">
-          <!-- CREATE A SUGGESTION DROPDOWN MENU -->
-          <button id="" class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Create a Suggestion
-          </button>
-
-          <div class="dropdown-menu">
-            <!-- DROPDOWN MENU CREATE A SUGGESTION -->
-            <form id="create-suggestion-form" class="px-4 py-3">
-              <div class="form-group">
-                <label>Write me a sugggestion on how to make the game better</label>
-                <textarea required minlength="10" maxlength="50" type="text" placeholder="Write your suggestion here" name="suggestion[text]" class="textarea"></textarea>
-              </div>
-              <input type="submit" value="Send me a suggestion!">
-            </form>
-            <!-- DROPDOWN MENU CREATE A SUGGESTION END -->
-          </div>
-          <!-- DROPDOWN END -->
-        </div>
-        <!-- CREATE A SUGGESTION END-->
-      </div>
-
 
       <!-- NAVBAR LIST ITEMS END -->
     </div>
@@ -245,8 +220,19 @@
     <!-- MAIN SCREEN END -->
   </div>
 
-  <div id="suggestions-page">
-    <div id="suggestions"></div>
+  <div id="suggestions-page" class="">
+    <div id="suggestions-content">
+      <div id="suggestions" class="col-6"></div>
+
+      <form id="create-suggestion-form" class="px-4 py-3 col-6 post-login">
+        <label>Write me a sugggestion on how to make the game better</label>
+        <div class="form-group">
+          <textarea required minlength="10" maxlength="50" type="text" placeholder="Write your suggestion here" name="suggestion[text]" class="textarea col-12"></textarea>
+        </div>
+        <input class="btn btn-success" type="submit" value="Send me a suggestion!">
+      </form>
+
+    </div>
   </div>
 
 </body>

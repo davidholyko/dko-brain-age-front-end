@@ -8,8 +8,14 @@ const hidePostLogin = () => { $('.post-login').hide() }
 const showHearts = () => { $('#game-hearts').show() }
 const hideHearts = () => { $('#game-hearts').hide() }
 
-const showGame = () => { $('.post-game-start').show() }
-const hideGame = () => { $('.post-game-start').hide() }
+const showGameDisplay = () => { $('.post-game-start').show() }
+const hideGameDisplay = () => { $('.post-game-start').hide() }
+
+const showSuggestion = () => { $('.suggestion').show() }
+const hideSuggestion = () => { $('.suggestion').hide() }
+
+const showGame = () => { $('.game').show() }
+const hideGame = () => { $('.game').hide() }
 
 const login = () => {
   hidePreLogin()
@@ -23,16 +29,18 @@ const logout = () => {
 
 const startGame = () => {
   showHearts()
-  showGame()
+  showGameDisplay()
 }
 
 const endGame = () => {
   hideHearts()
-  hideGame()
+  hideGameDisplay()
 }
 
 const onPageLoad = () => {
   showPreLogin()
+  showGame()
+  hideSuggestion()
   hidePostLogin()
   endGame()
 }
@@ -42,5 +50,9 @@ module.exports = {
   login,
   logout,
   startGame,
-  endGame
+  endGame,
+  showSuggestion,
+  hideSuggestion,
+  showGame,
+  hideGame
 }
