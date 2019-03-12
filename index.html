@@ -18,7 +18,7 @@
     <!-- NAVBAR NAV START-->
 
     <!-- GAME TITLE -->
-    <div class="navbar-brand">Brain Age</div>
+    <div id="game-title" class="navbar-brand mx-3">Brain Age</div>
 
 
     <!-- NAVBAR DIV START -->
@@ -120,74 +120,97 @@
         <button class="btn btn-success nav-link" id="game-start-button">Start New Game</button>
       </div>
 
-      <!-- MADE FOR GA NAVBAR ITEM -->
-      <div class="ml-auto mx-3"><span id="navbar-text"> Made for GA WDI-030 </span></div>
-
       <!-- NAVBAR LIST ITEMS END -->
     </div>
 
     <!-- NAVBAR NAV END -->
   </div>
 
-  <div id="game-board" class="col-9">
-    <h1 id="user-message"></h1>
-    <!-- GAME BOARD -->
+  <div id="main-screen">
+    <div id="content" class="d-flex">
+      <div id="game-board" class="col-6">
+        <h3 id="user-message"></h3>
+        <!-- GAME BOARD -->
 
-    <div id="game-header" class="post-game-start">
-      <!-- GAME HEADER -->
-      <div id="game-timer"></div>
-      <div id="game-hearts">
-        <img id="heart-1" class="heart" src="public/images/full-heart.png" alt="">
-        <img id="heart-2" class="heart" src="public/images/full-heart.png" alt="">
-        <img id="heart-3" class="heart" src="public/images/full-heart.png" alt="">
-        <img id="heart-4" class="heart" src="public/images/full-heart.png" alt="">
-        <img id="heart-5" class="heart" src="public/images/full-heart.png" alt="">
+        <div id="game-header" class="post-game-start">
+          <!-- GAME HEADER -->
+          <div id="game-timer"></div>
+          <div id="game-hearts">
+            <img id="heart-1" class="heart" src="public/images/full-heart.png" alt="">
+            <img id="heart-2" class="heart" src="public/images/full-heart.png" alt="">
+            <img id="heart-3" class="heart" src="public/images/full-heart.png" alt="">
+            <img id="heart-4" class="heart" src="public/images/full-heart.png" alt="">
+            <img id="heart-5" class="heart" src="public/images/full-heart.png" alt="">
+          </div>
+          <div id="game-score"></div>
+          <!-- GAME HEADER END-->
+        </div>
+
+
+        <div id="game-display" class="col-12 post-game-start"></div>
+        <div id="game-options-container" class="post-game-start">
+          <button id="option-0" class="option btn-primary">option 0</button>
+          <button id="option-1" class="option btn-primary">option 1</button>
+          <button id="option-2" class="option btn-primary">option 2</button>
+          <button id="option-3" class="option btn-primary">option 3</button>
+          <button id="option-4" class="option btn-primary">option 4</button>
+        </div>
+        <div id="game-buttons-container">
+          <!-- <button id="game-start-button" class="">Start game</button> -->
+        </div>
+
+        <!-- GAME BOARD END-->
       </div>
-      <div id="game-score"></div>
-      <button id="submit-score-button" class="col-12 m-0 post-login">Submit score</button>
-      <!-- GAME HEADER END-->
-    </div>
+
+      <div id="info-container" class="col-6">
+        <div id="buttons-container" class="flex-row justify-content-around col-12 d-flex">
+          <button id="my-scores-button" class="post-login col-3">My scores</button>
+          <button id="all-scores-button" class="col-3">All scores</button>
+          <button id="hiscores-button" class="col-3">Top 10 Hiscores</button>
+        </div>
+        <div id="scores" class="col-12">
+          <div id="game-headers" class="d-flex justify-content-around">
+            <div class="col-4">
+              <h2 class="text-left">score</h2>
+            </div>
+            <div class="col-4">
+              <h2 class="text-left">user</h2>
+            </div>
+            <div class="col-4">
+              <h2 class="text-left">ID</h2>
+            </div>
+          </div>
+        </div>
+        <button id="show-all-suggestion-button" class="col-12">Show All Suggestions</button>
+        <div id="suggestions"></div>
+      </div>
 
 
-    <div id="game-display" class="col-12 post-game-start"></div>
-    <div id="game-options-container" class="post-game-start">
-      <button id="option-0" class="option btn-primary">option 0</button>
-      <button id="option-1" class="option btn-primary">option 1</button>
-      <button id="option-2" class="option btn-primary">option 2</button>
-      <button id="option-3" class="option btn-primary">option 3</button>
-      <button id="option-4" class="option btn-primary">option 4</button>
-    </div>
-    <div id="game-buttons-container">
-      <!-- <button id="game-start-button" class="">Start game</button> -->
-      <button id="all-scores-button" class="">See all scores</button>
-      <button id="hiscores-button" class="">See hiscores</button>
-      <button id="my-scores-button" class="post-login">See my scores</button>
-    </div>
 
-    <!-- GAME BOARD END-->
+      <div id="suggestions-container" class="post-login">
+        <form id="create-suggestion-form">
+          <input required type="text" placeholder="Write your suggestion here" name="suggestion[text]" class="textarea">
+          <input type="submit" value="Send me a suggestion!">
+        </form>
+        <form id="update-suggestion-form">
+          <input required type="text" placeholder="Write your updated suggestion here" name="suggestion[text]">
+          <input required type="number" placeholder="Suggestion id" name="suggestion[id]" class="textarea">
+          <input type="submit" value="Update a suggestion">
+        </form>
+        <form id="delete-suggestion-form">
+          <input required type="number" placeholder="Write your suggestion here" name="suggestion[id]">
+          <input type="submit" value="Delete a suggestion">
+          <button id="show-my-suggestion-button" class="col-6">Show My Suggestions</button>
+        </form>
+      </div>
+
+
+
+
+      <!-- CONTENT END -->
+    </div>
+    <!-- MAIN SCREEN END -->
   </div>
-
-  <div id="suggestions-container" class="post-login">
-    <form id="create-suggestion-form">
-      <input required type="text" placeholder="Write your suggestion here" name="suggestion[text]" class="textarea">
-      <input type="submit" value="Send me a suggestion!">
-    </form>
-    <form id="update-suggestion-form">
-      <input required type="text" placeholder="Write your updated suggestion here" name="suggestion[text]">
-      <input required type="number" placeholder="Suggestion id" name="suggestion[id]" class="textarea">
-      <input type="submit" value="Update a suggestion">
-    </form>
-    <form id="delete-suggestion-form">
-      <input required type="number" placeholder="Write your suggestion here" name="suggestion[id]">
-      <input type="submit" value="Delete a suggestion">
-    </form>
-    <button id="show-my-suggestion-button">Show My Suggestions</button>
-  </div>
-  <button id="show-all-suggestion-button" class="">Show All Suggestions</button>
-
-
-  <div id="scores"></div>
-  <div id="suggestions"></div>
 
 </body>
 

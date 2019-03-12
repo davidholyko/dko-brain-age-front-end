@@ -11,6 +11,7 @@ const gameEvents = require('./game/events')
 const suggestionEvents = require('./suggestion/events')
 const client = require('./client-side/events')
 const view = require('./view/view')
+
 // const logicMath = require('./logic/math')
 
 $(() => {
@@ -20,4 +21,5 @@ $(() => {
   gameEvents.addHandlers()
   suggestionEvents.addHandlers()
   view.onPageLoad()
+  gameEvents.loadHiscores()
 })

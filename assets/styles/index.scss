@@ -5,10 +5,19 @@ body {
   background-color: grey;
 }
 
+#content {
+  width: 80%;
+  padding: 10% 0;
+  background-color: AliceBlue;
+}
+
+#game-title {
+  font-size: 2rem;
+}
+
 #game-display {
   flex-wrap: wrap;
   height: 30vh;
-  width: 100vw;
   background-color: white;
   border: 5px solid black;
 }
@@ -18,8 +27,17 @@ body {
   width: 50px;
 }
 
+#info-container {}
+
+#main-screen {
+  display: flex;
+  justify-content: center;
+  background: black;
+  background-size: cover;
+  height: 100vh;
+}
+
 #navbar {
-  width: 100vw;
   height: 5vh;
   display: flex;
   flex-direction: row;
@@ -29,7 +47,19 @@ body {
   width: 200px;
   height: 50px;
 }
-// .textarea {
-//   height: 2rem;
-//   width: 1rem;
-// }
+
+.option {
+  width: 15%;
+  height: 5vh;
+  font-size: 20px;
+}
+
+#game-options-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+#scores {
+  max-height: 75vh;
+  overflow: auto;
+}

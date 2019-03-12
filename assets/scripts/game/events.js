@@ -15,13 +15,13 @@ const startGame = () => {
   client.resetHearts()
   client.resetScore()
   client.startGame()
-  client.startTimer()
+  startTimer()
   client.allowSubmission()
   logicController[Math.random() * Object.keys(logicController).length | 0]()
   client.updateGameDisplay()
   view.startGame()
-  $('#game-score').html(`<h1>Your score is: ${store.game.score}</h1>`)
-  $('#game-timer').html(`<h1>Time left: ${store.game.countdown} seconds</h1>`)
+  $('#game-score').html(`<h3>Your score is: ${store.game.score}</h3>`)
+  $('#game-timer').html(`<h3>Time left: ${store.game.countdown} seconds</h3>`)
 }
 
 const answerProblem = () => {
@@ -32,13 +32,14 @@ const answerProblem = () => {
 
   if ($(event.target).text() === store.game.answer.toString()) {
     store.game.score++
-    $('#game-score').html(`<h1>Your score is: ${store.game.score}</h1>`)
+    $('#game-score').html(`<h3>Your score is: ${store.game.score}</h3>`)
   } else {
     $($('#game-hearts').children()[store.game.hearts - 1]).attr('src', 'public/images/empty-heart.png')
     store.game.hearts--
     if (!store.game.hearts) {
       store.game.over = true
       client.stopTimer()
+      if (store.user) { onSubmitScore() }
     }
   }
   logicController[Math.random() * Object.keys(logicController).length | 0]()
@@ -46,9 +47,8 @@ const answerProblem = () => {
 }
 
 const onSubmitScore = () => {
-  event.preventDefault()
-  if (!store.game.submit) { return }
   console.log('submitScore')
+  if (!store.game.submit) { return }
   client.forbidSubmission()
   api.submitScore()
     .then(ui.submitScoreSuccess)
@@ -79,6 +79,13 @@ const onGetHighScores = () => {
     .catch(ui.failure)
 }
 
+const loadHiscores = () => {
+  console.log('loadHiscores')
+  api.getHighScores()
+    .then(ui.getScoresSuccess)
+    .catch(ui.failure)
+}
+
 const onDeleteScore = () => {
   console.log('onDeleteScore')
   event.preventDefault()
@@ -88,15 +95,38 @@ const onDeleteScore = () => {
     .catch(ui.failure)
 }
 
+const startTimer = () => {
+  console.log('setGameTimer')
+  clearInterval(store.game.timer)
+  const start = Date.now()
+  const end = start + (store.game.countdown * 1000)
+  let now
+
+  store.game.timer = setInterval(() => {
+    now = Date.now()
+    if (now > end || !store.game.hearts) {
+      clearInterval(store.game.timer)
+      $('#game-timer').html(`<h3>Game over!</h3>`)
+      store.game.over = true
+      if (store.user) { onSubmitScore() }
+    }
+    $('#game-timer').html(`<h3>Time remaining in seconds: ${((end - now) / 1000).toString().slice(0, -2)}</h3>`)
+    if ($('#game-timer').text() === 'Time remaining in seconds: -0.0') { $('#game-timer').html(`<h3>Game over!</h3>`) }
+  }, 1)
+}
+
 const addHandlers = () => {
   console.log('addHandlers Game')
   $('.option').on('click', answerProblem)
   $('#game-start-button').on('click', startGame)
-  $('#submit-score-button').on('click', onSubmitScore)
   $('#all-scores-button').on('click', onGetScores)
   $('#hiscores-button').on('click', onGetHighScores)
   $('#my-scores-button').on('click', onGetMyScores)
   $('#delete-score-form').on('submit', onDeleteScore)
 }
 
-module.exports = { addHandlers }
+module.exports = {
+  addHandlers,
+  loadHiscores,
+  onSubmitScore
+}

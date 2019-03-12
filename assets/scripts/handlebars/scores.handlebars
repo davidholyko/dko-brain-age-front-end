@@ -1,7 +1,15 @@
+<div id="game-headers" class="d-flex justify-content-around">
+  <div class="col-4"><h2 class="text-left">score</h2></div>
+  <div class="col-4"><h2 class="text-left">user</h2></div>
+  <div class="col-4"><h2 class="text-left">ID</h2></div>
+</div>
 {{#each games as |game|}}
 
-  <div class="game">
-    <h2 data-id="{{game.id}}"> score: {{game.score}} game_id: {{game.id}} user: {{game.user_info}} date: {{game.created_at}} </h2>
+  <div class="game d-flex justify-content-around" data-game-id="{{game.id}}">
+    <div class="col-4"><h2 class="text-left">{{game.score}} </h2></div>
+    <div class="col-4"><h2 class="text-left">{{game.user_info}} </h2></div>
+    <div class="col-4"><h2 class="text-left">{{game.id}} </h2></div>
   </div>
+
 
 {{/each}}

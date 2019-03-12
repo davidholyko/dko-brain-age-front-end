@@ -14,7 +14,7 @@ const initStore = () => {
   store.game.submit = false
   store.game.over = false
   store.game.start = false
-  store.user = {}
+  store.user = false
 }
 
 const resetStore = () => {
@@ -57,32 +57,13 @@ const resetTimer = () => {
 }
 const stopTimer = () => {
   clearInterval(store.game.timer)
-  $('#game-timer').html(`<h1>Game over!</h1>`)
-}
-
-const startTimer = () => {
-  console.log('setGameTimer')
-  clearInterval(store.game.timer)
-  const start = Date.now()
-  const end = start + (store.game.countdown * 1000)
-  let now
-
-  store.game.timer = setInterval(() => {
-    now = Date.now()
-    if (now > end || !store.game.hearts) {
-      clearInterval(store.game.timer)
-      $('#game-timer').html(`<h1>Game over!</h1>`)
-      store.game.over = true
-    }
-    $('#game-timer').html(`<h1>Time remaining in seconds: ${((end - now) / 1000).toString().slice(0, -1)}</h1>`)
-    if ($('#game-timer').text() === 'Time remaining in seconds: -0.00') { $('#game-timer').html(`<h1>Game over!</h1>`) }
-  }, 1)
+  $('#game-timer').html(`<h3>Game over!</h3>`)
 }
 
 const updateGameDisplay = () => {
   console.log('updateGameDisplay')
   $('#game-display').empty()
-  $('#game-display').append(`<div><h1>${store.game.question}</h1></div>`)
+  $('#game-display').append(`<div><h3>${store.game.question}</h3></div>`)
   $('#option-0').text(`${store.game.multipleChoice[0]}`)
   $('#option-1').text(`${store.game.multipleChoice[1]}`)
   $('#option-2').text(`${store.game.multipleChoice[2]}`)
@@ -96,7 +77,6 @@ module.exports = {
   resetScore,
   resetTimer,
   stopTimer,
-  startTimer,
   startGame,
   initStore,
   updateGameDisplay,

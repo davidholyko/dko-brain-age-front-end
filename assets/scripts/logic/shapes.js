@@ -23,7 +23,7 @@ const generateProblem = () => {
   const answer = multipleChoiceInput[randomIndex]
   multipleChoiceInput[randomIndex] = 'question'
   const question =
-  `${shapesHTML[multipleChoiceInput[0]]} ${shapesHTML[multipleChoiceInput[1]]} ${shapesHTML[multipleChoiceInput[2]]}    ${shapesHTML[multipleChoiceInput[3]]} ${shapesHTML[multipleChoiceInput[4]]} <h1>Which shape is missing?</h1>`
+  `${shapesHTML[multipleChoiceInput[0]]} ${shapesHTML[multipleChoiceInput[1]]} ${shapesHTML[multipleChoiceInput[2]]}    ${shapesHTML[multipleChoiceInput[3]]} ${shapesHTML[multipleChoiceInput[4]]} <h3>Which shape is missing?</h3>`
 
   // randomize MultipleChoice
   for (let i = multipleChoiceInput.length; i > 0; i--) {
