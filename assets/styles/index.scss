@@ -29,6 +29,17 @@ body {
 
 #info-container {}
 
+textarea {
+  width: 300px;
+  font-size: 24px;
+}
+
+input[type="number"] {
+  height: 2rem;
+  width: 4rem;
+  font-size: 24px;
+}
+
 #main-screen {
   display: flex;
   justify-content: center;

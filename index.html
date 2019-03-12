@@ -124,6 +124,81 @@
         <button class="btn btn-success nav-link" id="game-start-button">Start New Game</button>
       </div>
 
+      <!-- CREATE A SUGGESTION NAVBAR ITEM-->
+      <div class=" nav-item active my-1 mx-3 post-login">
+        <div class="dropdown">
+          <!-- CREATE A SUGGESTION DROPDOWN MENU -->
+          <button id="" class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Create a Suggestion
+          </button>
+
+          <!-- <form id="create-suggestion-form">
+            <input required type="text" placeholder="Write your suggestion here" name="suggestion[text]" class="textarea">
+            <input type="submit" value="Send me a suggestion!">
+          </form> -->
+
+          <div class="dropdown-menu">
+            <!-- DROPDOWN MENU CREATE A SUGGESTION -->
+            <form id="create-suggestion-form" class="px-4 py-3 ">
+              <div class="form-group">
+                <label>Write me a sugggestion on how to make the game better</label>
+                <textarea required minlength="10" maxlength="50" type="text" placeholder="Write your suggestion here" name="suggestion[text]" class="textarea"></textarea>
+              </div>
+              <input type="submit" value="Send me a suggestion!">
+            </form>
+            <!-- DROPDOWN MENU CREATE A SUGGESTION END -->
+          </div>
+          <!-- DROPDOWN END -->
+        </div>
+        <!-- CREATE A SUGGESTION END-->
+      </div>
+
+      <!-- UPDATE A SUGGESTION NAVBAR ITEM-->
+      <div class="nav-item active my-1 mx-3 post-login">
+        <div class="dropdown">
+          <!-- UPDATE A SUGGESTION DROPDOWN MENU -->
+          <button id="" class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Update a Suggestion
+          </button>
+
+          <div class="dropdown-menu">
+            <!-- DROPDOWN MENU UPDATE A SUGGESTION -->
+            <form id="update-suggestion-form" class="px-4 py-3">
+              <div class="form-group">
+                <label>Update your sugggestion on how to make the game better</label>
+                <textarea required minlength="10" maxlength="50" type="text" placeholder="Write your updated suggestion here" name="suggestion[text]" class="textarea"></textarea>
+              </div>
+              <input required type="number" placeholder="" name="suggestion[id]" class="textarea">
+              <input type="submit" value="Update a suggestion">
+            </form>
+            <!-- DROPDOWN MENU UPDATE A SUGGESTION END -->
+          </div>
+          <!-- DROPDOWN END -->
+        </div>
+        <!-- UPDATE A SUGGESTION END-->
+      </div>
+
+      <!-- DELETE A SUGGESTION NAVBAR ITEM-->
+      <div class="nav-item active my-1 mx-3 post-login">
+        <div class="dropdown">
+          <!-- DELETE A SUGGESTION DROPDOWN MENU -->
+          <button id="" class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Delete a Suggestion
+          </button>
+
+          <div class="dropdown-menu">
+            <!-- DROPDOWN MENU DELETE A SUGGESTION -->
+            <form id="delete-suggestion-form" class="px-4 py-3">
+              <input required type="number" placeholder="" name="suggestion[id]" class="textarea">
+              <input type="submit" value="Delete a suggestion">
+            </form>
+            <!-- DROPDOWN MENU DELETE A SUGGESTION END -->
+          </div>
+          <!-- DROPDOWN END -->
+        </div>
+        <!-- DELETE A SUGGESTION END-->
+      </div>
+
       <!-- NAVBAR LIST ITEMS END -->
     </div>
 
@@ -135,7 +210,7 @@
 
       <div id="game-description" class="m-3">
         <h1 class="text-center">Welcome to Brain Age</h1>
-        <h3 class="text-justify"> Play this 60 second game and try to get the highest score possible! There are four types of questions: Complete the Sentence, Math, Find the Missing Shape, and Recognition</h3>
+        <h3 class="text-justify">Play this 60 second game and try to get the highest score possible! There are four types of questions: Complete the Sentence, Math, Find the Missing Shape, and Recognition</h3>
       </div>
 
       <div id="game-container" class="d-flex flex-row">
@@ -205,7 +280,7 @@
       </div>
 
 
-
+      <!--
       <div id="suggestions-container" class="post-login">
         <form id="create-suggestion-form">
           <input required type="text" placeholder="Write your suggestion here" name="suggestion[text]" class="textarea">
@@ -213,16 +288,16 @@
         </form>
         <form id="update-suggestion-form">
           <input required type="text" placeholder="Write your updated suggestion here" name="suggestion[text]">
-          <input required type="number" placeholder="Suggestion id" name="suggestion[id]" class="textarea">
+          <input required type="number" placeholder="" name="suggestion[id]" class="textarea">
           <input type="submit" value="Update a suggestion">
         </form>
         <form id="delete-suggestion-form">
-          <input required type="number" placeholder="Write your suggestion here" name="suggestion[id]">
+          <input required type="number" placeholder="" name="suggestion[id]">
           <input type="submit" value="Delete a suggestion">
           <button id="show-my-suggestion-button" class="col-6">Show My Suggestions</button>
         </form>
       </div>
-
+ -->
 
 
 
