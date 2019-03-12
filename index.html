@@ -129,7 +129,7 @@
       </div>
 
       <!-- SHOW ALL SUGGESTIONS -->
-      <div class="nav-item my-1 mx-3 suggestion">
+      <div class="nav-item my-1 mx-3 suggestion post-login">
         <button id="show-all-suggestion-button" class="suggestion btn btn-warning">Show All Suggestions</button>
       </div>
 
@@ -222,7 +222,12 @@
 
   <div id="suggestions-page" class="">
     <div id="suggestions-content">
-      <div id="suggestions" class="col-6"></div>
+      <div id="suggestions-container" class="col-6">
+        <div id="suggestions-header" class="border-bottom text-center">
+          <h1>Suggestions</h1>
+        </div>
+        <div id="suggestions" class="col-12"></div>
+      </div>
 
       <form id="create-suggestion-form" class="px-4 py-3 col-6 post-login">
         <label>Write me a sugggestion on how to make the game better</label>
