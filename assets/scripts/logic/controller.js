@@ -7,9 +7,15 @@ const shapes = require('./shapes')
 
 const miniGames = {
   0: math,
-  1: sentence,
-  2: words,
-  3: shapes
+  1: math,
+  2: math,
+  3: math,
+  4: sentence,
+  5: sentence,
+  6: words,
+  7: words,
+  8: shapes,
+  9: shapes
 }
 
 module.exports = miniGames

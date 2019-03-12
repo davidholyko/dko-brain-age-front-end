@@ -6,8 +6,8 @@ body {
 }
 
 #content {
-  width: 80%;
-  padding: 10% 0;
+  width: 90%;
+  padding: 2% 0;
   background-color: AliceBlue;
 }
 
@@ -34,7 +34,8 @@ body {
   justify-content: center;
   background: black;
   background-size: cover;
-  height: 100vh;
+  background-image: url("/public/images/background.jpg");
+  height: 95vh;
 }
 
 #navbar {
@@ -60,6 +61,6 @@ body {
 }
 
 #scores {
-  max-height: 75vh;
+  max-height: 50vh;
   overflow: auto;
 }
