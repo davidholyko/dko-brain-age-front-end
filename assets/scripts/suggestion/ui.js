@@ -34,7 +34,6 @@ const updateSuggestionSuccess = (data, id) => {
   console.log('updateSuggestionSuccess')
   const suggestion = {suggestion: {text: data.suggestion.text, id: id}}
   $(`#suggestion-${id}`).replaceWith(updateSuggestionTemplate(suggestion))
-  // $(`#suggestion-${id}`).replaceWith('<h1> this has been replaced </h1>')
 }
 
 module.exports = {

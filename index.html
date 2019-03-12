@@ -25,6 +25,10 @@
     <div class="navbar-nav flex-row flex-grow-1">
       <!-- NAVBAR LIST ITEMS START -->
 
+      <!-- MOVE TO SUGGESTIONS PAGE -->
+      <div class="nav-item my-1 mx-3">
+        <button id="toggle-suggestions-page-button" class="btn btn-dark">Suggestions</button>
+      </div>
 
       <!-- SIGN IN NAVBAR ITEM-->
       <div class=" nav-item active my-1 mx-3 pre-login">
@@ -115,27 +119,27 @@
       </div>
 
       <!-- SIGN OUT NAVBAR ITEM- -->
-      <div class="nav-item settings my-1 mx-3 post-login">
+      <div class="nav-item my-1 mx-3 post-login">
         <button id="sign-out-button" class="btn btn-danger">Sign Out</button>
       </div>
 
       <!-- START NEW GAME NAVBAR ITEM -->
-      <div class="nav-item settings mx-3 my-1">
+      <div class="nav-item mx-3 my-1">
         <button id="game-start-button" class="btn btn-success">Start New Game</button>
       </div>
 
       <!-- SHOW ALL SUGGESTIONS -->
-      <div class="nav-item settings my-1 mx-3">
+      <div class="nav-item my-1 mx-3">
         <button id="show-all-suggestion-button" class="btn btn-warning">Show All Suggestions</button>
       </div>
 
       <!-- SHOW MY SUGGESTIONS -->
-      <div class="nav-item settings my-1 mx-3 post-login">
+      <div class="nav-item my-1 mx-3 post-login">
         <button id="show-my-suggestion-button" class="btn btn-dark">Show My Suggestions</button>
       </div>
 
       <!-- SHOW MY SCORES -->
-      <div class="nav-item settings my-1 mx-3">
+      <div class="nav-item my-1 mx-3">
         <button id="my-scores-button" class="btn btn-dark post-login">Show My Scores</button>
       </div>
 
@@ -170,7 +174,7 @@
     <!-- NAVBAR NAV END -->
   </div>
 
-  <div id="main-screen">
+  <div id="game-page">
     <div id="content" class="">
 
       <div id="game-description" class="m-3">
@@ -219,33 +223,30 @@
 
         <div id="info-container" class="col-6">
           <div id="buttons-container" class="flex-row justify-content-around col-12 d-flex">
-
             <button id="all-scores-button" class="btn btn-warning col-3">All scores</button>
             <button id="hiscores-button" class="btn btn-warning col-3">Top 10 Hiscores</button>
           </div>
-          <div id="game-headers" class="d-flex justify-content-around">
-            <div class="col-4">
-              <h2 class="text-left font-weight-bold">SCORE</h2>
-            </div>
-            <div class="col-4">
-              <h2 class="text-left font-weight-bold">USER</h2>
-            </div>
-            <div class="col-4">
-              <h2 class="text-left font-weight-bold">ID</h2>
-            </div>
+          <div id="game-headers" class="d-flex justify-content-between">
+            <h2 id="game-headers-score" class="text-left font-weight-bold col-4">SCORE</h2>
+            <h2 id="game-headers-user" class="text-left font-weight-bold col-4">USER</h2>
+            <h2 id="game-headers-id" class="text-left font-weight-bold col-4">ID</h2>
           </div>
           <div id="scores" class="col-12">
 
           </div>
 
-          <div id="suggestions"></div>
         </div>
 
       </div>
 
+
       <!-- CONTENT END -->
     </div>
     <!-- MAIN SCREEN END -->
+  </div>
+
+  <div id="suggestions-page">
+    <div id="suggestions"></div>
   </div>
 
 </body>

@@ -15,6 +15,7 @@ const initStore = () => {
   store.game.over = false
   store.game.start = false
   store.user = false
+  store.suggestions = false
 }
 
 const resetStore = () => {

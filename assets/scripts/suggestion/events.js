@@ -1,6 +1,7 @@
 'use strict'
 
 const getFormFields = require('../../../lib/get-form-fields')
+const store = require('../store')
 const api = require('./api')
 const ui = require('./ui')
 
@@ -48,11 +49,25 @@ const onShowMySuggestion = () => {
     .catch(ui.failure)
 }
 
+const onToggleSuggestionsPage = () => {
+  console.log('onToggleSuggestionsPage')
+  if (!store.suggestion) {
+    $('#suggestions-page').show()
+    $('#game-page').hide()
+    store.suggestion = true
+  } else {
+    $('#suggestions-page').hide()
+    $('#game-page').show()
+    store.suggestion = false
+  }
+}
+
 const addHandlers = () => {
   console.log('addHandlers Suggestions')
   $('#create-suggestion-form').on('submit', onCreateSuggestion)
   $('#show-all-suggestion-button').on('click', onShowSuggestion)
   $('#show-my-suggestion-button').on('click', onShowMySuggestion)
+  $('#toggle-suggestions-page-button').on('click', onToggleSuggestionsPage)
 
   $('#suggestions').on('click', '.delete-suggestion-button', onDeleteSuggestion)
   $('#suggestions').on('submit', '.update-suggestion-form', onUpdateSuggestion)
