@@ -1,6 +1,7 @@
 'use strict'
 
 // const store = require('../store')
+const updateSuggestionTemplate = require('../handlebars/my-suggestion-update.handlebars')
 const showSuggestionsTemplate = require('../handlebars/suggestions.handlebars')
 const showMySuggestionsTemplate = require('../handlebars/my-suggestions.handlebars')
 
@@ -26,12 +27,14 @@ const showMySuggestionSuccess = responseData => {
 
 const deleteSuggestionSuccess = (id) => {
   console.log('deleteSuggestionSuccess')
-  $(`#suggestion-${id}`).hide()
+  $(`#suggestion-${id}`).empty()
 }
 
 const updateSuggestionSuccess = (data, id) => {
   console.log('updateSuggestionSuccess')
-  $(`#suggestion-${id}`).replaceWith(`<h2>${data.suggestion.text}</h2>`)
+  const suggestion = {suggestion: {text: data.suggestion.text, id: id}}
+  $(`#suggestion-${id}`).replaceWith(updateSuggestionTemplate(suggestion))
+  // $(`#suggestion-${id}`).replaceWith('<h1> this has been replaced </h1>')
 }
 
 module.exports = {

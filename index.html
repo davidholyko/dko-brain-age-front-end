@@ -116,22 +116,27 @@
 
       <!-- SIGN OUT NAVBAR ITEM- -->
       <div class="nav-item settings my-1 mx-3 post-login">
-        <button id="sign-out-button" class="btn btn-danger nav-link">Sign Out</button>
+        <button id="sign-out-button" class="btn btn-danger">Sign Out</button>
       </div>
 
       <!-- START NEW GAME NAVBAR ITEM -->
       <div class="nav-item settings mx-3 my-1">
-        <button id="game-start-button" class="btn btn-success nav-link">Start New Game</button>
+        <button id="game-start-button" class="btn btn-success">Start New Game</button>
       </div>
 
       <!-- SHOW ALL SUGGESTIONS -->
       <div class="nav-item settings my-1 mx-3">
-        <button id="show-all-suggestion-button" class="btn btn-dark nav-link">Show All Suggestions</button>
+        <button id="show-all-suggestion-button" class="btn btn-warning">Show All Suggestions</button>
       </div>
 
       <!-- SHOW MY SUGGESTIONS -->
       <div class="nav-item settings my-1 mx-3 post-login">
-        <button id="show-my-suggestion-button" class="btn btn-dark nav-link">Show My Suggestions</button>
+        <button id="show-my-suggestion-button" class="btn btn-dark">Show My Suggestions</button>
+      </div>
+
+      <!-- SHOW MY SCORES -->
+      <div class="nav-item settings my-1 mx-3">
+        <button id="my-scores-button" class="btn btn-dark post-login">Show My Scores</button>
       </div>
 
       <!-- CREATE A SUGGESTION NAVBAR ITEM-->
@@ -205,7 +210,6 @@
             <button id="option-4" class="option btn-primary">option 4</button>
           </div>
           <div id="game-buttons-container">
-            <!-- <button id="game-start-button" class="">Start game</button> -->
           </div>
 
           <!-- GAME BOARD END-->
@@ -215,9 +219,9 @@
 
         <div id="info-container" class="col-6">
           <div id="buttons-container" class="flex-row justify-content-around col-12 d-flex">
-            <button id="my-scores-button" class="post-login col-3">My scores</button>
-            <button id="all-scores-button" class="col-3">All scores</button>
-            <button id="hiscores-button" class="col-3">Top 10 Hiscores</button>
+
+            <button id="all-scores-button" class="btn btn-warning col-3">All scores</button>
+            <button id="hiscores-button" class="btn btn-warning col-3">Top 10 Hiscores</button>
           </div>
           <div id="game-headers" class="d-flex justify-content-around">
             <div class="col-4">
@@ -238,28 +242,6 @@
         </div>
 
       </div>
-
-
-      <!--
-      <div id="suggestions-container" class="post-login">
-        <form id="create-suggestion-form">
-          <input required type="text" placeholder="Write your suggestion here" name="suggestion[text]" class="textarea">
-          <input type="submit" value="Send me a suggestion!">
-        </form>
-        <form id="update-suggestion-form">
-          <input required type="text" placeholder="Write your updated suggestion here" name="suggestion[text]">
-          <input required type="number" placeholder="" name="suggestion[id]" class="textarea">
-          <input type="submit" value="Update a suggestion">
-        </form>
-        <form id="delete-suggestion-form">
-          <input required type="number" placeholder="" name="suggestion[id]">
-          <input type="submit" value="Delete a suggestion">
-          <button id="show-my-suggestion-button" class="col-6">Show My Suggestions</button>
-        </form>
-      </div>
- -->
-
-
 
       <!-- CONTENT END -->
     </div>
