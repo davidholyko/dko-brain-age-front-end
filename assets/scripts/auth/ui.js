@@ -23,9 +23,6 @@ const failure = () => {
 const signInSuccess = responseData => {
   console.log('onSignInSuccess')
   $('form').trigger('reset')
-  $('#user-feedback').text('Signed in successfully')
-  $('#user-feedback').addClass('success')
-  setTimeout(() => { $('#user-feedback').empty() }, 2000)
   store.user = responseData.user
   view.login()
 }

@@ -21,5 +21,5 @@ $(() => {
   gameEvents.addHandlers()
   suggestionEvents.addHandlers()
   view.onPageLoad()
-  gameEvents.loadHiscores()
+  gameEvents.onGetScores()
 })

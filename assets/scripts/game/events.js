@@ -59,7 +59,7 @@ const onSubmitScore = () => {
 
 const onGetScores = () => {
   console.log('onGetScores')
-  event.preventDefault()
+  if (event) { event.preventDefault() }
   api.getScores()
     .then(ui.getScoresSuccess)
     .catch(ui.failure)
@@ -76,13 +76,6 @@ const onGetMyScores = () => {
 const onGetHighScores = () => {
   console.log('onGetHighScores')
   event.preventDefault()
-  api.getHighScores()
-    .then(ui.getScoresSuccess)
-    .catch(ui.failure)
-}
-
-const loadHiscores = () => {
-  console.log('loadHiscores')
   api.getHighScores()
     .then(ui.getScoresSuccess)
     .catch(ui.failure)
@@ -131,6 +124,6 @@ const addHandlers = () => {
 
 module.exports = {
   addHandlers,
-  loadHiscores,
+  onGetScores,
   onSubmitScore
 }

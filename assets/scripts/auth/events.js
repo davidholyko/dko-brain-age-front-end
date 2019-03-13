@@ -3,6 +3,8 @@
 const api = require('./api')
 const ui = require('./ui')
 const getFormFields = require('../../../lib/get-form-fields')
+const gameEvents = require('../game/events')
+const suggestionEvents = require('../suggestion/events')
 
 const onSignUp = event => {
   console.log('onSignUp')
@@ -39,6 +41,8 @@ const onSignOut = event => {
   api.signOut()
     .then(ui.signOutSuccess)
     .catch(ui.failure)
+    .then(gameEvents.onGetScores)
+    .then(suggestionEvents.onShowSuggestion)
 }
 
 const addHandlers = () => {
