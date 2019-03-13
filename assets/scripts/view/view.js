@@ -36,6 +36,10 @@ const login = () => {
   hidePreLogin()
   showPostLogin()
   if (store.currentPage === 'game') { $('#show-my-suggestion-button').hide() }
+  if (store.currentPage === 'suggestion') {
+    $('#show-all-suggestion-button').show()
+    $('#show-my-suggestion-button').show()
+  }
   $('#suggestions-container').width('50%')
 }
 
