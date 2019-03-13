@@ -5,6 +5,7 @@ const store = require('../store')
 
 const createSuggestion = data => {
   console.log('createSuggestion')
+  console.log(data)
   return $.ajax({
     url: config.apiUrl + '/suggestions',
     headers: {Authorization: `Token token=${store.user.token}`},

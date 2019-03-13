@@ -50,7 +50,8 @@ const signUpFailure = () => {
 const signOutSuccess = () => {
   console.log('onSignOutSuccess')
   $('form').trigger('reset')
-  store.user = null
+  store.suggestions = []
+  store.user = false
   view.logout()
 }
 

@@ -5,10 +5,16 @@ const store = require('../store')
 const api = require('./api')
 const ui = require('./ui')
 
-const onCreateSuggestion = () => {
+const onCreateSuggestion = data => {
   console.log('onCreateSuggestion')
-  event.preventDefault()
-  const data = getFormFields(event.target)
+
+  if (event.type === 'submit') {
+    event.preventDefault()
+    data = getFormFields(event.target)
+  }
+
+  console.log(data)
+
   api.createSuggestion(data)
     .then(ui.createSuggestionSuccess)
     .then(onShowMySuggestion)
@@ -29,9 +35,18 @@ const onDeleteSuggestion = () => {
   console.log('onDeleteSuggestion')
   event.preventDefault()
   const data = $(event.target).data('id')
+  store.suggestions.push($(`#suggestion-text-${data}`).text())
+  $('#undo-delete-button').show()
   api.deleteSuggestion(data)
     .then(ui.deleteSuggestionSuccess(data))
     .catch(ui.failure)
+}
+
+const onUndoDeleteSuggestion = () => {
+  console.log('onUndoDeleteSuggestion')
+  event.preventDefault()
+  onCreateSuggestion({suggestion: {text: store.suggestions.pop()}})
+  if (!store.suggestions.length) { $('#undo-delete-button').hide() }
 }
 
 const onShowSuggestion = () => {
@@ -84,6 +99,7 @@ const addHandlers = () => {
   $('#show-all-suggestion-button').on('click', onShowSuggestion)
   $('#show-my-suggestion-button').on('click', onShowMySuggestion)
   $('#toggle-page-button').on('click', onToggleSuggestionsPage)
+  $('#undo-delete-button').on('click', onUndoDeleteSuggestion)
 
   $('#suggestions').on('click', '.delete-suggestion-button', onDeleteSuggestion)
   $('#suggestions').on('submit', '.update-suggestion-form', onUpdateSuggestion)

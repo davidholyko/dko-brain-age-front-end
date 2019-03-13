@@ -5,6 +5,7 @@ const initStore = () => {
   console.log('initStore')
   store.game = {}
   store.game.problem = {}
+  store.suggestions = []
   store.game.question = ''
   store.game.answer = ''
   store.game.multipleChoice = []

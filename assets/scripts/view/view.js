@@ -46,6 +46,7 @@ const login = () => {
 const logout = () => {
   showPreLogin()
   hidePostLogin()
+  $('#undo-delete-button').hide()
   $('#suggestions-container').width('100%')
 }
 
@@ -65,6 +66,7 @@ const onPageLoad = () => {
   hideSuggestionPage()
   endGame()
   shadeGameDisplay()
+  $('#undo-delete-button').hide()
   $('#suggestions-container').width('100%')
 }
 
