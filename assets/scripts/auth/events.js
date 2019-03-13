@@ -6,26 +6,27 @@ const getFormFields = require('../../../lib/get-form-fields')
 const gameEvents = require('../game/events')
 const suggestionEvents = require('../suggestion/events')
 
-const onSignUp = event => {
+const onSignUp = () => {
   console.log('onSignUp')
   event.preventDefault()
   const data = getFormFields(event.target)
   api.signUp(data)
-    .then(ui.signUpSuccess)
+    .then(() => { onSignIn(data) })
     .catch(ui.signUpFailure)
 }
 
-const onSignIn = event => {
+const onSignIn = data => {
   console.log('onSignIn')
-  event.preventDefault()
-  const data = getFormFields(event.target)
-
+  if (event) {
+    event.preventDefault()
+    data = getFormFields(event.target)
+  }
   api.signIn(data)
     .then(ui.signInSuccess)
     .catch(ui.failure)
 }
 
-const onChangePassword = event => {
+const onChangePassword = () => {
   console.log('onChangePassword')
   event.preventDefault()
   const data = getFormFields(event.target)
@@ -35,7 +36,7 @@ const onChangePassword = event => {
     .catch(ui.failure)
 }
 
-const onSignOut = event => {
+const onSignOut = () => {
   console.log('onSignOut')
   event.preventDefault()
   api.signOut()
