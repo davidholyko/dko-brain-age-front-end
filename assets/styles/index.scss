@@ -24,6 +24,27 @@ body {
   color: white;
 }
 
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  color: white;
+  width: 100vw;
+
+  & > * {
+    text-align: center;
+    text-decoration: none;
+    color: white;
+  }
+
+  & > *:hover {
+    color: blue;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+
 .success {
   display: flex;
   color: white;

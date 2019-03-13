@@ -13,8 +13,6 @@ const onCreateSuggestion = data => {
     data = getFormFields(event.target)
   }
 
-  console.log(data)
-
   api.createSuggestion(data)
     .then(ui.createSuggestionSuccess)
     .then(onShowMySuggestion)
