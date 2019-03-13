@@ -11,11 +11,14 @@ const hideGameDisplay = () => { $('.post-game-start').hide() }
 const showSuggestion = () => { $('.suggestion').show() }
 const hideSuggestion = () => { $('.suggestion').hide() }
 
+const showGame = () => { $('.game').show() }
+const hideGame = () => { $('.game').hide() }
+
 const showSuggestionPage = () => { $('#suggestion-page').show() }
 const hideSuggestionPage = () => { $('#suggestion-page').hide() }
 
-const showGame = () => { $('.game').show() }
-const hideGame = () => { $('.game').hide() }
+const showGamePage = () => { $('#game-page').show() }
+const hideGamePage = () => { $('#game-page').hide() }
 
 const shadeGameDisplay = () => {
   $('#game-display').css('background-color', 'rgba(0,0,0,0.5)')
@@ -72,5 +75,7 @@ module.exports = {
   hideSuggestionPage,
   showSuggestionPage,
   shadeGameDisplay,
-  unshadeGameDisplay
+  unshadeGameDisplay,
+  showGamePage,
+  hideGamePage
 }

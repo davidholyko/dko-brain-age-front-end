@@ -9,10 +9,11 @@ body {}
   width: 3rem;
 }
 
-#content {
+#game-content {
   width: 90%;
   padding: 2% 0;
   background-color: AliceBlue;
+  background-repeat: repeat;
 }
 
 #game-title {
@@ -48,6 +49,7 @@ input[type="number"] {
   display: flex;
   justify-content: center;
   background-size: cover;
+  background-repeat: repeat;
   background: #CCC;
   // background-image: url("/public/images/background.jpg");
   height: 95vh;
@@ -57,17 +59,21 @@ input[type="number"] {
   display: none;
   justify-content: center;
   background: black;
+  background-repeat: repeat;
   background-size: cover;
   // background-image: url("/public/images/background.jpg");
   height: 95vh;
 }
 
 #suggestions-content {
+  max-height: 90%;
   width: 90%;
   padding: 2% 0;
   display: flex;
   flex-direction: row;
   background-color: AliceBlue;
+  background-repeat: repeat;
+  overflow: auto;
 }
 
 #suggestions-container {

@@ -58,12 +58,22 @@ const onToggleSuggestionsPage = () => {
     $('.suggestion').show()
     $('#game-page').hide()
     $('.game').hide()
+    $('#toggle-page-button').text('Game Page')
+    if (!store.user) {
+      $('#show-all-suggestion-button-container').hide()
+      $('#show-my-suggestion-button-container').hide()
+    }
     store.suggestion = true
   } else {
     $('#suggestions-page').hide()
     $('.suggestion').hide()
     $('#game-page').show()
     $('.game').show()
+    $('#toggle-page-button').text('Suggestion Page')
+    if (store.user) {
+      $('#show-all-suggestion-button-container').show()
+      $('#show-my-suggestion-button-container').show()
+    }
     store.suggestion = false
   }
 }
@@ -73,7 +83,7 @@ const addHandlers = () => {
   $('#create-suggestion-form').on('submit', onCreateSuggestion)
   $('#show-all-suggestion-button').on('click', onShowSuggestion)
   $('#show-my-suggestion-button').on('click', onShowMySuggestion)
-  $('#toggle-suggestions-page-button').on('click', onToggleSuggestionsPage)
+  $('#toggle-page-button').on('click', onToggleSuggestionsPage)
 
   $('#suggestions').on('click', '.delete-suggestion-button', onDeleteSuggestion)
   $('#suggestions').on('submit', '.update-suggestion-form', onUpdateSuggestion)

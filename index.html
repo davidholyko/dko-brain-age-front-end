@@ -28,14 +28,14 @@
 
       <!-- MOVE TO SUGGESTIONS PAGE -->
       <div class="nav-item my-1 mx-3">
-        <button id="toggle-suggestions-page-button" class="btn btn-dark">Suggestions</button>
+        <button id="toggle-page-button" class="btn btn-warning">Suggestion Page</button>
       </div>
 
       <!-- SIGN IN NAVBAR ITEM-->
       <div class=" nav-item active my-1 mx-3 pre-login">
         <div class="dropdown">
           <!-- SIGN IN DROPDOWN MENU -->
-          <button id="dropdownMenuButtonSignIn" class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <button id="" class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Sign In
           </button>
 
@@ -125,18 +125,13 @@
       </div>
 
       <!-- SHOW MY SUGGESTIONS -->
-      <div class="nav-item my-1 mx-3 post-login">
+      <div id="show-my-suggestion-button-container" class="nav-item my-1 mx-3 suggestion">
         <button id="show-my-suggestion-button" class="suggestion post-login btn btn-dark">Show My Suggestions</button>
       </div>
 
       <!-- SHOW ALL SUGGESTIONS -->
-      <div class="nav-item my-1 mx-3 suggestion post-login">
+      <div id="show-all-suggestion-button-container" class="nav-item my-1 mx-3 suggestion">
         <button id="show-all-suggestion-button" class="suggestion btn btn-warning">Show All Suggestions</button>
-      </div>
-
-      <!-- SHOW MY SCORES -->
-      <div class="nav-item my-1 mx-3 game">
-        <button id="my-scores-button" class="btn btn-dark post-login">Show My Scores</button>
       </div>
 
       <!-- NAVBAR LIST ITEMS END -->
@@ -146,7 +141,7 @@
   </div>
 
   <div id="game-page">
-    <div id="content" class="">
+    <div id="game-content" class="">
 
       <div id="game-description" class="m-3">
         <h1 class="text-center">Welcome to Brain Age</h1>
@@ -195,6 +190,7 @@
         <div id="info-container" class="col-6">
           <div id="buttons-container" class="flex-row justify-content-around col-12 d-flex">
             <button id="all-scores-button" class="btn btn-warning col-3">All scores</button>
+            <button id="my-scores-button" class="btn btn-dark post-login">Show My Scores</button>
             <button id="hiscores-button" class="btn btn-warning col-3">Top 10 Hiscores</button>
           </div>
           <div id="game-headers" class="d-flex justify-content-between">
