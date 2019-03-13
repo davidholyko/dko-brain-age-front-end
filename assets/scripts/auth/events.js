@@ -10,7 +10,7 @@ const onSignUp = event => {
   const data = getFormFields(event.target)
   api.signUp(data)
     .then(ui.signUpSuccess)
-    .catch(ui.signUpFailure)
+    .catch(ui.failure)
 }
 
 const onSignIn = event => {
@@ -20,7 +20,7 @@ const onSignIn = event => {
 
   api.signIn(data)
     .then(ui.signInSuccess)
-    .catch(ui.signInFailure)
+    .catch(ui.failure)
 }
 
 const onChangePassword = event => {
@@ -30,7 +30,7 @@ const onChangePassword = event => {
 
   api.changePassword(data)
     .then(ui.changePasswordSuccess)
-    .catch(ui.changePasswordFailure)
+    .catch(ui.failure)
 }
 
 const onSignOut = event => {
@@ -38,7 +38,7 @@ const onSignOut = event => {
   event.preventDefault()
   api.signOut()
     .then(ui.signOutSuccess)
-    .catch(ui.signOutFailure)
+    .catch(ui.failure)
 }
 
 const addHandlers = () => {

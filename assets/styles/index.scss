@@ -9,6 +9,27 @@ body {}
   width: 3rem;
 }
 
+.error {
+  display: flex;
+  color: red;
+  font-weight: bold;
+  text-align: center;
+  background-color: white;
+}
+
+.error-toggle {
+  background-color: rgba(255,0,0,.5);
+  color: white;
+}
+
+.success {
+  display: flex;
+  color: white;
+  background-color: rgba(0,255,0,.5);
+  font-weight: bold;
+  text-align: center;
+}
+
 #game-content {
   width: 90%;
   padding: 2% 0;

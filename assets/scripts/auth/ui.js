@@ -6,46 +6,55 @@ const view = require('../view/view')
 const signUpSuccess = () => {
   console.log('onSignUpSuccess')
   $('form').trigger('reset')
-  $('#user-message').text('SIGN UP')
+  $('#user-feedback').text('Signed up successfully')
+  $('#user-feedback').addClass('success')
+  setTimeout(() => { $('#user-feedback').empty() }, 2000)
 }
 
-const signUpFailure = () => $('#user-message').text('NOT SIGNED UP')
+const failure = () => {
+  console.log('failure')
+  $('#user-feedback').text('Something went wrong. Please try again')
+  $('#user-feedback').addClass('error')
+  for (let i = 0; i < 2000; i += 200) { setTimeout(() => { $('#user-feedback').toggleClass('error-toggle') }, i) }
+  setTimeout(() => { $('#user-feedback').empty() }, 2000)
+}
 
 const signInSuccess = responseData => {
   console.log('onSignInSuccess')
-  $('#user-message').text('SIGNED IN')
   $('form').trigger('reset')
+  $('#user-feedback').text('Signed in successfully')
+  $('#user-feedback').addClass('success')
+  setTimeout(() => { $('#user-feedback').empty() }, 2000)
   store.user = responseData.user
   view.login()
 }
 
-const signInFailure = () => $('#user-message').text('NOT SIGNED IN')
-
 const changePasswordSuccess = () => {
   console.log('onChangePasswordSuccess')
   $('form').trigger('reset')
-  $('#user-message').text('PASSWORD CHANGED')
+  $('#user-feedback').text('Password changed successfully')
+  $('#user-feedback').addClass('success')
+  setTimeout(() => { $('#user-feedback').empty() }, 2000)
 }
 
-const changePasswordFailure = () => $('#user-message').text('PASSWORD NOT CHANGED')
+const changePasswordFailure = () => {
+  $('#user-feedback').text('Your email and display name must be available.')
+  for (let i = 0; i < 2000; i += 200) { setTimeout(() => { $('#user-feedback').toggleClass('error-toggle') }, i) }
+  setTimeout(() => { $('#user-feedback').empty() }, 2000)
+}
 
 const signOutSuccess = () => {
   console.log('onSignOutSuccess')
-  $('#user-message').text('SIGN OUT SUCCESSFUL')
   $('form').trigger('reset')
   store.user = null
   view.logout()
 }
 
-const signOutFailure = () => $('#user-message').text('SIGN OUT NOT SUCCESSFUL')
-
 module.exports = {
   signUpSuccess,
-  signUpFailure,
+  failure,
   signInSuccess,
-  signInFailure,
   changePasswordSuccess,
   changePasswordFailure,
-  signOutSuccess,
-  signOutFailure
+  signOutSuccess
 }
