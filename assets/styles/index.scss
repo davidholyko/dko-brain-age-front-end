@@ -1,7 +1,9 @@
 @import '~bootstrap/scss/bootstrap';
 @import 'shapes';
 
-body {}
+body {
+  height: 100vh;
+}
 
 #brain-age-icon {
   margin-left: 2rem;
@@ -83,11 +85,11 @@ input[type="number"] {
   background-repeat: repeat;
   background-size: cover;
   // background-image: url("/public/images/background.jpg");
-  height: 95vh;
+  height: calc(100% - 50px);
 }
 
 #suggestions-content {
-  max-height: 90%;
+  max-height: 100%;
   width: 90%;
   padding: 2% 0;
   display: flex;
@@ -106,7 +108,7 @@ input[type="number"] {
 }
 
 #navbar {
-  height: 5vh;
+  height: 50px;
   display: flex;
   flex-direction: row;
 }
