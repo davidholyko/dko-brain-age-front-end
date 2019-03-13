@@ -107,6 +107,14 @@ input[type="number"] {
   padding: 5%;
 }
 
+.suggestion-text {
+  max-width: 100%;
+  background-color: green;
+  border: 5px solid black;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
 #navbar {
   height: 50px;
   display: flex;
