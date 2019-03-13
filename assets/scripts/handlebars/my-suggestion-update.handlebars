@@ -1,17 +1,16 @@
-<div id="suggestion-{{suggestion.id}}" class="suggestion d-flex my-2">
+<div id="suggestion-{{suggestion.id}}" class="suggestion my-2">
 
-  <div class="suggestion-buttons d-flex mx-2">
 
-    <!-- DELETE BUTTON -->
+  <div class="suggestion-buttons d-flex my-2">
     <button type="button" data-id="{{suggestion.id}}" class="delete-suggestion-button btn btn-danger">Delete</button>
 
-    <!-- UPDATE A SUGGESTION NAVBAR ITEM-->
+    <!-- UPDATE A SUGGESTION ITEM-->
     <div class="dropdown mx-2">
-      <!-- UPDATE A SUGGESTION DROPDOWN MENU -->
+      <!-- UPDATE A SUGGESTION DROPDOWN BUTTON MENU -->
       <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Update </button>
 
+      <!-- DROPDOWN MENU UPDATE A SUGGESTION -->
       <div class="dropdown-menu">
-        <!-- DROPDOWN MENU UPDATE A SUGGESTION -->
         <form class="px-4 py-3 d-flex flex-column update-suggestion-form" data-id="{{suggestion.id}}">
           <div class="form-group">
             <textarea required minlength="8" maxlength="64" type="text" placeholder="Write your updated suggestion here" name="suggestion[text]" class="textarea"></textarea>
@@ -22,11 +21,8 @@
       </div>
       <!-- DROPDOWN END -->
     </div>
-
   </div>
 
-  <div>
-    <h2 class="suggestion-text-{{suggestion.id}}">{{suggestion.text}}</h2>
-  </div>
+  <h4 id="suggestion-text-{{suggestion.id}}" class="suggestion-text">{{suggestion.text}}</h4>
 
 </div>
