@@ -14,9 +14,10 @@ const failure = () => {
   setTimeout(() => { $('#user-feedback').empty() }, 2000)
 }
 
-const createSuggestionSuccess = () => {
+const createSuggestionSuccess = responseData => {
   console.log('createSuggestionSuccess')
   $('form').trigger('reset')
+  $(`#suggestion`).append(updateSuggestionTemplate(responseData))
 }
 
 const showSuggestionSuccess = responseData => {

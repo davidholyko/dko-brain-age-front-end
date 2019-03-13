@@ -11,8 +11,8 @@ const onCreateSuggestion = () => {
   const data = getFormFields(event.target)
   api.createSuggestion(data)
     .then(ui.createSuggestionSuccess)
+    .then(onShowMySuggestion)
     .catch(ui.failure)
-    .then(onShowSuggestion)
 }
 
 const onUpdateSuggestion = () => {
@@ -44,7 +44,7 @@ const onShowSuggestion = () => {
 
 const onShowMySuggestion = () => {
   console.log('onShowSuggestion')
-  event.preventDefault()
+  if (event) { event.preventDefault() }
   api.showMySuggestion()
     .then(ui.showMySuggestionSuccess)
     .catch(ui.failure)
