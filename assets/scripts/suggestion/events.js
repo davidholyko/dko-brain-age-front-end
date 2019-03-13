@@ -52,7 +52,8 @@ const onShowMySuggestion = () => {
 
 const onToggleSuggestionsPage = () => {
   console.log('onToggleSuggestionsPage')
-  if (!store.suggestion) {
+  if (store.currentPage === 'game') {
+    store.currentPage = 'suggestion'
     $('#suggestions-page').show()
     $('#suggestions-page').css('display', 'flex')
     $('.suggestion').show()
@@ -63,8 +64,8 @@ const onToggleSuggestionsPage = () => {
       $('#show-all-suggestion-button-container').hide()
       $('#show-my-suggestion-button-container').hide()
     }
-    store.suggestion = true
-  } else {
+  } else if (store.currentPage === 'suggestion') {
+    store.currentPage = 'game'
     $('#suggestions-page').hide()
     $('.suggestion').hide()
     $('#game-page').show()
@@ -74,7 +75,6 @@ const onToggleSuggestionsPage = () => {
       $('#show-all-suggestion-button-container').show()
       $('#show-my-suggestion-button-container').show()
     }
-    store.suggestion = false
   }
 }
 
@@ -92,5 +92,6 @@ const addHandlers = () => {
 }
 
 module.exports = {
-  addHandlers
+  addHandlers,
+  onShowSuggestion
 }

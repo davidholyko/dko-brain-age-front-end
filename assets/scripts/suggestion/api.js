@@ -44,7 +44,6 @@ const showSuggestion = () => {
   console.log('showSuggestion')
   return $.ajax({
     url: config.apiUrl + `/suggestions/`,
-    headers: {Authorization: `Token token=${store.user.token}`},
     method: 'GET'
   })
 }

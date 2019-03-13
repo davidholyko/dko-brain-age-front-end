@@ -36,6 +36,12 @@ const changePasswordSuccess = () => {
 }
 
 const changePasswordFailure = () => {
+  $('#user-feedback').text('Your passwords do not match.')
+  for (let i = 0; i < 2000; i += 200) { setTimeout(() => { $('#user-feedback').toggleClass('error-toggle') }, i) }
+  setTimeout(() => { $('#user-feedback').empty() }, 2000)
+}
+
+const signUpFailure = () => {
   $('#user-feedback').text('Your email and display name must be available.')
   for (let i = 0; i < 2000; i += 200) { setTimeout(() => { $('#user-feedback').toggleClass('error-toggle') }, i) }
   setTimeout(() => { $('#user-feedback').empty() }, 2000)
@@ -49,6 +55,7 @@ const signOutSuccess = () => {
 }
 
 module.exports = {
+  signUpFailure,
   signUpSuccess,
   failure,
   signInSuccess,

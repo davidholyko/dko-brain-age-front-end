@@ -4,7 +4,7 @@
 const updateSuggestionTemplate = require('../handlebars/my-suggestion-update.handlebars')
 const showSuggestionsTemplate = require('../handlebars/suggestions.handlebars')
 const showMySuggestionsTemplate = require('../handlebars/my-suggestions.handlebars')
-const view = require('../view/view')
+// const view = require('../view/view')
 
 const failure = () => {
   console.log('failure')

@@ -12,7 +12,7 @@ const onSignUp = event => {
   const data = getFormFields(event.target)
   api.signUp(data)
     .then(ui.signUpSuccess)
-    .catch(ui.failure)
+    .catch(ui.signUpFailure)
 }
 
 const onSignIn = event => {
@@ -40,9 +40,9 @@ const onSignOut = event => {
   event.preventDefault()
   api.signOut()
     .then(ui.signOutSuccess)
-    .catch(ui.failure)
     .then(gameEvents.onGetScores)
     .then(suggestionEvents.onShowSuggestion)
+    .catch(ui.failure)
 }
 
 const addHandlers = () => {

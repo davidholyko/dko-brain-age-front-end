@@ -1,3 +1,4 @@
+const store = require('../store')
 
 const showPreLogin = () => { $('.pre-login').show() }
 const hidePreLogin = () => { $('.pre-login').hide() }
@@ -34,6 +35,7 @@ const unshadeGameDisplay = () => {
 const login = () => {
   hidePreLogin()
   showPostLogin()
+  if (store.currentPage === 'game') { $('#show-my-suggestion-button').hide() }
   $('#suggestions-container').width('50%')
 }
 
