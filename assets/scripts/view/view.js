@@ -5,9 +5,6 @@ const hidePreLogin = () => { $('.pre-login').hide() }
 const showPostLogin = () => { $('.post-login').show() }
 const hidePostLogin = () => { $('.post-login').hide() }
 
-const showHearts = () => { $('#game-hearts').show() }
-const hideHearts = () => { $('#game-hearts').hide() }
-
 const showGameDisplay = () => { $('.post-game-start').show() }
 const hideGameDisplay = () => { $('.post-game-start').hide() }
 
@@ -20,6 +17,17 @@ const hideSuggestionPage = () => { $('#suggestion-page').hide() }
 const showGame = () => { $('.game').show() }
 const hideGame = () => { $('.game').hide() }
 
+const shadeGameDisplay = () => {
+  $('#game-display').css('background-color', 'rgba(0,0,0,0.5)')
+  $('#game-display').css('color', 'white')
+  $('#game-display').css('cursor', 'pointer')
+}
+const unshadeGameDisplay = () => {
+  $('#game-display').css('background-color', 'rgba(0,0,0,0.0)')
+  $('#game-display').css('color', 'black')
+  $('#game-display').css('cursor', 'auto')
+}
+
 const login = () => {
   hidePreLogin()
   showPostLogin()
@@ -31,12 +39,10 @@ const logout = () => {
 }
 
 const startGame = () => {
-  showHearts()
   showGameDisplay()
 }
 
 const endGame = () => {
-  hideHearts()
   hideGameDisplay()
 }
 
@@ -47,6 +53,7 @@ const onPageLoad = () => {
   hidePostLogin()
   hideSuggestionPage()
   endGame()
+  shadeGameDisplay()
 }
 
 module.exports = {
@@ -60,5 +67,7 @@ module.exports = {
   showGame,
   hideGame,
   hideSuggestionPage,
-  showSuggestionPage
+  showSuggestionPage,
+  shadeGameDisplay,
+  unshadeGameDisplay
 }

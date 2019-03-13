@@ -1,129 +1,188 @@
-[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
+# Tic Tac Toe!
 
-# browser-template
+A online version of the class tic tac toe game! Play against someone at the same terminal or play against yourself! Sign up and sign in are required to play; win detection and game statistis are provided for you.
 
-A template for starting front-end projects. Webpack for `require` system, build
-pipeline, and development server. Boostrap and Handlebars.js included. No
-front-end frameworks included.
+## Getting Started
 
-## Installation
+Simply go to https://dko-brain-age-back-end.herokuapp.com/ to deploy backend.
+The web page should say "The page you were looking for doesn't exist."
+Go to https://davidholyko.github.io/dko-brain-age-front-end/ to interact with the page
 
-1. [Download](../../archive/master.zip) this template.
-    - **Do Not Fork And Clone**
-    - Click the "Clone or Download" button and select "Download Zip".
-1. Move to the `wdi/projects` directory, then unzip the template directory with
-    `unzip /Users/<user-name>/Downloads/browser-template-master.zip`.
-1. Rename the template directory from `browser-template-master` to
-    `<project-name>-client`.
-1. Empty [`README.md`](README.md) and fill with your own content.
-1. Replace all instances of `ga-wdi-boston.browser-template` with the name of
-    your project.
-    - You can search for all instances of text in Atom by pressing
-    `commant + shift + f` on Mac or `ctrl + shift + f` on WSL.
-1. Move into the new project and `git init`.
-1. Add all of the files in your project with the command `git add --all`.
-      - **Note: This is the only time you should run this command!**
-1. Commit all of your files with the command `git commit`.
-      - Your commit title should read `Initial commit`.
-1. Install dependencies with `npm install`.
-1. Create a new repository on [github.com](https://github.com),
-    _not GitHub Enterprise_.
-1. Name the new repository with the same name used on Step 3.
-1. Follow the instructions on your new repository's setup page. For details on
-   how to push to Github, refer to the section on Github entitled "…or push an existing
-   repository from the command line." Further documentation can be found [here](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/).
+## Technologies used
 
-## Structure
++ HTML
++ CSS + SASS
++ Javascript + jQuery
++ Bootstrap
++ Ruby
++ Ruby on Rails
 
-### Scripts
+## Planning and Development
 
-Developers should store JavaScript files in [`assets/scripts`](assets/scripts).
-The "manifest" or entry-point is
-[`assets/scripts/app.js`](assets/scripts/app.js). In general, only
-application initialization goes in this file. It's normal for developers to
-start putting all code in this file, but encourage them to break out different
-responsibilities and use the `require` syntax put references where they're
-needed.
+Planning:
+1. Start coding
+2. Complete small goals that lead upto a big goal
+3. Make adjustments along the way
+4. Acquire crucial feedback for improvement
+5. Implement feedback goals
+6. Refactor
 
-### Config
+#### My Process
 
-Developers should set `apiUrls.production` and `apiUrls.development` in
-[`assets/scripts/config.js`](assets/scripts/config.js).  With
-`apiUrls` set, developers may rely on `apiUrl` as the base for API
-URLs.
+1. Start coding
+2. Build Resource - games
+3. Add games relationship to user
+4. Make Create, Read controller actions for games back end
+5. Make some custom routes and serializers
+6. Start working on front end
+7. Create logic for one of the problems
+8. Create game display
+9. Create three more logic problems
+10. Implment all four problems
+11. Create Create, Read for games front end
+12. Build MVP resource - suggestions
+13. Add suggestions relationship to user
+14. Make CRUD (Create, Read, Update, Destroy) actions for suggestions back end
+15. Make CRUD (Create, Read, Update, Destroy) actions for suggestions front end
+16. Style with HTML and Bootstrap
 
-### Styles
+#### Initial wireframes and user stories
+##### [Desktop wireframe](https://i.imgur.com/80gDeK5.jpg "Tic Tac Toe - desktop wireframe")
 
-Developers should store styles in [`assets/styles`](assets/styles) and load them
-from [`assets/styles/index.scss`](assets/styles/index.scss). Bootstrap version 3 is
-included in this template.
+1. As a user, I want to sign up.
+2. As a user, I want to sign in.
+3. As a user, I want to change passwords.
+4. As a user, I want to sign out.
+5. As a user, I want to play a game.
+6. As a user, I want to play a game without signing in
+6. As a user, I want to see my previous games.
+7. As a user, I want to go to all previous games.
+8. As a user, I want to go make a public suggestion.
+9. As a user, I want to go CRUD a public suggestion.
 
-### Forms and Using `getFormFields`
+## Problem Solving Strategy
 
-Developers should use [getFormFields](get-form-fields.md) to retrieve form data
-to send to an API.
+1. Break down problems into smallest solvable problem and build up.
+2. Take a break after certain amount of time regardless of progress.
+3. Write down diagrams if stuck.
+4. Explain code to peers for different approaches to solve the problem.
 
-### Deployment
+## Unsolved Problems (Problem Working on at the time of editing this file)
 
-To deploy a browser-template based SPA, run `grunt deploy`.
+1. Create stats page, graphs
 
-## Adding Images
+## Future Direction (Super Stretch Goals)
 
-To add images to your project, you must store them in the `public` directory.
-To use the image in HTML or CSS, write the path to the image like this:
-
-```html
-<img src="public/cat.jpg">
-```
-or
-```css
-#my-cool-div {
-  background-image: url('public/cat.jpg')
-}
-```
-
-Note that there's no `./` or `/` in front of `public/filename.jpg`.
-
-## Adding Fonts
-
-To add custom fonts to your app, you can either use a CDN like Google Fonts, or
-you can download the fonts and save them in the `public` directory. If you use
-the former method, follow the directions on the website providing the fonts.
-
-For local fonts, put the files in `public`, and then import and use them in a
-`.scss` file like this:
-
-```scss
-@font-face {
-  font-family: 'Nature Beauty';
-  src: url('public/Nature-Beauty.ttf') format('truetype');
-}
-
-.element-with-custom-font {
-  font-family: 'Nature Beauty';
-}
-```
-
-## Tasks
-
-Developers should run these often!
-
-- `grunt nag` or just `grunt`: runs code quality analysis tools on your code
-    and complains
-- `grunt make-standard`: reformats all your code in the JavaScript Standard Style
-- `grunt <server|serve|s>`: generates bundles, watches, and livereloads
-- `grunt build`: place bundled styles and scripts where `index.html` can find
-    them
-- `grunt deploy`: builds and deploys master branch
-
-
-## Additional Resources
-
-- [Modern Javascript Explained for Dinosaurs](https://medium.com/@peterxjang/modern-javascript-explained-for-dinosaurs-f695e9747b70)
-- [Making Sense of Front End Build Tools](https://medium.freecodecamp.org/making-sense-of-front-end-build-tools-3a1b3a87043b)
+1. Stats page, graphs
+2. 3 2 1 Countdown before game starts
+3. On Click start game
 
 ## [License](LICENSE)
 
 1. All content is licensed under a CC­BY­NC­SA 4.0 license.
-1. All software code is licensed under GNU GPLv3. For commercial use or
+1. All software code is licensed under GNU GPLv3. [ ] For commercial use or
     alternative licensing, please contact legal@ga.co.
+
+## Acknowledgments
+
+Special thanks to Jennifer Meade, Erica Salling, Ben Jenkins, Toni Langley, Jordan Allain, Caleb Pearce, Naida Rosenberger, GA WDI-30, and everyone at General Assembly Boston.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Requirements
+
+In order to get a satisfactory score, by the time you present your project, you
+**must** meet the following requirements:
+
+### Deployment
+
+Be deployed online, where the rest of the world can access it.
+
+1.  [X] Deploy on your public Github page, not Github Enterprise.
+1.  [X] Present a working browser game, built by you, hosted and deployed on GitHub Pages.
+
+### Version Control
+
+Demonstrate using version control by:
+
+1.  [X] Sharing your work through a git repository hosted on Github.
+1.  [X] Making frequent, cohesive commits dating back to the **first day**
+of the project week.
+
+### Documentation
+
+Produce documentation in the form of a **README**, which must:
+
+1.  [X] Pin your repository on GitHub as a Popular Repository
+1.  [X] Complete the repository `Description` field and `Website` field with a meaningful sentence description of the application and link to the live URL
+![github image](https://git.generalassemb.ly/storage/user/3667/files/beae41ae-aaaa-11e7-8867-63958d376a0b)
+1.  [X] List technologies used
+1.  [X] Document your planning and tell a story about your development process and problem-solving strategy.
+1.  [X] List unsolved problems which would be fixed in future iterations.
+1.  [X] Link to wireframes and user stories.
+
+### Technical Specifications
+
+1.  [X] Use a custom game engine written by you.
+1.  [X] Be a single-page application, no browser refresh.
+1.  [X] Render a game board in the browser.
+1.  [X] Switch turns between X and O (or whichever markers you select).  Tip:  Assume player X is the first player to start the game.
+1.  [X] Visually display which side won if a player gets three in a row or show a draw if neither wins.
+1.  [X] Support playing multiple games, one at a time.
+1.  [X] Use jQuery for DOM manipulation and event handling.
+1.  [X] Use AJAX for interacting with a provided API.
+
+### API Specifications
+
+1.  [X] Create new games on the server. (CREATE)
+1.  [X] Update a game by storing new moves. (UPDATE)
+1.  [X] Visually display the results of retrieving game statistics, such as total games won by a user. (READ)
+1.  [X] Give feedback to the user after each action.
+
+### Auth Specifications
+
+1.  [X] Signup with email, password, and password confirmation.
+1.  [X] Login with email and password.
+1.  [X] Logout when logged in.
+1.  [X] Change password with current and new password.
+1.  [X] Signup and Signin must only be available to not signed in users.
+1.  [X] Logout and Change password must only be available to signed in users.
+1.  [X] Give feedback to the user after each action's success or failure.
+1.  [X] All forms must clear after submit success or failure
+
+### DO NOT!!
+
+Your app **must not**:
+1.  [X] Delete your repository at any time or start over.
+1.  [X] Rely on refreshing the page for any functionality.
+1.  [X] Have any user-facing bugs.
+    -  [X] Display non-functional buttons, nor buttons that do not successfully complete a task.
+    -  [X] Show actions at inappropriate times (example: sign out button when not signed in).
+    -  [X] Forms not clearing at appropriate times (example: sign up form not clearing after success).
+1.  [X] Allow the same game to be played after a player has won or tied.
+1.  [X] Allow players to move in the same square more than once.
+1.  [X] Change players when an invalid move is made.
+1.  [X] Use alerts for anything.
+1.  [X] Display errors or warnings in the console.
+1.  [X] Display debugging messages in the console.

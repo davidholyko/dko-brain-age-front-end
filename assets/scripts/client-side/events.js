@@ -1,4 +1,5 @@
 const store = require('../store')
+const view = require('../view/view')
 
 const initStore = () => {
   console.log('initStore')
@@ -7,7 +8,7 @@ const initStore = () => {
   store.game.question = ''
   store.game.answer = ''
   store.game.multipleChoice = []
-  store.game.timer = {}
+  store.game.timer = false
   store.game.countdown = 60
   store.game.hearts = 5
   store.game.score = 0
@@ -23,7 +24,7 @@ const resetStore = () => {
   store.game.question = ''
   store.game.answer = ''
   store.game.multipleChoice = []
-  store.game.timer = {}
+  store.game.timer = false
   store.game.hearts = 5
   store.game.score = 0
   store.game.submit = false
@@ -70,6 +71,11 @@ const updateGameDisplay = () => {
   $('#option-2').text(`${store.game.multipleChoice[2]}`)
   $('#option-3').text(`${store.game.multipleChoice[3]}`)
   $('#option-4').text(`${store.game.multipleChoice[4]}`)
+
+  if (store.game.over) {
+    $('#game-display').append('<h3>Want to play again? Click here again</h3>')
+    view.shadeGameDisplay()
+  }
 }
 
 module.exports = {

@@ -124,11 +124,6 @@
         <button id="sign-out-button" class="btn btn-danger">Sign Out</button>
       </div>
 
-      <!-- START NEW GAME NAVBAR ITEM -->
-      <div class="nav-item mx-3 my-1 game">
-        <button id="game-start-button" class="btn btn-success">Start New Game</button>
-      </div>
-
       <!-- SHOW MY SUGGESTIONS -->
       <div class="nav-item my-1 mx-3 post-login">
         <button id="show-my-suggestion-button" class="suggestion post-login btn btn-dark">Show My Suggestions</button>
@@ -155,22 +150,21 @@
 
       <div id="game-description" class="m-3">
         <h1 class="text-center">Welcome to Brain Age</h1>
-        <h3 class="text-justify">Play this 60 second game and try to get the highest score possible! There are four types of questions: Complete the Sentence, Math, Find the Missing Shape, and Recognition. Any completed score will be submitted on
+        <h3 class="text-justify">Play this 60 second game and try to get the highest score possible! There are four types of questions: Complete the Sentence, Math, Find the Missing Shape, and Recognition. Any completed score will be submitted
+          on
           completion. </h3>
+        <h3 id="user-message"></h3>
       </div>
 
       <div id="game-container" class="d-flex flex-row">
         <div id="game-board" class="col-6">
-          <h3 id="user-message"></h3>
-
 
           <!-- GAME BOARD -->
 
           <div id="game-header" class="">
             <!-- GAME HEADER -->
-
-            <div id="game-timer"></div>
-            <div id="game-hearts">
+            <div id="game-timer" class="post-game-start"></div>
+            <div id="game-hearts" class="post-game-start">
               <img id="heart-1" class="heart" src="public/images/full-heart.png" alt="">
               <img id="heart-2" class="heart" src="public/images/full-heart.png" alt="">
               <img id="heart-3" class="heart" src="public/images/full-heart.png" alt="">
@@ -182,15 +176,15 @@
           </div>
 
 
-          <div id="game-display" class="col-12 "></div>
-          <div id="game-options-container" class="">
-            <button id="option-0" class="option btn-primary">option 0</button>
-            <button id="option-1" class="option btn-primary">option 1</button>
-            <button id="option-2" class="option btn-primary">option 2</button>
-            <button id="option-3" class="option btn-primary">option 3</button>
-            <button id="option-4" class="option btn-primary">option 4</button>
+          <div id="game-display" class="col-12 game-start-button d-flex">
+            <h1 id="game-display-text" class="text-center h-100">Want to play? Click here!</h1>
           </div>
-          <div id="game-buttons-container">
+          <div id="game-options-container" class="justify-content-between my-2 post-game-start">
+            <button id="option-0" class="option btn btn-primary col-2">option 0</button>
+            <button id="option-1" class="option btn btn-primary col-2">option 1</button>
+            <button id="option-2" class="option btn btn-primary col-2">option 2</button>
+            <button id="option-3" class="option btn btn-primary col-2">option 3</button>
+            <button id="option-4" class="option btn btn-primary col-2">option 4</button>
           </div>
 
           <!-- GAME BOARD END-->

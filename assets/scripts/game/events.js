@@ -20,6 +20,7 @@ const startGame = () => {
   logicController[Math.random() * Object.keys(logicController).length | 0]()
   client.updateGameDisplay()
   view.startGame()
+  view.unshadeGameDisplay()
   $('#game-score').html(`<h3>Your score is: ${store.game.score}</h3>`)
   $('#game-timer').html(`<h3>Time left: ${store.game.countdown} seconds</h3>`)
 }
@@ -37,11 +38,12 @@ const answerProblem = () => {
     $($('#game-hearts').children()[store.game.hearts - 1]).attr('src', 'public/images/empty-heart.png')
     store.game.hearts--
     if (!store.game.hearts) {
-      store.game.over = true
       client.stopTimer()
+      store.game.over = true
       if (store.user) { onSubmitScore() }
     }
   }
+
   logicController[Math.random() * Object.keys(logicController).length | 0]()
   client.updateGameDisplay()
 }
@@ -107,6 +109,8 @@ const startTimer = () => {
     if (now > end || !store.game.hearts) {
       clearInterval(store.game.timer)
       $('#game-timer').html(`<h3>Game over!</h3>`)
+      $('#game-display').append('<h3>Want to play again? Click here again</h3>')
+      view.shadeGameDisplay()
       store.game.over = true
       if (store.user) { onSubmitScore() }
     }
@@ -118,7 +122,7 @@ const startTimer = () => {
 const addHandlers = () => {
   console.log('addHandlers Game')
   $('.option').on('click', answerProblem)
-  $('#game-start-button').on('click', startGame)
+  $('.game-start-button').on('click', startGame)
   $('#all-scores-button').on('click', onGetScores)
   $('#hiscores-button').on('click', onGetHighScores)
   $('#my-scores-button').on('click', onGetMyScores)

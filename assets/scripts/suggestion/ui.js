@@ -11,6 +11,7 @@ const failure = () => {
 
 const createSuggestionSuccess = () => {
   console.log('createSuggestionSuccess')
+  $('form').trigger('reset')
 }
 
 const showSuggestionSuccess = responseData => {
@@ -34,6 +35,7 @@ const updateSuggestionSuccess = (data, id) => {
   console.log('updateSuggestionSuccess')
   const suggestion = {suggestion: {text: data.suggestion.text, id: id}}
   $(`#suggestion-${id}`).replaceWith(updateSuggestionTemplate(suggestion))
+  $('form').trigger('reset')
 }
 
 module.exports = {
