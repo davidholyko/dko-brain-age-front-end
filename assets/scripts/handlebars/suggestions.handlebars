@@ -1,8 +1,8 @@
 {{#each suggestions as |suggestion|}}
 
-  <div class="suggestion my-2 border">
-    <h2 class="font-weight-bold">{{suggestion.user_info}} suggested: </h2>
-    <h2 data-id="{{suggestion.id}}">"{{suggestion.text}}"</h2>
+  <div class="suggestion my-2 border suggestion-item">
+    <h5 class="font-weight-bold">{{suggestion.user_info}} suggested: </h5>
+    <h5 data-id="{{suggestion.id}}">"{{suggestion.text}}"</h5>
   </div>
 
 {{/each}}
