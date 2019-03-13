@@ -48,7 +48,8 @@ input[type="number"] {
   display: flex;
   justify-content: center;
   background-size: cover;
-  background-image: url("/public/images/background.jpg");
+  background: #CCC;
+  // background-image: url("/public/images/background.jpg");
   height: 95vh;
 }
 
@@ -57,7 +58,7 @@ input[type="number"] {
   justify-content: center;
   background: black;
   background-size: cover;
-  background-image: url("/public/images/background.jpg");
+  // background-image: url("/public/images/background.jpg");
   height: 95vh;
 }
 
@@ -67,6 +68,14 @@ input[type="number"] {
   display: flex;
   flex-direction: row;
   background-color: AliceBlue;
+}
+
+#suggestions-container {
+  width: 100%;
+}
+
+#suggestions {
+  padding: 5%;
 }
 
 #navbar {

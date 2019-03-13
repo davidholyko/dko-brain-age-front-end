@@ -31,11 +31,13 @@ const unshadeGameDisplay = () => {
 const login = () => {
   hidePreLogin()
   showPostLogin()
+  $('#suggestions-container').width('50%')
 }
 
 const logout = () => {
   showPreLogin()
   hidePostLogin()
+  $('#suggestions-container').width('100%')
 }
 
 const startGame = () => {
@@ -54,6 +56,7 @@ const onPageLoad = () => {
   hideSuggestionPage()
   endGame()
   shadeGameDisplay()
+  $('#suggestions-container').width('100%')
 }
 
 module.exports = {
