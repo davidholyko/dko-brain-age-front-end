@@ -4,6 +4,7 @@
 const showScoreTemplate = require('../handlebars/scores.handlebars')
 const showMyScoreTemplate = require('../handlebars/my-scores.handlebars')
 const client = require('../client-side/events')
+const store = require('../store')
 
 const failure = () => {
   console.log('failure')
@@ -20,6 +21,7 @@ const submitScoreSuccess = () => {
 
 const getScoresSuccess = responseData => {
   console.log('getScoreSuccess')
+  store.data = responseData
   $('#scores').empty()
   const showScores = showScoreTemplate({games: responseData.games})
   $('#scores').append(showScores)

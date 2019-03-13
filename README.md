@@ -16,6 +16,7 @@ Go to https://davidholyko.github.io/dko-brain-age-front-end/ to interact with th
 + Bootstrap
 + Ruby
 + Ruby on Rails
++ Chart.js and mathjs
 
 ## Planning and Development
 

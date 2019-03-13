@@ -3,8 +3,9 @@ const view = require('../view/view')
 
 const initStore = () => {
   console.log('initStore')
+  store.data = {}
+  store.stats = {}
   store.game = {}
-  store.game.problem = {}
   store.suggestions = []
   store.game.question = ''
   store.game.answer = ''

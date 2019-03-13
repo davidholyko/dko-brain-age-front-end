@@ -7,6 +7,8 @@ const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
 const view = require('../view/view')
+const stats = require('../stats/stats')
+const graph = require('../stats/graph')
 
 const startGame = () => {
   console.log('startGame')
@@ -62,6 +64,8 @@ const onGetScores = () => {
   if (event) { event.preventDefault() }
   api.getScores()
     .then(ui.getScoresSuccess)
+    .then(stats.calcAll)
+    .then(graph.generateBarChart)
     .catch(ui.failure)
 }
 
