@@ -8,6 +8,10 @@ const view = require('../view/view')
 
 const failure = () => {
   console.log('failure')
+  $('#user-feedback').text('Something went wrong. Please try again')
+  $('#user-feedback').addClass('error')
+  for (let i = 0; i < 2000; i += 200) { setTimeout(() => { $('#user-feedback').toggleClass('error-toggle') }, i) }
+  setTimeout(() => { $('#user-feedback').empty() }, 2000)
 }
 
 const createSuggestionSuccess = () => {

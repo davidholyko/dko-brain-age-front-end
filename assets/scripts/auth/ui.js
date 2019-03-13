@@ -13,6 +13,7 @@ const signUpSuccess = () => {
 
 const failure = () => {
   console.log('failure')
+  $('form').trigger('reset')
   $('#user-feedback').text('Something went wrong. Please try again')
   $('#user-feedback').addClass('error')
   for (let i = 0; i < 2000; i += 200) { setTimeout(() => { $('#user-feedback').toggleClass('error-toggle') }, i) }
