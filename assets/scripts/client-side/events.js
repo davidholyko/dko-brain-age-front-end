@@ -6,6 +6,7 @@ const initStore = () => {
   store.data = {}
   store.stats = {}
   store.game = {}
+  store.currentPage = 'game'
   store.suggestions = []
   store.game.question = ''
   store.game.answer = ''
@@ -18,7 +19,6 @@ const initStore = () => {
   store.game.over = false
   store.game.start = false
   store.user = false
-  store.currentPage = 'game'
 }
 
 const resetStore = () => {

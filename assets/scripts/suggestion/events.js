@@ -72,7 +72,7 @@ const onToggleSuggestionsPage = () => {
     $('.suggestion').show()
     $('#game-page').hide()
     $('.game').hide()
-    $('#toggle-page-button').text('Game Page')
+    $('#toggle-page-button').text('Suggestion Page')
     if (!store.user) {
       $('#show-all-suggestion-button-container').hide()
       $('#show-my-suggestion-button-container').hide()
@@ -94,7 +94,7 @@ const onToggleSuggestionsPage = () => {
     $('.suggestion').hide()
     $('#game-page').show()
     $('.game').show()
-    $('#toggle-page-button').text('Suggestion Page')
+    $('#toggle-page-button').text('Game Page')
     if (store.user) {
       $('#show-all-suggestion-button-container').show()
       $('#show-my-suggestion-button-container').show()
