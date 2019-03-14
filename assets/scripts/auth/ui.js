@@ -21,9 +21,10 @@ const failure = () => {
 }
 
 const signInSuccess = responseData => {
-  console.log('onSignInSuccess')
+  console.log('signInSuccess')
   $('form').trigger('reset')
   store.user = responseData.user
+  console.log(store)
   view.login()
 }
 
