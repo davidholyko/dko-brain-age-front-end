@@ -78,6 +78,17 @@ const onToggleSuggestionsPage = () => {
       $('#show-my-suggestion-button-container').hide()
     }
   } else if (store.currentPage === 'suggestion') {
+    store.currentPage = 'stats'
+    $('#suggestions-page').hide()
+    $('.suggestion').hide()
+    $('#stats-page').show()
+    // $('.game').show()
+    $('#toggle-page-button').text('Stats Page')
+    if (store.user) {
+      // $('#show-all-suggestion-button-container').show()
+      // $('#show-my-suggestion-button-container').show()
+    }
+  } else if (store.currentPage === 'stats') {
     store.currentPage = 'game'
     $('#suggestions-page').hide()
     $('.suggestion').hide()

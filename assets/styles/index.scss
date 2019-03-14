@@ -99,6 +99,27 @@ input[type="number"] {
   height: 95vh;
 }
 
+#stats-page {
+  display: flex;
+  justify-content: center;
+  background: DarkSlateGrey;
+  justify-content: center;
+  background-repeat: repeat;
+  background-size: cover;
+  height: calc(100% - 50px);
+}
+
+#stats-container {
+  max-height: 100%;
+  width: 90%;
+  padding: 2% 0;
+  display: flex;
+  flex-direction: row;
+  background-color: AliceBlue;
+  background-repeat: repeat;
+  overflow: auto;
+}
+
 #suggestions-page {
   display: none;
   justify-content: center;

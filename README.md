@@ -46,6 +46,7 @@ Planning:
 14. Make CRUD (Create, Read, Update, Destroy) actions for suggestions back end
 15. Make CRUD (Create, Read, Update, Destroy) actions for suggestions front end
 16. Style with HTML and Bootstrap
+17. Get feedback, implment changes
 
 #### Initial wireframes and user stories
 ##### [Desktop wireframe](https://i.imgur.com/80gDeK5.jpg "Tic Tac Toe - desktop wireframe")
@@ -76,7 +77,7 @@ Planning:
 
 1. Stats page, graphs
 2. 3 2 1 Countdown before game starts
-3. On Click start game
+
 
 ## [License](LICENSE)
 

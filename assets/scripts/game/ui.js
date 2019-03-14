@@ -40,7 +40,6 @@ const getMyScoresSuccess = responseData => {
   console.log('getMyScoresSuccess')
   $('#scores').empty()
   $('#scores').append(showMyScoreTemplate({games: responseData.user.games}))
-  console.log('working on something')
   $('#game-headers-user').hide()
 }
 

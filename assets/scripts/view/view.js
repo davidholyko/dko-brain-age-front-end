@@ -21,6 +21,9 @@ const hideSuggestionPage = () => { $('#suggestion-page').hide() }
 const showGamePage = () => { $('#game-page').show() }
 const hideGamePage = () => { $('#game-page').hide() }
 
+const showStatsPage = () => { $('#stats-page').show() }
+const hideStatsPage = () => { $('#stats-page').hide() }
+
 const shadeGameDisplay = () => {
   $('#game-display').css('background-color', 'rgba(0,0,0,0.5)')
   $('#game-display').css('color', 'white')
@@ -66,6 +69,7 @@ const onPageLoad = () => {
   hideSuggestionPage()
   endGame()
   shadeGameDisplay()
+  hideStatsPage()
   $('#undo-delete-button').hide()
   $('#suggestions-container').width('100%')
 }
@@ -85,5 +89,7 @@ module.exports = {
   shadeGameDisplay,
   unshadeGameDisplay,
   showGamePage,
-  hideGamePage
+  hideGamePage,
+  hideStatsPage,
+  showStatsPage
 }

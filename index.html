@@ -25,7 +25,7 @@
     <div class="navbar-nav flex-row flex-grow-1 flex-start">
       <!-- NAVBAR LIST ITEMS START -->
 
-      <!-- MOVE TO SUGGESTIONS PAGE -->
+      <!-- TOGGLE PAGE BUTTON-->
       <div class="nav-item my-1 mx-3">
         <button id="toggle-page-button" class="btn btn-warning">Suggestion Page</button>
       </div>
@@ -147,9 +147,8 @@
 
       <div id="game-description" class="m-3">
         <h1 class="text-center">Welcome to Brain Age</h1>
-        <h3 class="text-justify">Play this 60 second game and try to get the highest score possible! There are four types of questions: Complete the Sentence, Math, Find the Missing Shape, and Recognition. Any completed score will be submitted
-          on
-          completion. </h3>
+        <h3 class="text-justify">Play this 60 second game and try to get the highest score possible! There are four types of questions: Complete the Sentence, Math, Find the Missing Shape, and Recognition. Sign in to record your score to record your
+          score upon completion. </h3>
       </div>
 
       <div id="game-container" class="d-flex flex-row">
@@ -235,9 +234,10 @@
     </div>
   </div>
 
-  <div id="stats-page" class="h-100">
-    <div id="stats-container">
-      <canvas id="mycanvas" class="mb-10"></canvas>
+  <div id="stats-page" class="">
+    <div id="stats-container" class="d-flex flex-column">
+      <div id="stats" class="d-flex justify-content-around flex-row py-2"></div>
+      <canvas id="mycanvas" class=""></canvas>
     </div>
   </div>
 
