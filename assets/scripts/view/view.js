@@ -49,7 +49,6 @@ const login = () => {
 const logout = () => {
   showPreLogin()
   hidePostLogin()
-  $('#undo-delete-button').hide()
   $('#suggestions-container').width('100%')
 }
 

@@ -4,10 +4,10 @@ const store = require('../store')
 
 const generateProblem = () => {
   console.log('generateWordProblem')
-  const nouns = ['dog', 'cat', 'horse', 'rabbit', 'cow', 'person', 'goat', 'wizard']
-  const verbs = ['hit', 'ran from', 'looked at', 'picked up', 'moved', 'sat on', 'ate', 'met']
+  const nouns = ['dog', 'cat', 'horse', 'rabbit', 'cow', 'elf', 'goat', 'wizard']
+  const verbs = ['hit', 'ran from', 'saw', 'picked up', 'moved', 'sat on', 'ate', 'met']
   const adjectives = ['sleepy', 'hungry', 'angry', 'blue', 'curious', 'tall', 'happy', 'red', 'green']
-  const adverbs = ['hastily', 'quickly', 'never', 'slowly', 'boldly', 'always', 'wisely', 'calmly']
+  const adverbs = ['finally', 'often', 'never', 'slowly', 'boldly', 'always', 'rarely', 'calmly']
 
   const subject = nouns[Math.random() * nouns.length | 0]
   const object = nouns[Math.random() * nouns.length | 0]

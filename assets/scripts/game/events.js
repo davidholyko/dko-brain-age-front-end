@@ -109,7 +109,7 @@ const startTimer = () => {
     if (now > end || !store.game.hearts) {
       clearInterval(store.game.timer)
       $('#game-timer').html(`<h3>Game over!</h3>`)
-      $('#game-display').append('<h3>Want to play again? Click here again</h3>')
+      $('#game-display').append('<h3>Want to play again? Click here</h3>')
       view.shadeGameDisplay()
       store.game.over = true
       if (store.user) {

@@ -75,7 +75,7 @@
               </div>
               <div class="form-group">
                 <label>Display Name</label>
-                <input required type="text" minlength="3" maxlength="8" placeholder="Display Name" pattern="[A-Za-z0-9]+" name="credentials[handle]">
+                <input required type="text" minlength="3" maxlength="12" placeholder="Display Name" pattern="[A-Za-z0-9_ ]+" name="credentials[handle]">
               </div>
               <div class="form-group">
                 <label>Password</label>
@@ -139,6 +139,7 @@
 
     <!-- NAVBAR NAV END -->
   </div>
+
   <div>
     <h1 id="user-feedback" class="p-0 m-0"></h1>
   </div>
@@ -147,12 +148,9 @@
     <div id="game-content" class="">
 
       <div id="game-description" class="m-3">
-        <h1 class="text-center">Welcome to Brain Age</h1>
+        <h1 id="game-welcome" class="text-center">Welcome to Brain Age</h1>
         <h3 class="text-justify">Play this 60 second game and try to get the highest score possible! There are four types of questions: Complete the Sentence, Math, Find the Missing Shape, and Recognition.
-          <span class="font-weight-bold bg-dark text-light rounded px-2">
-            Sign in to
-            save your
-            score</span>
+          <span class="font-weight-bold bg-dark text-light rounded px-2"> Please sign in to save your score</span>
         </h3>
       </div>
 
@@ -221,10 +219,10 @@
     <div id="suggestions-content">
       <div id="suggestions-container" class="">
         <div id="suggestions-header" class="border-bottom text-center">
-          <h1>Suggestions</h1>
-          <button id="undo-delete-button" class="btn btn-success">Undo a deleted suggestion</button>
+          <h3 id="suggestions-header-text">All Suggestions</h3>
+          <button id="undo-delete-button" class="btn btn-success my-2">Undo a deleted suggestion</button>
         </div>
-        <div id="suggestions" class="col-12"></div>
+        <div id="suggestions" class="col-12 pb-5"></div>
       </div>
 
       <form id="create-suggestion-form" class="px-4 py-3 col-6 post-login">

@@ -24,17 +24,20 @@ const showSuggestionSuccess = responseData => {
   console.log('showSuggestionSuccess')
   $('#suggestions').empty()
   $('#suggestions').append(showSuggestionsTemplate({suggestions: responseData.suggestions}))
+  $('#suggestions-header-text').text('All Suggestions')
 }
 
 const showMySuggestionSuccess = responseData => {
   console.log('showMySuggestionSuccess')
   $('#suggestions').empty()
   $('#suggestions').append(showMySuggestionsTemplate({suggestions: responseData.user.suggestions}))
+  $('#suggestions-header-text').text('My Suggestions')
 }
 
 const deleteSuggestionSuccess = (id) => {
   console.log('deleteSuggestionSuccess')
   $(`#suggestion-${id}`).empty()
+  $('#undo-delete-button').show()
 }
 
 const updateSuggestionSuccess = (data, id) => {

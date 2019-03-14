@@ -34,7 +34,6 @@ const onDeleteSuggestion = () => {
   event.preventDefault()
   const data = $(event.target).data('id')
   store.suggestions.push($(`#suggestion-text-${data}`).text())
-  $('#undo-delete-button').show()
   api.deleteSuggestion(data)
     .then(ui.deleteSuggestionSuccess(data))
     .catch(ui.failure)
