@@ -17,15 +17,15 @@ const generateProblem = () => {
   const objectAdjective = adjectives[Math.random() * adjectives.length | 0]
 
   const sentence =
-  [ {word: subjectAdjective, declension: 'adjectives'},
-    {word: subject, declension: 'nouns'},
-    {word: adverb, declension: 'adverbs'},
-    {word: verb, declension: 'verbs'},
-    {word: objectAdjective, declension: 'adjectives'},
-    {word: object, declension: 'nouns'}]
+  [ {word: subjectAdjective, type: 'adjectives'},
+    {word: subject, type: 'nouns'},
+    {word: adverb, type: 'adverbs'},
+    {word: verb, type: 'verbs'},
+    {word: objectAdjective, type: 'adjectives'},
+    {word: object, type: 'nouns'}]
   const randomIndex = Math.random() * sentence.length | 0
   const answer = sentence[randomIndex]
-  sentence[randomIndex] = {word: '_____', declension: answer.declension}
+  sentence[randomIndex] = {word: '_____', type: answer.type}
   const options =
   { 0: nouns,
     1: verbs,
@@ -45,7 +45,7 @@ const generateProblem = () => {
   for (let i = 0; i < 4; i++) { wordBank = wordBank.concat(options[i]) }
 
   // filters out words of the same part of speech from wordBank
-  const answerType = options[answer.declension]
+  const answerType = options[answer.type]
   wordBank = wordBank.filter(word => !answerType.includes(word))
 
   const multipleChoiceUnshuffled = [answer.word]
@@ -53,7 +53,7 @@ const generateProblem = () => {
 
   const multipleChoice = []
 
-  // randomize choicesOutput
+  // randomize multipleChoice
   for (let i = multipleChoiceUnshuffled.length; i > 0; i--) {
     const random = Math.random() * i | 0
     multipleChoice.push(multipleChoiceUnshuffled[random])

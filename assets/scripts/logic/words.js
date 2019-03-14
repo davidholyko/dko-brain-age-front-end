@@ -11,7 +11,8 @@ const generateProblem = () => {
   const words = ['dog', 'cat', 'horse', 'rabbit', 'cow', 'person', 'goat', 'wizard',
     'jumped', 'ran', 'looked', 'ate', 'backed', 'talked', 'bit', 'approached',
     'sleepy', 'hungry', 'angry', 'excited', 'curious', 'tall', 'happy', 'bewildered', 'green',
-    'hastily', 'quickly', 'carefully', 'slowly', 'menacingly', 'abruptly', 'carelessly', 'calmly']
+    'hastily', 'quickly', 'carefully', 'slowly', 'menacingly', 'abruptly', 'carelessly', 'calmly',
+    'run', 'jumps', 'quick', 'often', 'many', 'one', 'two', 'three', 'four', 'house', 'chair', 'bed']
 
   const choicesInput = []
   const choicesOutput = []
@@ -68,9 +69,17 @@ const generateProblem = () => {
   <h3> Which word appears ${randomChoiceIndex} time${s}?</h3>`
   const answer = `${multipleChoice[randomChoiceIndex]}`
 
+  const multipleChoiceShuffled = []
+  // randomize multipleChoice
+  for (let i = multipleChoice.length; i > 0; i--) {
+    const random = Math.random() * i | 0
+    multipleChoiceShuffled.push(multipleChoice[random])
+    multipleChoice.splice(random, 1)
+  }
+
   store.game.question = question
   store.game.answer = answer
-  store.game.multipleChoice = multipleChoice
+  store.game.multipleChoice = multipleChoiceShuffled
 
   // console.log(answer)
 }
