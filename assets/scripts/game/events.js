@@ -42,7 +42,10 @@ const answerProblem = () => {
     if (!store.game.hearts) {
       client.stopTimer()
       store.game.over = true
-      if (store.user) { onSubmitScore() }
+      if (store.user) {
+        onSubmitScore()
+        onGetScores()
+      }
     }
   }
 
@@ -109,7 +112,10 @@ const startTimer = () => {
       $('#game-display').append('<h3>Want to play again? Click here again</h3>')
       view.shadeGameDisplay()
       store.game.over = true
-      if (store.user) { onSubmitScore() }
+      if (store.user) {
+        onSubmitScore()
+        onGetScores()
+      }
     }
     $('#game-timer').html(`<h3>Time remaining in seconds: ${((end - now) / 1000).toString().slice(0, -2)}</h3>`)
     if ($('#game-timer').text() === 'Time remaining in seconds: -0.0') { $('#game-timer').html(`<h3>Game over!</h3>`) }
