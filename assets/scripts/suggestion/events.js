@@ -63,49 +63,11 @@ const onShowMySuggestion = () => {
     .catch(ui.failure)
 }
 
-const onToggleSuggestionsPage = () => {
-  console.log('onToggleSuggestionsPage')
-  if (store.currentPage === 'game') {
-    store.currentPage = 'suggestion'
-    $('#stats-page').hide()
-    $('#game-page').hide()
-    $('#suggestions-page').show()
-    $('#suggestions-page').css('display', 'flex')
-    $('#toggle-page-button').text('Suggestion Page')
-    if (!store.user) {
-      $('#show-all-suggestion-button-container').hide()
-      $('#show-my-suggestion-button-container').hide()
-    }
-  } else if (store.currentPage === 'suggestion') {
-    store.currentPage = 'stats'
-    $('#suggestions-page').hide()
-    $('#game-page').hide()
-    $('#stats-page').show()
-    // $('#stats-page').css('display', 'flex')
-    $('#toggle-page-button').text('Stats Page')
-    if (store.user) {
-      $('#show-all-suggestion-button-container').show()
-      $('#show-my-suggestion-button-container').show()
-    }
-  } else if (store.currentPage === 'stats') {
-    store.currentPage = 'game'
-    $('#stats-page').hide()
-    $('#suggestions-page').hide()
-    $('#game-page').show()
-    $('#toggle-page-button').text('Game Page')
-    if (store.user) {
-      // $('#show-all-suggestion-button-container').show()
-      // $('#show-my-suggestion-button-container').show()
-    }
-  }
-}
-
 const addHandlers = () => {
   console.log('addHandlers Suggestions')
   $('#create-suggestion-form').on('submit', onCreateSuggestion)
   $('#show-all-suggestion-button').on('click', onShowSuggestion)
   $('#show-my-suggestion-button').on('click', onShowMySuggestion)
-  $('#toggle-page-button').on('click', onToggleSuggestionsPage)
   $('#undo-delete-button').on('click', onUndoDeleteSuggestion)
 
   $('#suggestions').on('click', '.delete-suggestion-button', onDeleteSuggestion)

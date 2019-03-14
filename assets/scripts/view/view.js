@@ -36,12 +36,12 @@ const unshadeGameDisplay = () => {
 }
 
 const login = () => {
+  console.log('login')
   hidePreLogin()
   showPostLogin()
-  if (store.currentPage === 'game') { $('#show-my-suggestion-button').hide() }
-  if (store.currentPage === 'suggestion') {
-    $('#show-all-suggestion-button').show()
-    $('#show-my-suggestion-button').show()
+  if (store.currentPage !== 'suggestion') {
+    $('#show-all-suggestion-button-container').hide()
+    $('#show-my-suggestion-button-container').hide()
   }
   $('#suggestions-container').width('50%')
 }
@@ -66,9 +66,9 @@ const onPageLoad = () => {
   showGame()
   hideSuggestion()
   hidePostLogin()
-  hideSuggestionPage()
   endGame()
   shadeGameDisplay()
+  hideSuggestionPage()
   hideStatsPage()
   $('#undo-delete-button').hide()
   $('#suggestions-container').width('100%')
