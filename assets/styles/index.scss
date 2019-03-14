@@ -99,6 +99,10 @@ input[type="number"] {
   height: 95vh;
 }
 
+#mycanvas {
+  max-height: 75vh;
+}
+
 #stats-page {
   display: flex;
   justify-content: center;
@@ -110,6 +114,7 @@ input[type="number"] {
 }
 
 #stats-container {
+  display: none;
   max-height: 100%;
   width: 90%;
   padding: 2% 0;

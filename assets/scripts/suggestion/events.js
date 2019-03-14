@@ -67,11 +67,10 @@ const onToggleSuggestionsPage = () => {
   console.log('onToggleSuggestionsPage')
   if (store.currentPage === 'game') {
     store.currentPage = 'suggestion'
+    $('#stats-page').hide()
+    $('#game-page').hide()
     $('#suggestions-page').show()
     $('#suggestions-page').css('display', 'flex')
-    $('.suggestion').show()
-    $('#game-page').hide()
-    $('.game').hide()
     $('#toggle-page-button').text('Suggestion Page')
     if (!store.user) {
       $('#show-all-suggestion-button-container').hide()
@@ -80,24 +79,23 @@ const onToggleSuggestionsPage = () => {
   } else if (store.currentPage === 'suggestion') {
     store.currentPage = 'stats'
     $('#suggestions-page').hide()
-    $('.suggestion').hide()
+    $('#game-page').hide()
     $('#stats-page').show()
-    // $('.game').show()
+    // $('#stats-page').css('display', 'flex')
     $('#toggle-page-button').text('Stats Page')
-    if (store.user) {
-      // $('#show-all-suggestion-button-container').show()
-      // $('#show-my-suggestion-button-container').show()
-    }
-  } else if (store.currentPage === 'stats') {
-    store.currentPage = 'game'
-    $('#suggestions-page').hide()
-    $('.suggestion').hide()
-    $('#game-page').show()
-    $('.game').show()
-    $('#toggle-page-button').text('Game Page')
     if (store.user) {
       $('#show-all-suggestion-button-container').show()
       $('#show-my-suggestion-button-container').show()
+    }
+  } else if (store.currentPage === 'stats') {
+    store.currentPage = 'game'
+    $('#stats-page').hide()
+    $('#suggestions-page').hide()
+    $('#game-page').show()
+    $('#toggle-page-button').text('Game Page')
+    if (store.user) {
+      // $('#show-all-suggestion-button-container').show()
+      // $('#show-my-suggestion-button-container').show()
     }
   }
 }

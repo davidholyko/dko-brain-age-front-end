@@ -7,6 +7,7 @@ const math = require('mathjs')
 const calcAll = () => {
   console.log('calcAll')
   store.data = store.data.games.map(game => game.score)
+  $('#stats').empty()
   calcAverage()
   calcMedian()
   calcMode()
