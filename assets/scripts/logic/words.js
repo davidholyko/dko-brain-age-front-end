@@ -6,7 +6,7 @@
 const store = require('../store')
 
 const generateProblem = () => {
-  console.log('generateWordsProblem')
+  // console.log('generateWordsProblem')
 
   const words = ['dog', 'cat', 'horse', 'rabbit', 'cow', 'person', 'goat', 'wizard',
     'jumped', 'ran', 'looked', 'ate', 'backed', 'talked', 'bit', 'approached',
@@ -81,7 +81,7 @@ const generateProblem = () => {
   store.game.answer = answer
   store.game.multipleChoice = multipleChoiceShuffled
 
-  // console.log(answer)
+  // // console.log(answer)
 }
 
 module.exports = generateProblem

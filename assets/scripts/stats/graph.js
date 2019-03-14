@@ -4,7 +4,7 @@ const Chart = require('chart.js')
 const store = require('../store')
 
 const generateBarChart = () => {
-  console.log('generateBarChart')
+  // console.log('generateBarChart')
 
   const maxValue = Math.max(...store.data)
 

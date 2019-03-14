@@ -3,7 +3,7 @@
 const store = require('../store')
 
 const onToggleSuggestionsPage = () => {
-  console.log('onToggleSuggestionsPage')
+  // console.log('onToggleSuggestionsPage')
 
   if (store.currentPage === 'game') {
     store.currentPage = 'suggestion'
@@ -40,7 +40,7 @@ const onToggleSuggestionsPage = () => {
 }
 
 const addHandlers = () => {
-  console.log('addHandlers Page')
+  // console.log('addHandlers Page')
   $('#toggle-page-button').on('click', onToggleSuggestionsPage)
 }
 

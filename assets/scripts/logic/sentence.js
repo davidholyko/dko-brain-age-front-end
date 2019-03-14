@@ -3,7 +3,7 @@
 const store = require('../store')
 
 const generateProblem = () => {
-  console.log('generateWordProblem')
+  // console.log('generateWordProblem')
   const nouns = ['dog', 'cat', 'horse', 'rabbit', 'cow', 'elf', 'goat', 'wizard']
   const verbs = ['hit', 'ran from', 'saw', 'picked up', 'moved', 'sat on', 'ate', 'met']
   const adjectives = ['sleepy', 'hungry', 'angry', 'blue', 'curious', 'tall', 'happy', 'red', 'green']

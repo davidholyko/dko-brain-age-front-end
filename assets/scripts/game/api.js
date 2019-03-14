@@ -4,7 +4,7 @@ const config = require('../config')
 const store = require('../store')
 
 const submitScore = () => {
-  console.log('submitScore')
+  // console.log('submitScore')
   return $.ajax({
     url: config.apiUrl + '/games',
     headers: {Authorization: `Token token=${store.user.token}`},
@@ -14,7 +14,7 @@ const submitScore = () => {
 }
 
 const getScores = () => {
-  console.log('getScores')
+  // console.log('getScores')
   return $.ajax({
     url: config.apiUrl + '/games',
     method: 'GET'
@@ -22,7 +22,7 @@ const getScores = () => {
 }
 
 const getHighScores = () => {
-  console.log('getHighScores')
+  // console.log('getHighScores')
   return $.ajax({
     url: config.apiUrl + '/highscores',
     method: 'GET'
@@ -30,7 +30,7 @@ const getHighScores = () => {
 }
 
 const getMyScores = () => {
-  console.log('getMyScores')
+  // console.log('getMyScores')
   return $.ajax({
     url: config.apiUrl + `/users/${store.user.handle}`,
     method: 'GET'
@@ -38,8 +38,8 @@ const getMyScores = () => {
 }
 
 const deleteScore = data => {
-  console.log('getMyScores')
-  console.log(data)
+  // console.log('getMyScores')
+  // console.log(data)
   return $.ajax({
     url: config.apiUrl + `/games/${data.game.id}`,
     method: 'DELETE'

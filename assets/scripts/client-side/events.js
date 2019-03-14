@@ -2,7 +2,7 @@ const store = require('../store')
 const view = require('../view/view')
 
 const initStore = () => {
-  console.log('initStore')
+  // console.log('initStore')
   store.data = {}
   store.stats = {}
   store.game = {}
@@ -22,7 +22,7 @@ const initStore = () => {
 }
 
 const resetStore = () => {
-  console.log('resetStore')
+  // console.log('resetStore')
   store.game.question = ''
   store.game.answer = ''
   store.game.multipleChoice = []
@@ -65,7 +65,7 @@ const stopTimer = () => {
 }
 
 const updateGameDisplay = () => {
-  console.log('updateGameDisplay')
+  // console.log('updateGameDisplay')
   $('#game-display').empty()
   $('#game-display').append(`<div><h3>${store.game.question}</h3></div>`)
   $('#option-0').text(`${store.game.multipleChoice[0]}`)

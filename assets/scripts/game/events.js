@@ -11,7 +11,7 @@ const stats = require('../stats/stats')
 const graph = require('../stats/graph')
 
 const startGame = () => {
-  console.log('startGame')
+  // console.log('startGame')
   if (store.game.start && !store.game.over) { return }
   client.resetStore()
   client.resetHearts()
@@ -28,7 +28,7 @@ const startGame = () => {
 }
 
 const answerProblem = () => {
-  console.log('answerProblem')
+  // console.log('answerProblem')
   event.preventDefault()
   if (!store.game.start) { return }
   if (store.game.over) { return }
@@ -54,7 +54,7 @@ const answerProblem = () => {
 }
 
 const onSubmitScore = () => {
-  console.log('submitScore')
+  // console.log('submitScore')
   if (!store.game.submit) { return }
   client.forbidSubmission()
   api.submitScore()
@@ -63,7 +63,7 @@ const onSubmitScore = () => {
 }
 
 const onGetScores = () => {
-  console.log('onGetScores')
+  // console.log('onGetScores')
   if (event) { event.preventDefault() }
   api.getScores()
     .then(ui.getScoresSuccess)
@@ -73,7 +73,7 @@ const onGetScores = () => {
 }
 
 const onGetMyScores = () => {
-  console.log('onGetUserScores')
+  // console.log('onGetUserScores')
   event.preventDefault()
   api.getMyScores()
     .then(ui.getMyScoresSuccess)
@@ -81,7 +81,7 @@ const onGetMyScores = () => {
 }
 
 const onGetHighScores = () => {
-  console.log('onGetHighScores')
+  // console.log('onGetHighScores')
   event.preventDefault()
   api.getHighScores()
     .then(ui.getScoresSuccess)
@@ -89,7 +89,7 @@ const onGetHighScores = () => {
 }
 
 const onDeleteScore = () => {
-  console.log('onDeleteScore')
+  // console.log('onDeleteScore')
   event.preventDefault()
   const data = getFormFields(event.target)
   api.deleteScore(data)
@@ -98,7 +98,7 @@ const onDeleteScore = () => {
 }
 
 const startTimer = () => {
-  console.log('setGameTimer')
+  // console.log('setGameTimer')
   clearInterval(store.game.timer)
   const start = Date.now()
   const end = start + (store.game.countdown * 1000)
@@ -123,7 +123,7 @@ const startTimer = () => {
 }
 
 const addHandlers = () => {
-  console.log('addHandlers Game')
+  // console.log('addHandlers Game')
   $('.option').on('click', answerProblem)
   $('.game-start-button').on('click', startGame)
   $('#all-scores-button').on('click', onGetScores)

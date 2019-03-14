@@ -36,7 +36,7 @@ const unshadeGameDisplay = () => {
 }
 
 const login = () => {
-  console.log('login')
+  // console.log('login')
   hidePreLogin()
   showPostLogin()
   if (store.currentPage !== 'suggestion') {
