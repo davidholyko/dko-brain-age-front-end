@@ -19,7 +19,7 @@ const miniGames = {
 }
 
 const generateQuestion = () => {
-  console.log('generateQuestion')
+  // console.log('generateQuestion')
   return miniGames[Math.random() * Object.keys(miniGames).length | 0]()
 }
 

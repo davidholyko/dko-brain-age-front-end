@@ -9,7 +9,7 @@ const view = require('../view/view')
 const gameEvents = require('./events')
 
 const startPlaying = () => {
-  console.log('startPlaying')
+  // console.log('startPlaying')
   if (store.game.start && !store.game.over) { return }
   storeActions.resetStore()
   storeActions.startGame()
@@ -28,7 +28,7 @@ const startPlaying = () => {
 }
 
 const stopPlaying = () => {
-  console.log('stopPlaying')
+  // console.log('stopPlaying')
   $('.option').hide()
   timerActions.stopTimer()
   view.shadeGameDisplay()
@@ -40,7 +40,7 @@ const stopPlaying = () => {
 }
 
 const answerProblem = () => {
-  console.log('answerProblem')
+  // console.log('answerProblem')
   event.preventDefault()
   if (!store.game.start) { return }
   if (store.game.over) { return }
@@ -62,7 +62,7 @@ const answerProblem = () => {
 }
 
 const addHandlers = () => {
-  console.log('addHandlers Game')
+  // console.log('addHandlers Game')
   $('.game-start-button').on('click', startPlaying)
   $('.option').on('click', answerProblem)
 }

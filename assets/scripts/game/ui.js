@@ -7,7 +7,7 @@ const client = require('../client-side/store-actions')
 const store = require('../store')
 
 const failure = () => {
-  console.log('failure')
+  // console.log('failure')
   $('#user-feedback').text('Something went wrong. Please try again')
   $('#user-feedback').addClass('error')
   for (let i = 0; i < 2000; i += 200) { setTimeout(() => { $('#user-feedback').toggleClass('error-toggle') }, i) }
@@ -15,12 +15,12 @@ const failure = () => {
 }
 
 const submitScoreSuccess = () => {
-  console.log('submitScoreSuccess')
+  // console.log('submitScoreSuccess')
   client.resetStore()
 }
 
 const getScoresSuccess = responseData => {
-  console.log('getScoreSuccess')
+  // console.log('getScoreSuccess')
   store.data = responseData
   $('#scores').empty()
   const showScores = showScoreTemplate({games: responseData.games})
@@ -29,7 +29,7 @@ const getScoresSuccess = responseData => {
 }
 
 const getHighScoresSuccess = responseData => {
-  console.log('getScoreSuccess')
+  // console.log('getScoreSuccess')
   $('#scores').empty()
   const showScores = showScoreTemplate({games: responseData.games})
   $('#scores').append(showScores)
@@ -37,14 +37,14 @@ const getHighScoresSuccess = responseData => {
 }
 
 const getMyScoresSuccess = responseData => {
-  console.log('getMyScoresSuccess')
+  // console.log('getMyScoresSuccess')
   $('#scores').empty()
   $('#scores').append(showMyScoreTemplate({games: responseData.user.games}))
   $('#game-headers-user').hide()
 }
 
 const deleteScoreSuccess = () => {
-  console.log('deleteScoreSuccess')
+  // console.log('deleteScoreSuccess')
 }
 
 module.exports = {

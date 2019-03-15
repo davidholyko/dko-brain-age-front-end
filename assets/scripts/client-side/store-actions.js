@@ -1,7 +1,7 @@
 const store = require('../store')
 
 const initStore = () => {
-  console.log('initStore')
+  // console.log('initStore')
   store.data = {}
   store.stats = {}
   store.game = {}
@@ -21,7 +21,7 @@ const initStore = () => {
 }
 
 const resetStore = () => {
-  console.log('resetStore')
+  // console.log('resetStore')
   store.game.question = ''
   store.game.answer = ''
   store.game.multipleChoice = []

@@ -40,7 +40,7 @@ const square = () => {
 }
 
 const scaleMathQuestionFont = () => {
-  console.log('scaleMathQuestionFont')
+  // console.log('scaleMathQuestionFont')
   // $('#question-math-item').css('font-size', `${$('question-math').width / 4}`)
 
   $('#question-math-item').css('font-size', '200px')
@@ -48,7 +48,7 @@ const scaleMathQuestionFont = () => {
 }
 
 const login = () => {
-  console.log('login')
+  // console.log('login')
   hidePreLogin()
   showPostLogin()
   $('#user-handle').text(store.user.handle)

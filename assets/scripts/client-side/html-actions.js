@@ -18,7 +18,7 @@ const resetScore = () => { $('#game-score').html('') }
 const resetTimer = () => { $('#game-timer').html('') }
 
 const updateGameDisplay = () => {
-  console.log('updateGameDisplay')
+  // console.log('updateGameDisplay')
   $('#game-display').empty()
   $('#game-display').append(`${store.game.question}`)
   $('#option-0').text(`${store.game.multipleChoice[0]}`)

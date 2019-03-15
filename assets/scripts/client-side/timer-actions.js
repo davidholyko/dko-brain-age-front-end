@@ -11,7 +11,7 @@ const stopTimer = () => {
 }
 
 const startTimer = () => {
-  console.log('setGameTimer')
+  // console.log('setGameTimer')
   clearInterval(store.game.timer)
   const start = Date.now()
   const end = start + (store.game.countdown * 1000)
@@ -30,7 +30,7 @@ const startTimer = () => {
 }
 
 const stopPlaying = () => {
-  console.log('stopPlaying')
+  // console.log('stopPlaying')
   $('.option').hide()
   stopTimer()
   view.shadeGameDisplay()
