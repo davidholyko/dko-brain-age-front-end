@@ -51,6 +51,7 @@ const login = () => {
   console.log('login')
   hidePreLogin()
   showPostLogin()
+  $('#user-handle').text(store.user.handle)
   if (store.currentPage !== 'suggestion') {
     $('#show-all-suggestion-button-container').hide()
     $('#show-my-suggestion-button-container').hide()
