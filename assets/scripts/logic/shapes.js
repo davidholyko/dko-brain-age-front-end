@@ -1,5 +1,9 @@
 const store = require('../store')
 
+// QUESTION EXAMPLE: 3,4,5,6,7
+// IF ONE OF THE NUMBERS (WHICH REPRESENT NUMBER OF SIDES ON A SHAPE)
+// IS TAKEN OUT, WHAT NUMBER IS IT
+
 const shapesHTML = {
   triangle: '<img id="triangle" src="public/images/triangle.png" alt="" class="shape">',
   square: '<img id="square" src="public/images/square.png" alt="" class="shape">',
@@ -23,7 +27,16 @@ const generateProblem = () => {
   const answer = multipleChoiceInput[randomIndex]
   multipleChoiceInput[randomIndex] = 'question'
   const question =
-  `${shapesHTML[multipleChoiceInput[0]]} ${shapesHTML[multipleChoiceInput[1]]} ${shapesHTML[multipleChoiceInput[2]]}    ${shapesHTML[multipleChoiceInput[3]]} ${shapesHTML[multipleChoiceInput[4]]} <h3>Which shape is missing?</h3>`
+  `
+  <div id="question-shapes" class="d-flex justify-content-around col-12">
+    <div class="shape-container">${shapesHTML[multipleChoiceInput[0]]} </div>
+    <div class="shape-container">${shapesHTML[multipleChoiceInput[1]]} </div>
+    <div class="shape-container">${shapesHTML[multipleChoiceInput[2]]} </div>
+    <div class="shape-container">${shapesHTML[multipleChoiceInput[3]]} </div>
+    <div class="shape-container">${shapesHTML[multipleChoiceInput[4]]} </div>
+  </div>
+  <h3>Which shape is missing?</h3>
+  `
 
   // randomize MultipleChoice
   for (let i = multipleChoiceInput.length; i > 0; i--) {

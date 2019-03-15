@@ -10,7 +10,7 @@ const authEvents = require('./auth/events')
 const pageEvents = require('./page/events')
 const gameEvents = require('./game/events')
 const suggestionEvents = require('./suggestion/events')
-const client = require('./client-side/events')
+const client = require('./client-side/store-actions')
 const view = require('./view/view')
 
 // const logicMath = require('./logic/math')

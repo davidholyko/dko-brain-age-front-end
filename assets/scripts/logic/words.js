@@ -64,8 +64,19 @@ const generateProblem = () => {
   let s = 's'
   if (randomChoiceIndex === 1) { s = '' }
 
-  const question = `<h3>${choicesOutput[0]} ${choicesOutput[1]} ${choicesOutput[2]} ${choicesOutput[3]} ${choicesOutput[4]} ${choicesOutput[5]}
-  ${choicesOutput[6]} ${choicesOutput[7]} ${choicesOutput[8]} ${choicesOutput[9]}</h3>
+  const question =
+  `<div id="question-words" class="d-flex flex-wrap">
+    <div class="bg-dark text-light p-3 m-3 rounded"><h3 class="m-0">${choicesOutput[0]}</h3></div>
+    <div class="bg-dark text-light p-3 m-3 rounded"><h3 class="m-0">${choicesOutput[1]}</h3></div>
+    <div class="bg-dark text-light p-3 m-3 rounded"><h3 class="m-0">${choicesOutput[2]}</h3></div>
+    <div class="bg-dark text-light p-3 m-3 rounded"><h3 class="m-0">${choicesOutput[3]}</h3></div>
+    <div class="bg-dark text-light p-3 m-3 rounded"><h3 class="m-0">${choicesOutput[4]}</h3></div>
+    <div class="bg-dark text-light p-3 m-3 rounded"><h3 class="m-0">${choicesOutput[5]}</h3></div>
+    <div class="bg-dark text-light p-3 m-3 rounded"><h3 class="m-0">${choicesOutput[6]}</h3></div>
+    <div class="bg-dark text-light p-3 m-3 rounded"><h3 class="m-0">${choicesOutput[7]}</h3></div>
+    <div class="bg-dark text-light p-3 m-3 rounded"><h3 class="m-0">${choicesOutput[8]}</h3></div>
+    <div class="bg-dark text-light p-3 m-3 rounded"><h3 class="m-0">${choicesOutput[9]}</h3></div>
+  </div>
   <h3> Which word appears ${randomChoiceIndex} time${s}?</h3>`
   const answer = `${multipleChoice[randomChoiceIndex]}`
 
@@ -80,8 +91,6 @@ const generateProblem = () => {
   store.game.question = question
   store.game.answer = answer
   store.game.multipleChoice = multipleChoiceShuffled
-
-  // // console.log(answer)
 }
 
 module.exports = generateProblem

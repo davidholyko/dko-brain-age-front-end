@@ -1,5 +1,9 @@
 'use strict'
 
+//  QUESTION EXAMPLE: THE SLEEPY DOG ALWAYS SAT ON THE GREEN CAT
+//  IF SLEEPY, DOG, ALWAYS, SAT ON, GREEN, OR CAT IS TAKEN OUT THE SENTENCE,
+//  WHAT TYPE OF WORD WOULD FIT BACK IN ITS PLACE TO MAKE THE SENTENCE MAKE SENSE?
+
 const store = require('../store')
 
 const generateProblem = () => {
@@ -38,7 +42,7 @@ const generateProblem = () => {
   let wordBank = []
 
   const question =
-  `<h3>The ${sentence[0].word} ${sentence[1].word} ${sentence[2].word} ${sentence[3].word} the ${sentence[4].word} ${sentence[5].word}.</h3>
+  `<h3 id="question-sentence">The ${sentence[0].word} ${sentence[1].word} ${sentence[2].word} ${sentence[3].word} the ${sentence[4].word} ${sentence[5].word}.</h3>
   <h3>Which word fits the sentence?</h3>`
 
   // adds all words to wordBank
@@ -64,7 +68,5 @@ const generateProblem = () => {
   store.game.answer = answer.word
   store.game.multipleChoice = multipleChoice
 }
-
-// which word makes sense in the sentence?
 
 module.exports = generateProblem

@@ -35,6 +35,10 @@ const unshadeGameDisplay = () => {
   $('#game-display').css('cursor', 'auto')
 }
 
+const square = () => {
+  $('.shape').height($('.shape').width())
+}
+
 const login = () => {
   // console.log('login')
   hidePreLogin()
@@ -70,6 +74,8 @@ const onPageLoad = () => {
   shadeGameDisplay()
   hideSuggestionPage()
   hideStatsPage()
+  square()
+  setTimeout(() => $(window).resize(square), 1)
   $('#undo-delete-button').hide()
   $('#suggestions-container').width('100%')
 }

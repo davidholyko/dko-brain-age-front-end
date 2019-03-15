@@ -28,7 +28,7 @@ const generateProblem = () => {
   // the value of the operand or result that will represent the answer after one is replaced with _
   elements[randomIndex] = '_'
   // replace an operand or result with blank
-  const question = `${elements[0]} ${operator} ${elements[1]} = ${elements[2]}`
+  const question = `<h3 id="question-math">${elements[0]} ${operator} ${elements[1]} = ${elements[2]}</h3>`
   const multipleChoiceOptions = [answer, answer - 1, answer + 2, answer * 3 - 3, answer * 4 + 4]
   const multipleChoice = []
 
