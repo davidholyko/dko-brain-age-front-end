@@ -66,7 +66,7 @@ body {
 
 #game-display {
   flex-wrap: wrap;
-  height: 50vh;
+  height: 40vh;
   background-color: white;
   border: 5px solid black;
 }
@@ -95,13 +95,20 @@ input[type="number"] {
   font-size: 24px;
 }
 
+.game {
+  border-bottom: 1px solid DarkSlateGrey;
+
+  &:hover {
+    background-color: rgba(0,128,128,0.5);
+  }
+}
+
 #game-page {
   display: flex;
   justify-content: center;
   background-size: cover;
   background-repeat: repeat;
   background: #CCC;
-  // background-image: url("/public/images/background.jpg");
   height: 95vh;
 }
 
