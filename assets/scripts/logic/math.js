@@ -30,11 +30,11 @@ const generateProblem = () => {
   // replace an operand or result with blank
   const question =
   `<div id="question-math" class="d-flex justify-content-around w-100">
-    <div class="col-2 p-0 d-flex justify-content-center"><span class="question-math-item">${elements[0]}</span></div>
-    <div class="col-2 p-0 d-flex justify-content-center"><span class="question-math-item">${operator}</span></div>
-    <div class="col-2 p-0 d-flex justify-content-center"><span class="question-math-item">${elements[1]}</span></div>
-    <div class="col-2 p-0 d-flex justify-content-center"><span class="question-math-item">=</span></div>
-    <div class="col-2 p-0 d-flex justify-content-center"><span class="question-math-item">${elements[2]}</span></div>
+    <div class="col-2 p-0 d-flex justify-content-center"><span class="d-flex font-weight-bold question-math-item align-items-center">${elements[0]}</span></div>
+    <div class="col-2 p-0 d-flex justify-content-center"><span class="d-flex font-weight-bold question-math-item align-items-center">${operator}</span></div>
+    <div class="col-2 p-0 d-flex justify-content-center"><span class="d-flex font-weight-bold question-math-item align-items-center">${elements[1]}</span></div>
+    <div class="col-2 p-0 d-flex justify-content-center"><span class="d-flex font-weight-bold question-math-item align-items-center">=</span></div>
+    <div class="col-2 p-0 d-flex justify-content-center"><span class="d-flex font-weight-bold question-math-item align-items-center">${elements[2]}</span></div>
   </div>`
   const multipleChoiceOptions = [answer, answer - 1, answer + 2, answer * 3 - 3, answer * 4 + 4]
   const multipleChoice = []

@@ -35,7 +35,7 @@ const generateProblem = () => {
       <div class="shape-container">${shapesHTML[multipleChoiceInput[3]]} </div>
       <div class="shape-container">${shapesHTML[multipleChoiceInput[4]]} </div>
     </div>
-    <h3>Which shape is missing?</h3>
+    <h3 class="text-center w-100">Which shape is missing?</h3>
   `
 
   // randomize MultipleChoice
