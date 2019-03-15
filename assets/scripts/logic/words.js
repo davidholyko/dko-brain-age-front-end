@@ -77,7 +77,7 @@ const generateProblem = () => {
     <div class="bg-dark text-light p-3 m-3 rounded"><h3 class="m-0">${choicesOutput[8]}</h3></div>
     <div class="bg-dark text-light p-3 m-3 rounded"><h3 class="m-0">${choicesOutput[9]}</h3></div>
   </div>
-  <h3> Which word appears ${randomChoiceIndex} time${s}?</h3>`
+  <h3> Which word above appears ${randomChoiceIndex} time${s}?</h3>`
   const answer = `${multipleChoice[randomChoiceIndex]}`
 
   const multipleChoiceShuffled = []

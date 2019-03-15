@@ -28,7 +28,7 @@ const updateGameDisplay = () => {
   $('#option-4').text(`${store.game.multipleChoice[4]}`)
 
   if (store.game.over) {
-    $('#game-display').append('<h3>Want to play again? Click here again</h3>')
+    $('#game-display').html('<h3>Want to play again? Click here again</h3>')
     view.shadeGameDisplay()
   }
 }

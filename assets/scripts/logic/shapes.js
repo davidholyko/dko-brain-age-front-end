@@ -28,14 +28,14 @@ const generateProblem = () => {
   multipleChoiceInput[randomIndex] = 'question'
   const question =
   `
-  <div id="question-shapes" class="d-flex justify-content-around col-12">
-    <div class="shape-container">${shapesHTML[multipleChoiceInput[0]]} </div>
-    <div class="shape-container">${shapesHTML[multipleChoiceInput[1]]} </div>
-    <div class="shape-container">${shapesHTML[multipleChoiceInput[2]]} </div>
-    <div class="shape-container">${shapesHTML[multipleChoiceInput[3]]} </div>
-    <div class="shape-container">${shapesHTML[multipleChoiceInput[4]]} </div>
-  </div>
-  <h3>Which shape is missing?</h3>
+    <div id="question-shapes" class="d-flex flex-row justify-content-around col-12">
+      <div class="shape-container">${shapesHTML[multipleChoiceInput[0]]} </div>
+      <div class="shape-container">${shapesHTML[multipleChoiceInput[1]]} </div>
+      <div class="shape-container">${shapesHTML[multipleChoiceInput[2]]} </div>
+      <div class="shape-container">${shapesHTML[multipleChoiceInput[3]]} </div>
+      <div class="shape-container">${shapesHTML[multipleChoiceInput[4]]} </div>
+    </div>
+    <h3>Which shape is missing?</h3>
   `
 
   // randomize MultipleChoice

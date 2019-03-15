@@ -39,6 +39,14 @@ const square = () => {
   $('.shape').height($('.shape').width())
 }
 
+const scaleMathQuestionFont = () => {
+  console.log('scaleMathQuestionFont')
+  // $('#question-math-item').css('font-size', `${$('question-math').width / 4}`)
+
+  $('#question-math-item').css('font-size', '200px')
+  $('#question-math-item').css('color', 'green')
+}
+
 const login = () => {
   console.log('login')
   hidePreLogin()
@@ -75,8 +83,11 @@ const onPageLoad = () => {
   hideSuggestionPage()
   hideStatsPage()
   square()
+  scaleMathQuestionFont()
+
+  setTimeout(() => $(window).resize(scaleMathQuestionFont), 1)
   setTimeout(() => $(window).resize(square), 1)
-  $('#undo-delete-button').hide()
+
   $('#suggestions-container').width('100%')
 }
 

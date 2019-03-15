@@ -43,7 +43,7 @@ const generateProblem = () => {
 
   const question =
   `<h3 id="question-sentence">The ${sentence[0].word} ${sentence[1].word} ${sentence[2].word} ${sentence[3].word} the ${sentence[4].word} ${sentence[5].word}.</h3>
-  <h3>Which word fits the sentence?</h3>`
+  <h3>Which word below fits the sentence?</h3>`
 
   // adds all words to wordBank
   for (let i = 0; i < 4; i++) { wordBank = wordBank.concat(options[i]) }
