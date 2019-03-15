@@ -7,7 +7,7 @@ const gameEvents = require('../game/events')
 const suggestionEvents = require('../suggestion/events')
 
 const onSignUp = () => {
-  // console.log('onSignUp')
+  console.log('onSignUp')
   event.preventDefault()
   const data = getFormFields(event.target)
   api.signUp(data)
@@ -16,7 +16,7 @@ const onSignUp = () => {
 }
 
 const onSignIn = data => {
-  // console.log('onSignIn')
+  console.log('onSignIn')
   if (event) {
     event.preventDefault()
     data = getFormFields(event.target)
@@ -27,7 +27,7 @@ const onSignIn = data => {
 }
 
 const onChangePassword = () => {
-  // console.log('onChangePassword')
+  console.log('onChangePassword')
   event.preventDefault()
   const data = getFormFields(event.target)
 
@@ -37,7 +37,7 @@ const onChangePassword = () => {
 }
 
 const onSignOut = () => {
-  // console.log('onSignOut')
+  console.log('onSignOut')
   event.preventDefault()
   api.signOut()
     .then(ui.signOutSuccess)
@@ -47,7 +47,7 @@ const onSignOut = () => {
 }
 
 const addHandlers = () => {
-  // console.log('addHandlers Authentication')
+  console.log('addHandlers Authentication')
   $('#sign-up-form').on('submit', onSignUp)
   $('#sign-in-form').on('submit', onSignIn)
   $('#change-password-form').on('submit', onChangePassword)

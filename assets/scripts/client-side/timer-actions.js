@@ -1,15 +1,17 @@
 const store = require('../store')
+const view = require('../view/view')
+const gameEvents = require('../game/events')
 
 const resetTimer = () => {
   $('#game-timer').html('')
 }
 const stopTimer = () => {
-  if (store.game.timer) { clearInterval(store.game.timer) }
-  $('#game-timer').html(`<h3>Game over!</h3>`)
+  clearInterval(store.game.timer)
+  $('#game-timer').html(`<h3>Time is up. Game over!</h3>`)
 }
 
 const startTimer = () => {
-  // console.log('setGameTimer')
+  console.log('setGameTimer')
   clearInterval(store.game.timer)
   const start = Date.now()
   const end = start + (store.game.countdown * 1000)
@@ -17,15 +19,26 @@ const startTimer = () => {
 
   store.game.timer = setInterval(() => {
     now = Date.now()
-    if (now > end || !store.game.hearts) {
+    if (now > end) {
       clearInterval(store.game.timer)
-      $('#game-timer').html(`<h3>Game over!</h3>`)
       $('#game-display').append('<h3>Want to play again? Click here</h3>')
-      // endGame()
+      stopPlaying()
     }
     $('#game-timer').html(`<h3>Time remaining in seconds: ${((end - now) / 1000).toString().slice(0, -2)}</h3>`)
-    if ($('#game-timer').text() === 'Time remaining in seconds: -0.0') { $('#game-timer').html(`<h3>Game over!</h3>`) }
+    if ($('#game-timer').text() === 'Time remaining in seconds: -0.0') { stopTimer() }
   }, 1)
+}
+
+const stopPlaying = () => {
+  console.log('stopPlaying')
+  $('.option').hide()
+  stopTimer()
+  view.shadeGameDisplay()
+  store.game.over = true
+  if (store.user) {
+    gameEvents.onSubmitScore()
+    gameEvents.onGetScores()
+  }
 }
 
 module.exports = {

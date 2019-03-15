@@ -18,4 +18,9 @@ const miniGames = {
   9: shapes
 }
 
-module.exports = miniGames
+const generateQuestion = () => {
+  console.log('generateQuestion')
+  return miniGames[Math.random() * Object.keys(miniGames).length | 0]()
+}
+
+module.exports = { generateQuestion }

@@ -4,7 +4,7 @@ const store = require('../store')
 const view = require('../view/view')
 
 const signUpSuccess = () => {
-  // console.log('onSignUpSuccess')
+  console.log('onSignUpSuccess')
   $('form').trigger('reset')
   $('#user-feedback').text('Signed up successfully')
   $('#user-feedback').addClass('success')
@@ -12,7 +12,7 @@ const signUpSuccess = () => {
 }
 
 const failure = () => {
-  // console.log('failure')
+  console.log('failure')
   $('form').trigger('reset')
   $('#user-feedback').text('Something went wrong. Please try again')
   $('#user-feedback').addClass('error')
@@ -21,15 +21,15 @@ const failure = () => {
 }
 
 const signInSuccess = responseData => {
-  // console.log('signInSuccess')
+  console.log('signInSuccess')
   $('form').trigger('reset')
   store.user = responseData.user
-  // console.log(store)
+  console.log(store)
   view.login()
 }
 
 const changePasswordSuccess = () => {
-  // console.log('onChangePasswordSuccess')
+  console.log('onChangePasswordSuccess')
   $('form').trigger('reset')
   $('#user-feedback').text('Password changed successfully')
   $('#user-feedback').addClass('success')
@@ -49,7 +49,7 @@ const signUpFailure = () => {
 }
 
 const signOutSuccess = () => {
-  // console.log('onSignOutSuccess')
+  console.log('onSignOutSuccess')
   $('form').trigger('reset')
   store.suggestions = []
   store.user = false

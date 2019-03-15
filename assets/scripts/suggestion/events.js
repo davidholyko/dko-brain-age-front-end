@@ -6,7 +6,7 @@ const api = require('./api')
 const ui = require('./ui')
 
 const onCreateSuggestion = data => {
-  // console.log('onCreateSuggestion')
+  console.log('onCreateSuggestion')
 
   if (event.type === 'submit') {
     event.preventDefault()
@@ -20,7 +20,7 @@ const onCreateSuggestion = data => {
 }
 
 const onUpdateSuggestion = () => {
-  // console.log('onUpdateSuggestion')
+  console.log('onUpdateSuggestion')
   event.preventDefault()
   const data = getFormFields(event.target)
   const id = $(event.target).data('id')
@@ -30,7 +30,7 @@ const onUpdateSuggestion = () => {
 }
 
 const onDeleteSuggestion = () => {
-  // console.log('onDeleteSuggestion')
+  console.log('onDeleteSuggestion')
   event.preventDefault()
   const data = $(event.target).data('id')
   store.suggestions.push($(`#suggestion-text-${data}`).text())
@@ -40,14 +40,14 @@ const onDeleteSuggestion = () => {
 }
 
 const onUndoDeleteSuggestion = () => {
-  // console.log('onUndoDeleteSuggestion')
+  console.log('onUndoDeleteSuggestion')
   event.preventDefault()
   onCreateSuggestion({suggestion: {text: store.suggestions.pop()}})
   if (!store.suggestions.length) { $('#undo-delete-button').hide() }
 }
 
 const onShowSuggestion = () => {
-  // console.log('onShowSuggestion')
+  console.log('onShowSuggestion')
   if (event) { event.preventDefault() }
   api.showSuggestion()
     .then(ui.showSuggestionSuccess)
@@ -55,7 +55,7 @@ const onShowSuggestion = () => {
 }
 
 const onShowMySuggestion = () => {
-  // console.log('onShowSuggestion')
+  console.log('onShowSuggestion')
   if (event) { event.preventDefault() }
   api.showMySuggestion()
     .then(ui.showMySuggestionSuccess)
@@ -63,7 +63,7 @@ const onShowMySuggestion = () => {
 }
 
 const addHandlers = () => {
-  // console.log('addHandlers Suggestions')
+  console.log('addHandlers Suggestions')
   $('#create-suggestion-form').on('submit', onCreateSuggestion)
   $('#show-all-suggestion-button').on('click', onShowSuggestion)
   $('#show-my-suggestion-button').on('click', onShowMySuggestion)
