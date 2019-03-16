@@ -3,7 +3,7 @@
 const store = require('../store')
 
 const onToggleGamePage = () => {
-  // console.log('onToggleGamePage')
+  console.log('onToggleGamePage')
   store.currentPage = 'game'
   $('#stats-page').hide()
   $('#suggestions-page').hide()
@@ -16,7 +16,7 @@ const onToggleGamePage = () => {
 }
 
 const onToggleSuggestionsPage = () => {
-  // console.log('onToggleSuggestionsPage')
+  console.log('onToggleSuggestionsPage')
   store.currentPage = 'suggestion'
   $('#stats-page').hide()
   $('#game-page').hide()
@@ -30,7 +30,7 @@ const onToggleSuggestionsPage = () => {
 }
 
 const onToggleStatsPage = () => {
-  // console.log('onToggleSuggestionsPage')
+  console.log('onToggleSuggestionsPage')
   store.currentPage = 'stats'
   $('#suggestions-page').hide()
   $('#game-page').hide()
@@ -43,7 +43,7 @@ const onToggleStatsPage = () => {
 }
 
 const addHandlers = () => {
-  // console.log('addHandlers Page')
+  console.log('addHandlers Page')
   $('#toggle-game-page-button').on('click', onToggleGamePage)
   $('#toggle-suggestions-page-button').on('click', onToggleSuggestionsPage)
   $('#toggle-stats-page-button').on('click', onToggleStatsPage)

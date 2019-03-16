@@ -9,7 +9,7 @@ const view = require('../view/view')
 const gameEvents = require('./events')
 
 const startPlaying = () => {
-  // console.log('startPlaying')
+  console.log('startPlaying')
   if (store.game.start && !store.game.over) { return }
   storeActions.resetStore()
   storeActions.startGame()
@@ -21,16 +21,13 @@ const startPlaying = () => {
   htmlActions.updateGameDisplay()
   view.startGame()
   view.unshadeGameDisplay()
-
-  $('.option').show()
-  $('#game-score').html(`<h3>Your score is: ${store.game.score}</h3>`)
-  $('#game-timer').html(`<h3>Time left: ${store.game.countdown} seconds</h3>`)
+  view.showOption()
 }
 
 const stopPlaying = () => {
-  // console.log('stopPlaying')
-  $('.option').hide()
+  console.log('stopPlaying')
   timerActions.stopTimer()
+  view.hideOption()
   view.shadeGameDisplay()
   store.game.over = true
   if (store.user) {
@@ -40,7 +37,7 @@ const stopPlaying = () => {
 }
 
 const answerProblem = () => {
-  // console.log('answerProblem')
+  console.log('answerProblem')
   event.preventDefault()
   if (!store.game.start) { return }
   if (store.game.over) { return }
@@ -62,7 +59,7 @@ const answerProblem = () => {
 }
 
 const addHandlers = () => {
-  // console.log('addHandlers Game')
+  console.log('addHandlers Game')
   $('.game-start-button').on('click', startPlaying)
   $('.option').on('click', answerProblem)
 }

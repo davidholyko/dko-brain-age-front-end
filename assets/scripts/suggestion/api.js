@@ -4,7 +4,7 @@ const config = require('../config')
 const store = require('../store')
 
 const createSuggestion = data => {
-  // console.log('createSuggestion')
+  console.log('createSuggestion')
   return $.ajax({
     url: config.apiUrl + '/suggestions',
     headers: {Authorization: `Token token=${store.user.token}`},
@@ -18,7 +18,7 @@ const createSuggestion = data => {
 }
 
 const updateSuggestion = (data, id) => {
-  // console.log('createSuggestion')
+  console.log('createSuggestion')
   return $.ajax({
     url: config.apiUrl + `/suggestions/${id}`,
     headers: {Authorization: `Token token=${store.user.token}`},
@@ -32,7 +32,7 @@ const updateSuggestion = (data, id) => {
 }
 
 const deleteSuggestion = data => {
-  // console.log('deleteSuggestion')
+  console.log('deleteSuggestion')
   return $.ajax({
     url: config.apiUrl + `/suggestions/${data}`,
     headers: {Authorization: `Token token=${store.user.token}`},
@@ -41,7 +41,7 @@ const deleteSuggestion = data => {
 }
 
 const showSuggestion = () => {
-  // console.log('showSuggestion')
+  console.log('showSuggestion')
   return $.ajax({
     url: config.apiUrl + `/suggestions/`,
     method: 'GET'
@@ -49,7 +49,7 @@ const showSuggestion = () => {
 }
 
 const showMySuggestion = () => {
-  // console.log('showMySuggestion')
+  console.log('showMySuggestion')
   return $.ajax({
     url: config.apiUrl + `/users/${store.user.handle}`,
     method: 'GET'

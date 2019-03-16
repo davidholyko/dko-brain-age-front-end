@@ -6,7 +6,7 @@
 const store = require('../store')
 
 const generateProblem = () => {
-  // console.log('generateWordsProblem')
+  console.log('generateWordsProblem')
 
   const words = ['dog', 'cat', 'horse', 'rabbit', 'cow', 'person', 'goat', 'wizard',
     'jumped', 'ran', 'looked', 'ate', 'backed', 'talked', 'bit', 'approached',

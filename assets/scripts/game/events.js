@@ -9,7 +9,7 @@ const stats = require('../stats/stats')
 const graph = require('../stats/graph')
 
 const onSubmitScore = () => {
-  // console.log('submitScore')
+  console.log('submitScore')
   if (!store.game.submit) { return }
   storeActions.forbidSubmission()
   api.submitScore()
@@ -18,7 +18,7 @@ const onSubmitScore = () => {
 }
 
 const onGetScores = () => {
-  // console.log('onGetScores')
+  console.log('onGetScores')
   if (event) { event.preventDefault() }
   api.getScores()
     .then(ui.getScoresSuccess)
@@ -28,7 +28,7 @@ const onGetScores = () => {
 }
 
 const onGetMyScores = () => {
-  // console.log('onGetUserScores')
+  console.log('onGetUserScores')
   event.preventDefault()
   api.getMyScores()
     .then(ui.getMyScoresSuccess)
@@ -36,7 +36,7 @@ const onGetMyScores = () => {
 }
 
 const onGetHighScores = () => {
-  // console.log('onGetHighScores')
+  console.log('onGetHighScores')
   event.preventDefault()
   api.getHighScores()
     .then(ui.getScoresSuccess)
@@ -44,7 +44,7 @@ const onGetHighScores = () => {
 }
 
 const onDeleteScore = () => {
-  // console.log('onDeleteScore')
+  console.log('onDeleteScore')
   event.preventDefault()
   const data = getFormFields(event.target)
   api.deleteScore(data)
@@ -53,7 +53,7 @@ const onDeleteScore = () => {
 }
 
 const addHandlers = () => {
-  // console.log('addHandlers Game')
+  console.log('addHandlers Game')
   $('#all-scores-button').on('click', onGetScores)
   $('#hiscores-button').on('click', onGetHighScores)
   $('#my-scores-button').on('click', onGetMyScores)

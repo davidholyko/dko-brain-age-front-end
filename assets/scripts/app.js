@@ -17,7 +17,7 @@ const view = require('./view/view')
 // const logicMath = require('./logic/math')
 
 $(() => {
-  // console.log('JavaScript is running...')
+  console.log('JavaScript is running...')
   client.initStore()
   authEvents.addHandlers()
   gameEvents.addHandlers()

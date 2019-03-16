@@ -12,14 +12,13 @@ body {
 }
 
 .error {
-  display: flex;
   color: red;
   font-weight: bold;
-  text-align: center;
   background-color: white;
 }
 
 .error-toggle {
+  font-weight: bold;
   background-color: rgba(255,0,0,.5);
   color: white;
 }
