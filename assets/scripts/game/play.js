@@ -18,6 +18,7 @@ const startPlaying = () => {
   controller.generateQuestion()
   htmlActions.resetScore()
   htmlActions.resetHearts()
+  htmlActions.initScore()
   htmlActions.updateGameDisplay()
   view.startGame()
   view.unshadeGameDisplay()

@@ -47,8 +47,6 @@ const square = () => {
 
 const scaleMathQuestionFont = () => {
   console.log('scaleMathQuestionFont')
-  // $('#question-math-item').css('font-size', `${$('question-math').width / 4}`)
-
   $('#question-math-item').css('font-size', '200px')
   $('#question-math-item').css('color', 'green')
 }

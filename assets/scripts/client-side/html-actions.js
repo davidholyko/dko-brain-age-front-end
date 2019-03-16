@@ -17,6 +17,8 @@ const resetHearts = () => {
 const resetScore = () => { $('#game-score').html('') }
 const resetTimer = () => { $('#game-timer').html('') }
 
+const initScore = () => { $('#game-score').html('<h3>Your score is: 0</h3>') }
+
 const updateGameDisplay = () => {
   console.log('updateGameDisplay')
   $('#game-display').empty()
@@ -37,5 +39,6 @@ module.exports = {
   resetHearts,
   resetScore,
   resetTimer,
+  initScore,
   updateGameDisplay
 }
