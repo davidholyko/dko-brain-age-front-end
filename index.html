@@ -7,6 +7,7 @@
 
   <!-- Do not add `link` tags-->
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
 
   <!-- Do not add `script` tags-->
   <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
@@ -14,272 +15,278 @@
 </head>
 
 <body>
-  <div id="navbar" class="bg-info sticky-top">
-    <!-- NAVBAR NAV START-->
 
-    <!-- GAME TITLE -->
-    <div><img id="brain-age-icon" src="public/images/brain-age.png" alt="" class="align-middle"></div>
+  <!-- PREVIEW IMAGE -->
+  <img id="preview-image" class="" src="public/images/background.jpg" alt="">
 
+  <!-- WINDOW START -->
+  <div id="window">
+    <!-- NAVBAR NAV CONTAINER START-->
+    <div id="navbar" class="bg-info sticky-top">
 
+      <!-- GAME TITLE ITEM -->
+      <div><img id="brain-age-icon" src="public/images/brain-age.png" alt="" class="align-middle"></div>
 
-    <!-- NAVBAR DIV START -->
-    <div class="navbar-nav flex-row flex-grow-1 flex-start">
       <!-- NAVBAR LIST ITEMS START -->
+      <div class="navbar-nav flex-row flex-grow-1 flex-start">
 
-
-      <!-- Example single danger button -->
-      <div class="">
-        <button type="button" class="btn btn-primary dropdown-toggle my-1 mx-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Page Toggle
-        </button>
-        <div class="dropdown-menu">
-          <span id="toggle-game-page-button" class="dropdown-item page-toggle-button">Game Page</span>
-          <span id="toggle-suggestions-page-button" class="dropdown-item page-toggle-button">Suggestions Page</span>
-          <span id="toggle-stats-page-button" class="dropdown-item page-toggle-button">Stats Page</span>
-        </div>
-      </div>
-
-      <!-- SIGN IN NAVBAR ITEM-->
-      <div class="nav-item active my-1 mx-3 pre-login">
-        <div class="dropdown">
-          <!-- SIGN IN DROPDOWN MENU -->
-          <button id="" class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Sign In
+        <!-- DROPDOWN PAGES MENU -->
+        <div class="">
+          <button type="button" class="btn btn-primary dropdown-toggle my-1 mx-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Page Toggle
           </button>
-
           <div class="dropdown-menu">
-            <!-- DROPDOWN MENU SIGN IN -->
-            <form id="sign-in-form" class="px-4 py-3">
-              <div class="form-group">
-                <label>Email address</label>
-                <input required type="email" placeholder="Enter Email" name="credentials[email]" />
-              </div>
-              <div class="form-group">
-                <label>Password</label>
-                <input required type="password" placeholder="Enter Password" name="credentials[password]" />
-              </div>
-              <button type="submit" class="btn btn-primary">Sign In</button>
-            </form>
-            <!-- DROPDOWN MENU SIGN IN END -->
+            <span id="toggle-game-page-button" class="dropdown-item page-toggle-button">Game Page</span>
+            <span id="toggle-suggestions-page-button" class="dropdown-item page-toggle-button">Suggestions Page</span>
+            <span id="toggle-stats-page-button" class="dropdown-item page-toggle-button">Stats Page</span>
           </div>
-          <!-- DROPDOWN END -->
         </div>
-        <!-- SIGN IN END-->
-      </div>
+
+        <!-- SIGN IN NAVBAR ITEM-->
+        <div class="nav-item active my-1 mx-3 pre-login">
+          <div class="dropdown">
+            <!-- SIGN IN DROPDOWN MENU -->
+            <button id="" class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Sign In
+            </button>
+
+            <div class="dropdown-menu">
+              <!-- DROPDOWN MENU SIGN IN -->
+              <form id="sign-in-form" class="px-4 py-3">
+                <div class="form-group">
+                  <label>Email address</label>
+                  <input required type="email" placeholder="Enter Email" name="credentials[email]" />
+                </div>
+                <div class="form-group">
+                  <label>Password</label>
+                  <input required type="password" placeholder="Enter Password" name="credentials[password]" />
+                </div>
+                <button type="submit" class="btn btn-primary">Sign In</button>
+              </form>
+              <!-- DROPDOWN MENU SIGN IN END -->
+            </div>
+            <!-- DROPDOWN END -->
+          </div>
+          <!-- SIGN IN END-->
+        </div>
 
 
-      <!-- SIGN UP NAVBAR ITEM-->
-      <div class="nav-item my-1 mx-3 pre-login">
-        <div class="dropdown">
+        <!-- SIGN UP NAVBAR ITEM-->
+        <div class="nav-item my-1 mx-3 pre-login">
+          <div class="dropdown">
+            <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Sign Up
+            </button>
+
+            <div class="dropdown-menu">
+              <!-- SIGN UP DROWNDOWN MENU START -->
+              <form id="sign-up-form" class="px-4 py-3">
+                <div class="form-group">
+                  <label>Email address</label>
+                  <input required type="email" placeholder="Enter Email" name="credentials[email]" />
+                </div>
+                <div class="form-group">
+                  <label>Display Name</label>
+                  <input required type="text" minlength="3" maxlength="12" placeholder="Display Name" pattern="[A-Za-z0-9_ ]+" name="credentials[handle]">
+                </div>
+                <div class="form-group">
+                  <label>Password</label>
+                  <input required type="password" placeholder="Enter Password" name="credentials[password]" />
+                </div>
+                <div class="form-group">
+                  <label>Password</label>
+                  <input required type="password" placeholder="Enter Password Confirmation" name="credentials[password_confirmation]" />
+                </div>
+                <button type="submit" class="btn btn-primary">Sign Up</button>
+              </form>
+              <!-- SIGN UP DROWNDOWN MENU END -->
+            </div>
+            <!-- DROPDOWN END -->
+          </div>
+          <!-- SIGN UP END -->
+        </div>
+
+
+        <!-- CHANGE PASSWORD NAVBAR ITEM- -->
+        <div class="nav-item my-1 mx-3 post-login">
           <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Sign Up
+            Change Password
           </button>
-
           <div class="dropdown-menu">
-            <!-- SIGN UP DROWNDOWN MENU START -->
-            <form id="sign-up-form" class="px-4 py-3">
+            <!-- CHANGE PASSWORD DROPDOWN START -->
+            <form id="change-password-form" class="px-4 py-3">
               <div class="form-group">
-                <label>Email address</label>
-                <input required type="email" placeholder="Enter Email" name="credentials[email]" />
+                <label>Old Password</label>
+                <input type="password" placeholder="Old Password" name="passwords[old]" />
               </div>
               <div class="form-group">
-                <label>Display Name</label>
-                <input required type="text" minlength="3" maxlength="12" placeholder="Display Name" pattern="[A-Za-z0-9_ ]+" name="credentials[handle]">
+                <label>New Password</label>
+                <input type="password" placeholder="New Password" name="passwords[new]" />
               </div>
-              <div class="form-group">
-                <label>Password</label>
-                <input required type="password" placeholder="Enter Password" name="credentials[password]" />
-              </div>
-              <div class="form-group">
-                <label>Password</label>
-                <input required type="password" placeholder="Enter Password Confirmation" name="credentials[password_confirmation]" />
-              </div>
-              <button type="submit" class="btn btn-primary">Sign Up</button>
+              <button type="submit" class="btn btn-primary">Change Password</button>
             </form>
-            <!-- SIGN UP DROWNDOWN MENU END -->
+            <!-- CHANGE PASSWORD DROPDOWN END -->
           </div>
-          <!-- DROPDOWN END -->
-        </div>
-        <!-- SIGN UP END -->
-      </div>
-
-
-      <!-- CHANGE PASSWORD NAVBAR ITEM- -->
-      <div class="nav-item my-1 mx-3 post-login">
-        <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Change Password
-        </button>
-        <div class="dropdown-menu">
-          <!-- CHANGE PASSWORD DROPDOWN START -->
-          <form id="change-password-form" class="px-4 py-3">
-            <div class="form-group">
-              <label>Old Password</label>
-              <input type="password" placeholder="Old Password" name="passwords[old]" />
-            </div>
-            <div class="form-group">
-              <label>New Password</label>
-              <input type="password" placeholder="New Password" name="passwords[new]" />
-            </div>
-            <button type="submit" class="btn btn-primary">Change Password</button>
-          </form>
-          <!-- CHANGE PASSWORD DROPDOWN END -->
-        </div>
-        <!-- CHANGE PASSWORD END -->
-      </div>
-
-
-      <!-- SHOW MY SUGGESTIONS -->
-      <div id="show-my-suggestion-button-container" class="nav-item my-1 mx-3 post-login">
-        <button id="show-my-suggestion-button" class="post-login btn btn-dark">Show My Suggestions</button>
-      </div>
-
-      <!-- SHOW ALL SUGGESTIONS -->
-      <div id="show-all-suggestion-button-container" class="nav-item my-1 mx-3 post-login">
-        <button id="show-all-suggestion-button" class="btn btn-warning">Show All Suggestions</button>
-      </div>
-
-
-      <div class="flex-grow-1 d-flex justify-content-center">
-        <!-- TOGGLE PAGE TITLE-->
-        <div class="nav-item ml-2 d-flex">
-          <span id="toggle-page-title" class="bg-transparent text-light">Game Page</span>
-        </div>
-      </div>
-
-
-      <div id="navbar-right-side" class="d-flex post-login ml-auto align-items-center">
-        <!-- USER NAVBAR ITEM- -->
-        <div class="nav-item mx-3 post-login">
-          <span id="user-handle" class="bg-light px-2 rounded">User Display Name</span>
+          <!-- CHANGE PASSWORD END -->
         </div>
 
-        <!-- SIGN OUT NAVBAR ITEM- -->
-        <div class="nav-item mx-3 post-login order-1">
-          <button id="sign-out-button" class="btn btn-danger">Sign Out</button>
+
+        <!-- SHOW MY SUGGESTIONS -->
+        <div id="show-my-suggestion-button-container" class="nav-item my-1 mx-3 post-login">
+          <button id="show-my-suggestion-button" class="post-login btn btn-dark">Show My Suggestions</button>
         </div>
+
+        <!-- SHOW ALL SUGGESTIONS -->
+        <div id="show-all-suggestion-button-container" class="nav-item my-1 mx-3 post-login">
+          <button id="show-all-suggestion-button" class="btn btn-warning">Show All Suggestions</button>
+        </div>
+
+
+        <div class="flex-grow-1 d-flex justify-content-center">
+          <!-- TOGGLE PAGE TITLE-->
+          <div class="nav-item ml-2 d-flex">
+            <span id="toggle-page-title" class="bg-transparent text-light">Game Page</span>
+          </div>
+        </div>
+
+
+        <div id="navbar-right-side" class="d-flex post-login ml-auto align-items-center">
+          <!-- USER NAVBAR ITEM- -->
+          <div class="nav-item mx-3 post-login">
+            <span id="user-handle" class="bg-light px-2 rounded">User Display Name</span>
+          </div>
+
+          <!-- SIGN OUT NAVBAR ITEM- -->
+          <div class="nav-item mx-3 post-login order-1">
+            <button id="sign-out-button" class="btn btn-danger">Sign Out</button>
+          </div>
+        </div>
+
+        <!-- NAVBAR LIST ITEMS END -->
       </div>
 
-      <!-- NAVBAR LIST ITEMS END -->
+      <!-- NAVBAR NAV END -->
     </div>
 
-    <!-- NAVBAR NAV END -->
-  </div>
+    <div id="user-feedback-container">
+      <h1 id="user-feedback" class="p-0 m-0"></h1>
+    </div>
 
-  <div id="user-feedback-container">
-    <h1 id="user-feedback" class="p-0 m-0"></h1>
-  </div>
+    <!-- GAME PAGE -->
+    <div id="game-page" class="">
+      <!-- GAME CONTENT -->
+      <div id="game-content" class="overflow-auto">
 
-  <div id="game-page">
-    <div id="game-content" class="">
+        <div id="game-description" class="m-3">
+          <h2 id="game-welcome" class="text-center">Brain Age: Train Your Brain in Minutes a Day</h2>
+          <h4 id="game-description-text" class="text-justify mx-4"><span class="px-4"></span>Play this game modified remake of the Nintendo DS classic Brain Age. Try to get the highest score possible within 60 seconds! There are four types of
+            questions: Complete the Sentence,
+            Math, Find the Missing
+            Shape,
+            and Recognition.
+            <span class="font-weight-bold bg-dark text-light rounded px-2"> Please sign in to have your score saved</span>
+          </h4>
+        </div>
 
-      <div id="game-description" class="m-3">
-        <h2 id="game-welcome" class="text-center">Brain Age: Train Your Brain in Minutes a Day</h2>
-        <h4 id="game-description-text" class="text-justify mx-4"><span class="px-4"></span>Play this game modified remake of the Nintendo DS classic Brain Age. Try to get the highest score possible within 60 seconds! There are four types of
-          questions: Complete the Sentence,
-          Math, Find the Missing
-          Shape,
-          and Recognition.
-          <span class="font-weight-bold bg-dark text-light rounded px-2"> Please sign in to have your score saved</span>
-        </h4>
-      </div>
-
-      <div id="game-container" class="d-flex flex-row">
-        <div id="game-board" class="col-6">
-
+        <!-- GAME CONTAINER -->
+        <div id="game-container" class="d-flex flex-row">
           <!-- GAME BOARD -->
-
-          <div id="game-header" class="">
+          <div id="game-board" class="col-6">
             <!-- GAME HEADER -->
-            <div id="game-timer" class="post-game-start"></div>
-            <div id="game-hearts" class="post-game-start">
-              <img id="heart-1" class="heart" src="public/images/full-heart.png" alt="">
-              <img id="heart-2" class="heart" src="public/images/full-heart.png" alt="">
-              <img id="heart-3" class="heart" src="public/images/full-heart.png" alt="">
-              <img id="heart-4" class="heart" src="public/images/full-heart.png" alt="">
-              <img id="heart-5" class="heart" src="public/images/full-heart.png" alt="">
+            <div id="game-header" class="">
+              <div id="game-timer" class="post-game-start"></div>
+              <div id="game-hearts" class="post-game-start">
+                <img id="heart-1" class="heart" src="public/images/full-heart.png" alt="">
+                <img id="heart-2" class="heart" src="public/images/full-heart.png" alt="">
+                <img id="heart-3" class="heart" src="public/images/full-heart.png" alt="">
+                <img id="heart-4" class="heart" src="public/images/full-heart.png" alt="">
+                <img id="heart-5" class="heart" src="public/images/full-heart.png" alt="">
+              </div>
+              <div id="game-score"></div>
+              <!-- GAME HEADER END-->
             </div>
-            <div id="game-score"></div>
-            <!-- GAME HEADER END-->
-          </div>
 
 
-          <div id="game-display" class="col-12 game-start-button d-flex p-0">
-            <h1 id="game-display-text" class="d-flex align-items-center justify-content-center w-100">Want to play? Click here!</h1>
-          </div>
-          <div id="game-options-container" class="justify-content-between my-2 post-game-start">
-            <button id="option-0" class="option btn btn-primary m-1 btn-block">option 0</button>
-            <button id="option-1" class="option btn btn-primary m-1 btn-block">option 1</button>
-            <button id="option-2" class="option btn btn-primary m-1 btn-block">option 2</button>
-            <button id="option-3" class="option btn btn-primary m-1 btn-block">option 3</button>
-            <button id="option-4" class="option btn btn-primary m-1 btn-block">option 4</button>
+            <div id="game-display" class="col-12 game-start-button d-flex p-0">
+              <h1 id="game-display-text" class="d-flex align-items-center justify-content-center w-100">Want to play? Click here!</h1>
+            </div>
+            <div id="game-options-container" class="justify-content-between my-2 post-game-start">
+              <button id="option-0" class="option btn btn-primary m-1 btn-block">option 0</button>
+              <button id="option-1" class="option btn btn-primary m-1 btn-block">option 1</button>
+              <button id="option-2" class="option btn btn-primary m-1 btn-block">option 2</button>
+              <button id="option-3" class="option btn btn-primary m-1 btn-block">option 3</button>
+              <button id="option-4" class="option btn btn-primary m-1 btn-block">option 4</button>
+            </div>
+            <!-- GAME BOARD END-->
           </div>
 
-          <!-- GAME BOARD END-->
+          <div id="info-container" class="col-6">
+            <div id="buttons-container" class="flex-row justify-content-around col-12 d-flex">
+              <button id="all-scores-button" class="btn btn-warning btn-block mx-1">All scores</button>
+              <button id="my-scores-button" class="btn btn-dark post-login mx-1">Show My Scores</button>
+              <button id="hiscores-button" class="btn btn-warning btn-block mx-1">Top 10 Hiscores</button>
+            </div>
+            <div id="game-headers" class="d-flex justify-content-between">
+              <h2 id="game-headers-score" class="text-left font-weight-bold col-4">SCORE</h2>
+              <h2 id="game-headers-user" class="text-left font-weight-bold col-4">USER</h2>
+              <h2 id="game-headers-id" class="text-left font-weight-bold col-4">ID</h2>
+            </div>
+            <div id="scores" class="col-12"></div>
+            <!-- GAME BOARD END -->
+          </div>
+          <!-- GAME CONTAINER END -->
+        </div>
+        <!-- GAME CONTENT END -->
+      </div>
+      <!-- GAME PAGE END -->
+    </div>
+
+
+    <!-- SUGGESTIONS PAGE -->
+    <div id="suggestions-page" class="overflow-auto">
+
+      <div id="suggestions-content">
+        <div id="suggestions-container" class="">
+          <div id="suggestions-header" class="border-bottom text-center">
+            <h3 id="suggestions-header-text">All Suggestions</h3>
+            <button id="undo-delete-button" class="btn btn-success my-2">Undo a deleted suggestion</button>
+          </div>
+          <div id="suggestions" class="col-12 pb-5"></div>
         </div>
 
-
-
-        <div id="info-container" class="col-6">
-          <div id="buttons-container" class="flex-row justify-content-around col-12 d-flex">
-            <button id="all-scores-button" class="btn btn-warning btn-block mx-1">All scores</button>
-            <button id="my-scores-button" class="btn btn-dark post-login mx-1">Show My Scores</button>
-            <button id="hiscores-button" class="btn btn-warning btn-block mx-1">Top 10 Hiscores</button>
+        <form id="create-suggestion-form" class="px-4 py-3 col-6 post-login">
+          <label>Post a public a sugggestion on how to make this web application better</label>
+          <div class="form-group">
+            <textarea required minlength="8" maxlength="256" type="text" placeholder="Write your suggestion here" name="suggestion[text]" class="textarea col-12"></textarea>
           </div>
-          <div id="game-headers" class="d-flex justify-content-between">
-            <h2 id="game-headers-score" class="text-left font-weight-bold col-4">SCORE</h2>
-            <h2 id="game-headers-user" class="text-left font-weight-bold col-4">USER</h2>
-            <h2 id="game-headers-id" class="text-left font-weight-bold col-4">ID</h2>
-          </div>
-          <div id="scores" class="col-12">
-
-          </div>
-
-        </div>
+          <input class="btn btn-success" type="submit" value="Send me a suggestion">
+        </form>
 
       </div>
-
-
-      <!-- CONTENT END -->
     </div>
-    <!-- MAIN SCREEN END -->
-  </div>
 
-  <div id="suggestions-page" class="">
-    <div id="suggestions-content">
-      <div id="suggestions-container" class="">
-        <div id="suggestions-header" class="border-bottom text-center">
-          <h3 id="suggestions-header-text">All Suggestions</h3>
-          <button id="undo-delete-button" class="btn btn-success my-2">Undo a deleted suggestion</button>
-        </div>
-        <div id="suggestions" class="col-12 pb-5"></div>
+    <!-- STATS PAGE -->
+    <div id="stats-page" class="overflow-auto">
+
+      <div id="stats-container" class="flex-column">
+        <div id="stats" class="d-flex justify-content-around flex-row py-2"></div>
+        <canvas id="mycanvas" class=""></canvas>
       </div>
 
-      <form id="create-suggestion-form" class="px-4 py-3 col-6 post-login">
-        <label>Post a public a sugggestion on how to make this web application better</label>
-        <div class="form-group">
-          <textarea required minlength="8" maxlength="256" type="text" placeholder="Write your suggestion here" name="suggestion[text]" class="textarea col-12"></textarea>
-        </div>
-        <input class="btn btn-success" type="submit" value="Send me a suggestion">
-
-      </form>
-
     </div>
-  </div>
 
-  <div id="stats-page" class="">
-    <div id="stats-container" class="flex-column">
-      <div id="stats" class="d-flex justify-content-around flex-row py-2"></div>
-      <canvas id="mycanvas" class=""></canvas>
+
+    <!-- FOOTER -->
+    <div id="footer-links" class="footer d-flex justify-content-around">
+      <a id="front-end-repo" href="https://github.com/davidholyko/dko-brain-age-front-end" target="_blank">
+        <h2>Link to Front-end Github Repo</h2>
+      </a>
+      <a id="back-end-repo" href="https://github.com/davidholyko/dko-brain-age-back-end" target="_blank">
+        <h2>Link to Back-end Github Repo</h2>
+      </a>
     </div>
-  </div>
 
-  <div id="footer-links" class="footer d-flex justify-content-around">
-    <a id="front-end-repo" href="https://github.com/davidholyko/dko-brain-age-front-end" target="_blank">
-      <h2>Link to Front-end Github Repo</h2>
-    </a>
-    <a id="back-end-repo" href="https://github.com/davidholyko/dko-brain-age-back-end" target="_blank">
-      <h2>Link to Back-end Github Repo</h2>
-    </a>
+    <!-- WINDOW END -->
   </div>
 
 </body>

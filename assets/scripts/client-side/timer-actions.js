@@ -23,9 +23,11 @@ const startTimer = () => {
       clearInterval(store.game.timer)
       $('#game-display').html('<h1 id="game-display-text" class="d-flex align-items-center justify-content-center w-100">Want to play again? Click here!</h1>')
       stopPlaying()
+      stopTimer()
+    } else {
+      $('#game-timer')
+        .html(`<h3>Time remaining in seconds: ${((end - now) / 1000).toString().slice(0, -2)}</h3>`)
     }
-    $('#game-timer').html(`<h3>Time remaining in seconds: ${((end - now) / 1000).toString().slice(0, -2)}</h3>`)
-    if ($('#game-timer').text() === 'Time remaining in seconds: -0.0') { stopTimer() }
   }, 1)
 }
 

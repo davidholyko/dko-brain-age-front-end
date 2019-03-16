@@ -26,6 +26,7 @@ body {
 
 .footer {
   position: fixed;
+  height: 50px;
   bottom: 0;
   left: 0;
   background-color: black;
@@ -83,7 +84,8 @@ body {
   background-size: cover;
   background-repeat: repeat;
   background: #CCC;
-  height: 95vh;
+  margin-bottom: 50px;
+  height: calc(100vh - 100px);
 }
 
 #game-welcome {
@@ -127,11 +129,19 @@ input[type="number"] {
   font-size: 20px;
 }
 
+.overflow-x-auto {
+  overflow-x: auto;
+}
+
 .page-toggle-button:hover {
   background-color: DarkBlue;
   color: white;
   text-decoration: none;
   cursor: pointer;
+}
+
+#preview-image {
+  display: none;
 }
 
 #scores {
@@ -245,4 +255,10 @@ textarea {
 #user-handle {
   font-size: 2rem;
   font-weight: bold;
+}
+
+#window {
+  opacity: 1;
+  transition: 0.1s;
+  transition-timing-function: ease-in-out;
 }
