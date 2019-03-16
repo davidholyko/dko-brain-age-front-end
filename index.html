@@ -21,17 +21,26 @@
     <div><img id="brain-age-icon" src="public/images/brain-age.png" alt="" class="align-middle"></div>
 
 
+
     <!-- NAVBAR DIV START -->
     <div class="navbar-nav flex-row flex-grow-1 flex-start">
       <!-- NAVBAR LIST ITEMS START -->
 
-      <!-- TOGGLE PAGE BUTTON-->
-      <div class="nav-item my-1 mx-3">
-        <button id="toggle-page-button" class="btn btn-warning">Game Page</button>
+
+      <!-- Example single danger button -->
+      <div class="">
+        <button type="button" class="btn btn-primary dropdown-toggle my-1 mx-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Page Toggle
+        </button>
+        <div class="dropdown-menu">
+          <span id="toggle-game-page-button" class="dropdown-item page-toggle-button">Game Page</span>
+          <span id="toggle-suggestions-page-button" class="dropdown-item page-toggle-button">Suggestions Page</span>
+          <span id="toggle-stats-page-button" class="dropdown-item page-toggle-button">Stats Page</span>
+        </div>
       </div>
 
       <!-- SIGN IN NAVBAR ITEM-->
-      <div class=" nav-item active my-1 mx-3 pre-login">
+      <div class="nav-item active my-1 mx-3 pre-login">
         <div class="dropdown">
           <!-- SIGN IN DROPDOWN MENU -->
           <button id="" class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -120,14 +129,23 @@
 
 
       <!-- SHOW MY SUGGESTIONS -->
-      <div id="show-my-suggestion-button-container" class="nav-item my-1 mx-3 suggestion post-login">
+      <div id="show-my-suggestion-button-container" class="nav-item my-1 mx-3 post-login">
         <button id="show-my-suggestion-button" class="post-login btn btn-dark">Show My Suggestions</button>
       </div>
 
       <!-- SHOW ALL SUGGESTIONS -->
-      <div id="show-all-suggestion-button-container" class="nav-item my-1 mx-3 suggestion post-login">
+      <div id="show-all-suggestion-button-container" class="nav-item my-1 mx-3 post-login">
         <button id="show-all-suggestion-button" class="btn btn-warning">Show All Suggestions</button>
       </div>
+
+
+      <div class="flex-grow-1 d-flex justify-content-center">
+        <!-- TOGGLE PAGE TITLE-->
+        <div class="nav-item ml-2 d-flex">
+          <span id="toggle-page-title" class="bg-transparent text-light">Game Page</span>
+        </div>
+      </div>
+
 
       <div id="navbar-right-side" class="d-flex post-login ml-auto align-items-center">
         <!-- USER NAVBAR ITEM- -->
@@ -147,7 +165,7 @@
     <!-- NAVBAR NAV END -->
   </div>
 
-  <div>
+  <div id="user-feedback-container">
     <h1 id="user-feedback" class="p-0 m-0"></h1>
   </div>
 
