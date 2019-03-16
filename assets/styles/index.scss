@@ -98,6 +98,11 @@ input[type="number"] {
   color: black;
 }
 
+#game-description-text {
+  max-height: 135px;
+  overflow: auto;
+}
+
 #game-page {
   display: flex;
   justify-content: center;
@@ -118,7 +123,6 @@ input[type="number"] {
 }
 
 .option {
-  width: 15%;
   height: 5vh;
   font-size: 20px;
 }
