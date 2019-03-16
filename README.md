@@ -1,6 +1,6 @@
-# Tic Tac Toe!
+# Brain Age: Train Your Brain in Minutes a Day
 
-A online version of the class tic tac toe game! Play against someone at the same terminal or play against yourself! Sign up and sign in are required to play; win detection and game statistis are provided for you.
+An online, modified remake of the classic classic Brain Age for the Nintendo DS. Try to get the highest score possible within 60 seconds! There are four types of questions: Complete the Sentence, Math, Find the Missing Shape, and Recognition.
 
 ## Getting Started
 
@@ -10,12 +10,12 @@ Go to https://davidholyko.github.io/dko-brain-age-front-end/ to interact with th
 
 ## Technologies used
 
++ Javascript + jQuery
++ Ruby + Ruby on Rails
++ pSQL + SQL
 + HTML
 + CSS + SASS
-+ Javascript + jQuery
-+ Bootstrap
-+ Ruby
-+ Ruby on Rails
++ Bootstrap + Handlebars
 + Chart.js and mathjs
 
 ## Planning and Development
@@ -71,12 +71,14 @@ Planning:
 
 ## Unsolved Problems (Problem Working on at the time of editing this file)
 
-1. Create stats page, graphs
 
 ## Future Direction (Super Stretch Goals)
 
-1. Stats page, graphs
-2. 3 2 1 Countdown before game starts
+
+1. 3 2 1 Countdown before game starts
+2. query score by player
+3. my scores graph
+4. compare my score to queried player
 
 
 ## [License](LICENSE)
