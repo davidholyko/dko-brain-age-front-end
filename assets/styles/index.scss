@@ -61,6 +61,9 @@ body {
   flex-wrap: wrap;
   height: 40vh;
   background-color: white;
+}
+
+#game-display-and-options-container {
   border: 5px solid black;
 }
 
@@ -125,7 +128,6 @@ input[type="number"] {
 }
 
 .option {
-  height: 5vh;
   font-size: 20px;
 }
 

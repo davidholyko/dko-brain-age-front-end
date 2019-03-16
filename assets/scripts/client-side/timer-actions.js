@@ -21,7 +21,8 @@ const startTimer = () => {
     now = Date.now()
     if (now > end) {
       clearInterval(store.game.timer)
-      $('#game-display').html('<h1 id="game-display-text" class="d-flex align-items-center justify-content-center w-100">Want to play again? Click here!</h1>')
+      $('#game-display')
+        .html('<div><h1>Time is up!</h1><h1 id="game-display-text" class="d-flex align-items-center justify-content-center w-100">Want to play again? Click here!</h1></div>')
       stopPlaying()
       stopTimer()
     } else {

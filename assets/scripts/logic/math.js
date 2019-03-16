@@ -26,7 +26,7 @@ const generateProblem = () => {
   // random index
   const answer = elements[randomIndex]
   // the value of the operand or result that will represent the answer after one is replaced with _
-  elements[randomIndex] = '_'
+  elements[randomIndex] = '___'
   // replace an operand or result with blank
   const question =
   `<div id="question-math" class="d-flex justify-content-around w-100">
