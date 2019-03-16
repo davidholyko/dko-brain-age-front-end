@@ -27,6 +27,9 @@ const hideStatsPage = () => { $('#stats-page').hide() }
 const showOption = () => { $('.option').show() }
 const hideOption = () => { $('.option').hide() }
 
+const showMultipleChoice = () => { $('#game-multiple-choice-and-game-options-container').show() }
+const hideMultipleChoice = () => { $('#game-multiple-choice-and-game-options-container').hide() }
+
 const shadeGameDisplay = () => {
   $('#game-display').css('background-color', 'rgba(0,0,0,0.5)')
   $('#game-display').css('color', 'white')
@@ -114,5 +117,7 @@ module.exports = {
   hideStatsPage,
   showStatsPage,
   showOption,
-  hideOption
+  hideOption,
+  showMultipleChoice,
+  hideMultipleChoice
 }

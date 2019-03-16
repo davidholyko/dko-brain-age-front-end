@@ -38,9 +38,9 @@ const startTimer = () => {
 
 const stopPlaying = () => {
   console.log('stopPlaying')
-  $('.option').hide()
   stopTimer()
   view.shadeGameDisplay()
+  view.hideMultipleChoice()
   store.game.over = true
   if (store.user) {
     gameEvents.onSubmitScore()

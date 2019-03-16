@@ -21,13 +21,13 @@ const startPlaying = () => {
   htmlActions.updateGameDisplay()
   view.startGame()
   view.unshadeGameDisplay()
-  view.showOption()
+  view.showMultipleChoice()
 }
 
 const stopPlaying = () => {
   console.log('stopPlaying')
   timerActions.stopTimer()
-  view.hideOption()
+  view.hideMultipleChoice()
   view.shadeGameDisplay()
   store.game.over = true
   if (store.user) {
