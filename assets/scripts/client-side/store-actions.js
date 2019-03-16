@@ -11,7 +11,7 @@ const initStore = () => {
   store.game.answer = ''
   store.game.multipleChoice = []
   store.game.timer = false
-  store.game.countdown = 5
+  store.game.countdown = 60
   store.game.hearts = 5
   store.game.score = 0
   store.game.submit = false
