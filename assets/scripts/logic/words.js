@@ -65,17 +65,17 @@ const generateProblem = () => {
   if (randomChoiceIndex === 1) { s = '' }
 
   const question =
-  `<div id="question-words" class="d-flex flex-wrap">
-    <div class="bg-dark text-light px-3 m-3 rounded d-flex"><h3 class="d-flex m-0 align-items-center">${choicesOutput[0]}</h3></div>
-    <div class="bg-dark text-light px-3 m-3 rounded d-flex"><h3 class="d-flex m-0 align-items-center">${choicesOutput[1]}</h3></div>
-    <div class="bg-dark text-light px-3 m-3 rounded d-flex"><h3 class="d-flex m-0 align-items-center">${choicesOutput[2]}</h3></div>
-    <div class="bg-dark text-light px-3 m-3 rounded d-flex"><h3 class="d-flex m-0 align-items-center">${choicesOutput[3]}</h3></div>
-    <div class="bg-dark text-light px-3 m-3 rounded d-flex"><h3 class="d-flex m-0 align-items-center">${choicesOutput[4]}</h3></div>
-    <div class="bg-dark text-light px-3 m-3 rounded d-flex"><h3 class="d-flex m-0 align-items-center">${choicesOutput[5]}</h3></div>
-    <div class="bg-dark text-light px-3 m-3 rounded d-flex"><h3 class="d-flex m-0 align-items-center">${choicesOutput[6]}</h3></div>
-    <div class="bg-dark text-light px-3 m-3 rounded d-flex"><h3 class="d-flex m-0 align-items-center">${choicesOutput[7]}</h3></div>
-    <div class="bg-dark text-light px-3 m-3 rounded d-flex"><h3 class="d-flex m-0 align-items-center">${choicesOutput[8]}</h3></div>
-    <div class="bg-dark text-light px-3 m-3 rounded d-flex"><h3 class="d-flex m-0 align-items-center">${choicesOutput[9]}</h3></div>
+  `<div id="question-words" class="d-flex align-items-end px-5 flex-wrap mb-2">
+    <h3 class="bg-dark text-light px-3 py-2 m-1 rounded d-inline-block">${choicesOutput[0]}</h3>
+    <h3 class="bg-dark text-light px-3 py-2 m-1 rounded d-inline-block">${choicesOutput[1]}</h3>
+    <h3 class="bg-dark text-light px-3 py-2 m-1 rounded d-inline-block">${choicesOutput[2]}</h3>
+    <h3 class="bg-dark text-light px-3 py-2 m-1 rounded d-inline-block">${choicesOutput[3]}</h3>
+    <h3 class="bg-dark text-light px-3 py-2 m-1 rounded d-inline-block">${choicesOutput[4]}</h3>
+    <h3 class="bg-dark text-light px-3 py-2 m-1 rounded d-inline-block">${choicesOutput[5]}</h3>
+    <h3 class="bg-dark text-light px-3 py-2 m-1 rounded d-inline-block">${choicesOutput[6]}</h3>
+    <h3 class="bg-dark text-light px-3 py-2 m-1 rounded d-inline-block">${choicesOutput[7]}</h3>
+    <h3 class="bg-dark text-light px-3 py-2 m-1 rounded d-inline-block">${choicesOutput[8]}</h3>
+    <h3 class="bg-dark text-light px-3 py-2 m-1 rounded d-inline-block">${choicesOutput[9]}</h3>
   </div>
   <h3 class="text-center w-100"> Which word above appears ${randomChoiceIndex} time${s}?</h3>`
   const answer = `${multipleChoice[randomChoiceIndex]}`

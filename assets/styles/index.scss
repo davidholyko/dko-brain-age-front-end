@@ -47,7 +47,7 @@ body {
 
 #game-content {
   width: 90%;
-  padding: 2% 0;
+  padding: 0;
   background-color: AliceBlue;
   background-repeat: repeat;
 }
@@ -61,6 +61,29 @@ body {
   height: 40vh;
   background-color: white;
   border: 5px solid black;
+}
+
+#game-options-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+#game-display-text:hover {
+  color: black;
+}
+
+#game-description-text {
+  max-height: 135px;
+  overflow: auto;
+}
+
+#game-page {
+  display: flex;
+  justify-content: center;
+  background-size: cover;
+  background-repeat: repeat;
+  background: #CCC;
+  height: 95vh;
 }
 
 #game-welcome {
@@ -87,29 +110,6 @@ input[type="number"] {
   &:hover {
     background-color: rgba(0,128,128,0.5);
   }
-}
-
-#game-options-container {
-  display: flex;
-  justify-content: space-around;
-}
-
-#game-display-text:hover {
-  color: black;
-}
-
-#game-description-text {
-  max-height: 135px;
-  overflow: auto;
-}
-
-#game-page {
-  display: flex;
-  justify-content: center;
-  background-size: cover;
-  background-repeat: repeat;
-  background: #CCC;
-  height: 95vh;
 }
 
 #mycanvas {
