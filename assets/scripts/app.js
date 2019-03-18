@@ -18,6 +18,9 @@ const view = require('./view/view')
 
 $(() => {
   console.log('JavaScript is running...')
+
+  $('body').fadeIn()
+
   client.initStore()
   authEvents.addHandlers()
   gameEvents.addHandlers()
