@@ -20,7 +20,7 @@ body {
 
 .error-toggle {
   font-weight: bold;
-  background-color: rgba(255,0,0,.5);
+  background-color: rgba(255, 0, 0, 0.5);
   color: white;
 }
 
@@ -83,9 +83,8 @@ body {
   justify-content: center;
   background-size: cover;
   background-repeat: repeat;
-  background: #CCC;
+  background: #ccc;
   margin-bottom: 50px;
-  height: calc(100vh - 100px);
 }
 
 #game-welcome {
@@ -98,9 +97,10 @@ body {
   width: 50px;
 }
 
-#info-container {}
+#info-container {
+}
 
-input[type="number"] {
+input[type='number'] {
   height: 2rem;
   width: 4rem;
   font-size: 24px;
@@ -110,7 +110,7 @@ input[type="number"] {
   border-bottom: 1px solid DarkSlateGrey;
 
   &:hover {
-    background-color: rgba(0,128,128,0.5);
+    background-color: rgba(0, 128, 128, 0.5);
   }
 }
 
@@ -155,7 +155,6 @@ input[type="number"] {
   justify-content: center;
   background-repeat: repeat;
   background-size: cover;
-  height: calc(100vh - 100px);
 }
 
 #stats-container {
@@ -173,7 +172,7 @@ input[type="number"] {
 .success {
   display: flex;
   color: white;
-  background-color: rgba(0,255,0,.5);
+  background-color: rgba(0, 255, 0, 0.5);
   font-weight: bold;
   text-align: center;
 }
@@ -199,7 +198,6 @@ input[type="number"] {
   background: black;
   background-repeat: repeat;
   background-size: cover;
-  height: calc(100vh - 100px);
 }
 
 #suggestions-content {
