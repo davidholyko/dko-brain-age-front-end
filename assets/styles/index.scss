@@ -85,6 +85,7 @@ body {
   background-repeat: repeat;
   background: #ccc;
   margin-bottom: 50px;
+  min-height: calc(100vh - 100px);
 }
 
 #game-welcome {
@@ -155,6 +156,7 @@ input[type='number'] {
   justify-content: center;
   background-repeat: repeat;
   background-size: cover;
+  min-height: calc(100vh - 100px);
 }
 
 #stats-container {
@@ -198,6 +200,7 @@ input[type='number'] {
   background: black;
   background-repeat: repeat;
   background-size: cover;
+  min-height: calc(100vh - 100px);
 }
 
 #suggestions-content {
